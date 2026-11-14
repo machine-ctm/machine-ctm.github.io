@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gia công CNC — Cẩm nang Kỹ thuật · Chế tạo máy</title>
+<meta name="description" content="Bản hướng dẫn tiếng Việt (chuyển soạn nguyên bản) dựa trên CNC machining: The Complete Engineering Guide: nguyên lý, loại máy 3/5 trục, lợi ích & hạn chế, thiết kế cho CNC, vật liệu và mẹo giảm chi phí.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua nội dung</a>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../../index.html" aria-label="Chế tạo máy">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="16" cy="16" r="6.5"/><circle cx="16" cy="16" r="2.2" fill="currentColor" stroke="none"/>
+            <path d="M16 4.5v3M16 24.5v3M4.5 16h3M24.5 16h3M7.6 7.6l2.1 2.1M22.3 22.3l2.1 2.1M24.4 7.6l-2.1 2.1M9.7 22.3l-2.1 2.1"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand-txt"><strong>Chế tạo máy</strong><em>Machine Building</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a class="nav-link" href="../../index.html#discipline">Kỷ thuật</a>
+      <a class="nav-link" href="../../index.html#processes">Quy trình</a>
+      <a class="nav-link" href="../../index.html#curriculum">Chương trình</a>
+      <a class="nav-link" href="../../index.html#tools">Thiết bị</a>
+      <a class="nav-link" href="../../index.html#careers">Nghề nghiệp</a>
+      <a class="nav-link" href="../../books/">Sách (EN)</a>
+      <a class="nav-link" href="../../education/">Giáo dục</a>
+      <a class="nav-link" href="../../videos/">Video</a>
+    </nav>
+    <div class="bar-right">
+      <div class="lang" title="Đổi ngôn ngữ / Switch language">
+        <a href="../../books/" style="color:inherit">EN</a><span class="lang-sep">/</span><span class="on">VI</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="kicker"><span class="dot"></span>Sách · Cẩm nang Kỹ thuật CNC</span>
+        <h1>Gia công CNC<span class="thin">Hướng dẫn tiếng Việt chuyển soạn từ <em>The Complete Engineering Guide</em>.</span></h1>
+        <p class="lede">Cẩm nang dành cho kỹ sư thiết kế lẫn người mới bắt đầu: CNC là gì, máy 3 trục và 5 trục, lợi ích &amp; hạn chế, quy tắc thiết kế cho gia công, chọn vật liệu, xử lý bề mặt và mẹo giữ dự án trong ngân sách. <span class="dim">Bản gốc (PDF): <a href="../../books/files/cnc-machining-complete-guide.pdf" target="_blank" rel="noopener">cnc-machining-complete-guide.pdf ↗</a></span></p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#chuong-1">Bắt đầu đọc →</a>
+          <a class="btn btn-s" href="../../books/files/cnc-machining-complete-guide.pdf" target="_blank" rel="noopener">PDF gốc (EN)</a>
+        </div>
+      </div>
+      <div class="figure">
+        <svg viewBox="0 0 360 240" role="img" aria-label="Phôi bị cắt gọt thành chi tiết">
+          <g fill="none" stroke="#2f5d80" stroke-width="2">
+            <rect x="60" y="100" width="200" height="90" rx="4" fill="#e9f0f5" stroke="#d2d8e0"/>
+            <path d="M60 100h200v90H60z" fill="none"/>
+            <circle cx="120" cy="145" r="20" fill="#fff" stroke="#2f5d80"/>
+            <rect x="180" y="118" width="55" height="20" rx="4" fill="#fff" stroke="#2f5d80"/>
+          </g>
+          <g stroke="#c2540b" stroke-width="3" stroke-linecap="round" fill="none">
+            <line x1="280" y1="40" x2="280" y2="90"/>
+            <path d="M272 82l8 8 8-8"/>
+            <path d="M270 40h20"/>
+          </g>
+          <g stroke="#c2540b" stroke-width="2" stroke-linecap="round">
+            <line x1="60" y1="206" x2="300" y2="206"/>
+            <line x1="60" y1="212" x2="300" y2="212"/>
+          </g>
+        </svg>
+        <div class="figcap">Cắt gọt từ phôi đặc · subtractive manufacturing</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIỚI THIỆU -->
+  <section class="sec" id="gioi-thieu">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">00</span><span class="line"></span><span class="eyebrow-label">Giới thiệu · Introduction</span></div>
+      <div class="sec-head">
+        <h2>Một cẩm nang cho cả người thiết kế lẫn thợ máy <span class="dim" style="font-weight:400;font-size:.6em">A guide for designers &amp; machinists</span></h2>
+        <p>Gia công CNC không chỉ là chuyện vận hành máy — chất lượng và giá thành chi tiết được quyết định ngay từ <b>bản vẽ thiết kế</b>. Cẩm nang này đi theo trình tự: hiểu công nghệ → biết giới hạn của dao cắt → thiết kế tối ưu → chọn vật liệu → kiểm soát chi phí → bắt đầu sản xuất.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">TƯ DUY</span>
+          <h3>Thiết kế để gia công</h3>
+          <p>Một chi tiết dễ cắt sẽ rẻ hơn, nhanh hơn và chính xác hơn — dù cùng một loại vật liệu.</p>
+        </div>
+        <div class="card">
+          <span class="n">LỰA CHỌN</span>
+          <h3>Đúng công nghệ</h3>
+          <p>CNC, in 3D hay ép phun? Mỗi công nghệ có vùng số lượng và yêu cầu kỹ thuật riêng.</p>
+        </div>
+        <div class="card">
+          <span class="n">CHI PHÍ</span>
+          <h3>Ba đòn bẩy</h3>
+          <p>Bo góc lớn, giảm số lần kẹp đặt lại và chọn vật liệu phù hợp là ba cách giảm giá hiệu quả nhất.</p>
+        </div>
+      </div>
+      <p class="note warn" style="margin-top:24px">
+        <span class="lbl">LƯU Ý BẢN QUYỀN</span>
+        <span class="t-vi">Đây là <b>bản chuyển soạn nguyên bản</b> (original adaptation) bằng tiếng Việt dựa trên các chủ đề của <em>CNC machining: The Complete Engineering Guide</em> (ấn phẩm kỹ thuật của 3D Hubs / Hubs). Nội dung được viết lại bằng lời văn riêng nhằm mục đích giáo dục và không sao chép nguyên văn bản gốc. Toàn văn gốc (tiếng Anh) xem tại PDF liên kết ở trên.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 1 -->
+  <section class="sec alt" id="chuong-1">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">01</span><span class="line"></span><span class="eyebrow-label">Chương 1 · What is CNC machining?</span></div>
+      <div class="sec-head">
+        <h2>Gia công CNC là gì? <span class="dim" style="font-weight:400;font-size:.6em">What is CNC machining?</span></h2>
+        <p>CNC là công nghệ sản xuất <b>cắt gọt (subtractive)</b>: chi tiết được tạo ra bằng cách lấy vật liệu ra khỏi một khối phôi đặc (blank / workpiece) bằng nhiều loại dao cắt. Điều này khác với công nghệ <b>cộng</b> (in 3D) hay <b>tạo hình</b> (ép phun) — và chính cơ chế loại bỏ vật liệu quyết định ưu điểm, hạn chế và các ràng buộc thiết kế của CNC.</p>
+      </div>
+      <ol class="steps">
+        <li><b>1. Thiết kế:</b> kỹ sư dựng mô hình CAD của chi tiết.</li>
+        <li><b>2. Lập trình &amp; chuẩn bị:</b> từ CAD sinh ra chương trình máy (G-code) qua CAM, thợ máy setup dao, đồ gá và gốc tọa độ.</li>
+        <li><b>3. Gia công:</b> hệ thống CNC thực hiện toàn bộ nguyên công gần như không cần giám sát, bóc vật liệu và tạo ra chi tiết.</li>
+      </ol>
+      <p class="note" style="margin-top:20px">
+        <span class="lbl">VẬT LIỆU</span>
+        <span class="t-vi">Hầu hết vật liệu kỹ thuật đều gia công CNC được: nhôm, thép hợp kim, đồng thau, titan; nhựa ABS, Delrin (POM), Nylon, PEEK; ngoài ra còn xốp, composite và gỗ.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 2 -->
+  <section class="sec" id="chuong-2">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">02</span><span class="line"></span><span class="eyebrow-label">Chương 2 · A brief history</span></div>
+      <div class="sec-head">
+        <h2>Lược sử ngắn <span class="dim" style="font-weight:400;font-size:.6em">A brief history</span></h2>
+        <p>Từ bát gỗ tiện tay đến robot đa trục — vài cột mốc đáng nhớ:</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">700 TCN</span>
+          <h3>Khởi đầu bằng máy tiện</h3>
+          <p>Vật thể gia công cổ nhất từng được tìm thấy là một chiếc bát gỗ ở Ý, làm năm 700 TCN trên máy tiện.</p>
+        </div>
+        <div class="card">
+          <span class="n">THẾ KỶ 18</span>
+          <h3>Cơ khí hóa bằng hơi nước</h3>
+          <p>Các nỗ lực tự động hóa gia công bắt đầu từ thế kỷ 18 — máy hoàn toàn cơ khí, dẫn động bằng động cơ hơi nước.</p>
+        </div>
+        <div class="card">
+          <span class="n">THẬP NIÊN 1940</span>
+          <h3>Thẻ đục lỗ tại MIT</h3>
+          <p>Máy có thể lập trình đầu tiên phát triển cuối những năm 40 tại MIT, dùng thẻ đục lỗ để mã hóa từng chuyển động.</p>
+        </div>
+        <div class="card">
+          <span class="n">1950–60 → NAY</span>
+          <h3>Chữ "C" trong CNC</h3>
+          <p>Máy tính phổ biến thêm chữ <em>Computer</em> vào NC, thay đổi hoàn toàn ngành chế tạo. Ngày nay CNC là hệ thống robot đa trục, đa dao.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 3 -->
+  <section class="sec alt" id="chuong-3">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">03</span><span class="line"></span><span class="eyebrow-label">Chương 3 · Types of CNC machines</span></div>
+      <div class="sec-head">
+        <h2>Các loại máy CNC <span class="dim" style="font-weight:400;font-size:.6em">Types of CNC machines</span></h2>
+        <p>Cẩm nang tập trung vào nhóm máy <b>cắt gọt bằng dao</b> — phổ biến nhất và có phạm vi ứng dụng rộng nhất. Ngoài ra còn có máy cắt laser, plasma và EDM (tia lửa điện), nhưng cơ chế khác nên không xét ở đây.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">PHAY</span>
+          <h3>Máy phay CNC (CNC milling)</h3>
+          <p>Phôi kẹp cố định trên bàn, dao phay quay tốc độ cao và di chuyển theo 3 trục tuyến tính. Phù hợp chi tiết dạng hộp, mặt phẳng, rãnh, lỗ.</p>
+        </div>
+        <div class="card">
+          <span class="n">TIỆN</span>
+          <h3>Máy tiện CNC (CNC turning)</h3>
+          <p>Phôi quay, dao di chuyển theo hướng xuyên tâm và dọc trục để tạo hình chi tiết có <b>đối xứng quay</b> — trục, bạc, puly, ren.</p>
+        </div>
+        <div class="card">
+          <span class="n">5 TRỤC</span>
+          <h3>Máy 5 trục</h3>
+          <p>Thêm 2 trục quay vào 3 trục tuyến tính, cho phép dao tiếp cận chi tiết từ gần như mọi hướng — cánh tuabin, cánh quạt, khuôn phức tạp.</p>
+        </div>
+        <div class="card">
+          <span class="n">MILL‑TURN</span>
+          <h3>Trung tâm phay‑tiện (Mill‑turn)</h3>
+          <p>Kết hợp khả năng tiện và phay (dao quay được / live tooling) trong một lần kẹp, giảm thời gian và sai số do gá đặt lại.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 4 -->
+  <section class="sec" id="chuong-4">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">04</span><span class="line"></span><span class="eyebrow-label">Chương 4 · 3-axis vs 5-axis</span></div>
+      <div class="sec-head">
+        <h2>3 trục hay 5 trục? <span class="dim" style="font-weight:400;font-size:.6em">3-axis vs 5-axis CNC machining</span></h2>
+        <p>Đây không phải câu hỏi "máy nào mạnh hơn", mà là bao nhiêu <b>lần kẹp đặt lại (setups)</b> chi tiết cần.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">3 TRỤC</span>
+          <h3>Đơn giản, kinh tế</h3>
+          <p>Dao chỉ tiếp cận được từ một hướng (thường từ trên xuống). Các mặt bên, hốc lõm hay góc nghiêng phải lật phôi, gá lại — tốn thời gian và dễ sinh sai số vị trí. Rẻ nhất cho chi tiết dạng tấm/hộp đơn giản.</p>
+        </div>
+        <div class="card">
+          <span class="n">5 TRỤC</span>
+          <h3>Một lần kẹp, nhiều mặt</h3>
+          <p>Bàn xoay / đầu dao nghiêng giúp cắt 5 mặt trong một setup, giữ được độ chính xác liên quan giữa các mặt và dùng dao ngắn hơn (cứng vững hơn). Đắt hơn, lập trình CAM phức tạp hơn — đáng giá với biên dạng tự do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 5 -->
+  <section class="sec alt" id="chuong-5">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">05</span><span class="line"></span><span class="eyebrow-label">Chương 5 · Benefits &amp; limitations</span></div>
+      <div class="sec-head">
+        <h2>Lợi ích &amp; hạn chế <span class="dim" style="font-weight:400;font-size:.6em">Benefits &amp; limitations</span></h2>
+        <p>CNC tạo ra chi tiết trực tiếp từ file CAD với tính chất cơ học của vật liệu nguyên khối — đó là lợi thế lớn nhất, đồng thời cũng là nguồn gốc của mọi hạn chế.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">ƯU</span>
+          <h3>Độ chính xác &amp; vật liệu</h3>
+          <p>Dung sai rất chặt (một phần tư đường kính sợi tóc người), bề mặt tốt, độ lặp lại cao. Chi tiết có cơ tính đầy đủ của kim loại/nhựa đặc — dùng được làm chi tiết chịu lực thực sự.</p>
+        </div>
+        <div class="card">
+          <span class="n">ƯU</span>
+          <h3>Linh hoạt số lượng</h3>
+          <p>Nhờ tự động hóa cao, CNC cạnh tranh về giá cả với <b>một chi tiết đơn lẻ</b> lẫn <b>sản lượng trung bình</b>, không cần khuôn mẫu như ép phun.</p>
+        </div>
+        <div class="card">
+          <span class="n">HẠN CHẾ</span>
+          <h3>Góc trong &amp; hốc sâu</h3>
+          <p>Dao cắt tròn nên <b>không bao giờ tạo được góc trong vuông sắc</b>; chiều sâu cắt bị giới hạn bởi chiều dài dao. Mọi biên dạng phải để dao đi tới được.</p>
+        </div>
+        <div class="card">
+          <span class="n">HẠN CHẾ</span>
+          <h3>Phế liệu &amp; đơn giá</h3>
+          <p>Vật liệu bị bóc bỏ thành phoi (lãng phí hơn in 3D). Khi sản lượng rất lớn, ép phun/đúc thường rẻ hơn nhờ tính kinh tế theo quy mô.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 6 -->
+  <section class="sec" id="chuong-6">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">06</span><span class="line"></span><span class="eyebrow-label">Chương 6 · Applications &amp; vs 3D printing</span></div>
+      <div class="sec-head">
+        <h2>Ứng dụng &amp; so sánh với in 3D <span class="dim" style="font-weight:400;font-size:.6em">Applications &amp; 3D printing</span></h2>
+        <p>CNC hiện diện ở hầu hết ngành cần chi tiết chính xác: hàng không vũ trụ (kết cấu, giá đỡ, linh kiện vật liệu cấp không gian), y tế (dụng cụ, cấy ghép), điện‑điện tử (vỏ hộp, tản nhiệt), ô tô và chế tạo khuôn mẫu.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">CNC</span>
+          <h3>Chọn CNC khi…</h3>
+          <p>Cần <b>dung sai chặt</b>, <b>tính chất cơ học tốt</b>, bề mặt hoàn thiện cao, chi tiết chịu tải, hoặc làm từ kim loại / nhựa kỹ thuật đặc. Phù hợp chi tiết đơn chiếc đến vài trăm cái.</p>
+        </div>
+        <div class="card">
+          <span class="n">IN 3D</span>
+          <h3>Chọn in 3D khi…</h3>
+          <p>Cần <b>hình học rất phức tạp</b> (kênh dẫn bên trong, cấu trúc rỗng, lattice), tạo mẫu nhanh cực sớm, hoặc số lượng rất ít và không yêu cầu độ bền cơ học cao.</p>
+        </div>
+      </div>
+      <p class="note" style="margin-top:22px">
+        <span class="lbl">QUY MÔ</span>
+        <span class="t-vi">Số lượng càng lớn thì chi phí đơn vị càng giảm, nhưng mức giảm của CNC không mạnh bằng ép phun. Nguyên tắc: <b>1–100 chi tiết</b> → CNC / in 3D; <b>hàng trăm đến hàng ngàn</b> → CNC vẫn cạnh tranh; <b>hàng chục ngàn trở lên</b> → cân nhắc ép phun/đúc khuôn.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 7 -->
+  <section class="sec alt" id="chuong-7">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">07</span><span class="line"></span><span class="eyebrow-label">Chương 7 · Design for CNC machining</span></div>
+      <div class="sec-head">
+        <h2>Thiết kế cho gia công CNC <span class="dim" style="font-weight:400;font-size:.6em">Design for CNC machining</span></h2>
+        <p>Lực cắt và nhiệt độ có thể làm phôi biến dạng; dao cắt thì có đường kính và chiều dài hữu hạn. Từ đó suy ra các quy tắc thiết kế thực dụng:</p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Đặc điểm</th><th>Khuyến nghị · Recommended</th><th>Khả thi · Feasible</th></tr></thead>
+          <tbody>
+            <tr><td><b>Chiều dày vách</b> (kim loại)</td><td>≥ 0,8 mm</td><td>0,5 mm (rủi ro rung, biến dạng)</td></tr>
+            <tr><td><b>Chiều sâu lỗ</b></td><td>≈ 3 × đường kính danh nghĩa</td><td>Sâu hơn cần dao chuyên dụng, chậm &amp; đắt</td></tr>
+            <tr><td><b>Ren</b></td><td>M6 trở lên</td><td>M2 (dễ gãy taro)</td></tr>
+            <tr><td><b>Bán kính góc trong</b></td><td>Bo góc (fillet) càng lớn càng tốt</td><td>Góc sắc phải dùng dao nhỏ hoặc EDM</td></tr>
+            <tr><td><b>Số lần gá đặt</b></td><td>1–2 hướng tiếp cận</td><td>Nhiều hơn → tăng giá &amp; sai số</td></tr>
+            <tr><td><b>Dung sai</b></td><td>Chỉ siết chặt ở bề mặt chức năng</td><td>Dung sai chặt toàn thân → tốn công đo</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note warn" style="margin-top:22px">
+        <span class="lbl">BẢN VẼ</span>
+        <span class="t-vi">Luôn kèm <b>bản vẽ kỹ thuật</b> (technical drawing) khi đặt gia công: ghi rõ dung sai, ren, xử lý bề mặt và các bề mặt chức năng. File CAD chỉ mô tả hình học, không truyền được yêu cầu chế tạo.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 8 -->
+  <section class="sec" id="chuong-8">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">08</span><span class="line"></span><span class="eyebrow-label">Chương 8 · Undercuts</span></div>
+      <div class="sec-head">
+        <h2>Hốc lõm &amp; rãnh âm (Undercuts) <span class="dim" style="font-weight:400;font-size:.6em">Designing undercuts</span></h2>
+        <p>Undercut là phần vật liệu bị che khuất khi nhìn theo hướng dao đi vào — dao thẳng không thể chạm tới, cần dao chuyên dụng hoặc thêm một lần gá đặt lại.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">DẠNG T</span>
+          <h3>Rãnh chữ T (T‑slot)</h3>
+          <p>Gia công bằng dao phay đĩa T‑slot. Nên dùng <b>kích thước tiêu chuẩn</b> để có dao sẵn; rãnh tự thiết kế riêng sẽ phải đặt dao, tốn thời gian và chi phí.</p>
+        </div>
+        <div class="card">
+          <span class="n">ĐUÔI BÉO</span>
+          <h3>Rãnh đuôi én (Dovetail)</h3>
+          <p>Dùng dao phay côn góc nghiêng. Cần chừa đủ khoảng hở để dao vào/ra, và bo góc đáy phù hợp với bán kính dao.</p>
+        </div>
+      </div>
+      <p class="note" style="margin-top:22px">
+        <span class="lbl">MẸO</span>
+        <span class="t-vi">Trước khi thêm một undercut, hãy tự hỏi có thể <b>chia chi tiết thành hai phần rồi lắp ghép</b> được không — thường rẻ và bền hơn nhiều so với gia công hốc âm.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 9 -->
+  <section class="sec alt" id="chuong-9">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">09</span><span class="line"></span><span class="eyebrow-label">Chương 9 · Materials &amp; surface finishes</span></div>
+      <div class="sec-head">
+        <h2>Vật liệu &amp; xử lý bề mặt <span class="dim" style="font-weight:400;font-size:.6em">Materials &amp; finishes</span></h2>
+        <p>Vật liệu ảnh hưởng đồng thời đến độ bền, thời gian cắt và giá thành. Nhôm là lựa chọn phổ biến nhất nhờ dễ cắt, nhẹ và giá hợp lý.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">KIM LOẠI</span>
+          <h3>Nhôm &amp; hợp kim</h3>
+          <p>Nhẹ, dễ gia công, dẫn nhiệt tốt, anot hóa đẹp. Mặc định cho vỏ hộp, giá đỡ, chi tiết kết cấu.</p>
+        </div>
+        <div class="card">
+          <span class="n">KIM LOẠI</span>
+          <h3>Thép, inox, đồng, titan</h3>
+          <p>Bền và chịu nhiệt hơn nhưng cắt chậm, mài mòn dao nhanh. Titan/inox dùng cho y tế, hàng không — chi phí cao.</p>
+        </div>
+        <div class="card">
+          <span class="n">NHỰA</span>
+          <h3>ABS · POM · Nylon · PEEK</h3>
+          <p>Nhẹ, cách điện, thường gia công để tạo mẫu trước khi ép phun. Nhựa dễ biến dạng vì nhiệt — cần dao sắc và tốc độ phù hợp.</p>
+        </div>
+        <div class="card">
+          <span class="n">AS‑MACHINED</span>
+          <h3>Để nguyên bề mặt cắt</h3>
+          <p>Rẻ nhất, còn thấy vết dao. Dùng cho chi tiết bên trong hoặc khi chỉ cần chức năng.</p>
+        </div>
+        <div class="card">
+          <span class="n">PHUN BI</span>
+          <h3>Bead blasting</h3>
+          <p>Phun hạt làm mờ đồng đều, xóa vết dao. Có thể che chắn (mask) các bề mặt cần giữ dung sai chặt.</p>
+        </div>
+        <div class="card">
+          <span class="n">ANOT HÓA</span>
+          <h3>Anodizing / hardcoat</h3>
+          <p>Tạo lớp oxit chống ăn mòn, chống mài mòn, có thể nhuộm màu (chủ yếu cho nhôm). Lớp phủ làm đổi kích thước nhẹ — cần tính bù.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 10 -->
+  <section class="sec" id="chuong-10">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">10</span><span class="line"></span><span class="eyebrow-label">Chương 10 · Cost reduction tips &amp; getting started</span></div>
+      <div class="sec-head">
+        <h2>Ba mẹo giảm chi phí &amp; bắt đầu sản xuất <span class="dim" style="font-weight:400;font-size:.6em">Cost tips &amp; start machining</span></h2>
+        <p>Giá một chi tiết CNC phụ thuộc vào <b>thời gian máy</b>, <b>số lần gá đặt</b>, <b>vật liệu</b> và <b>độ phức tạp của lập trình</b>. Ba đòn bẩy dưới đây tác động mạnh nhất.</p>
+      </div>
+      <ol class="steps">
+        <li><b>1. Bo góc trong càng lớn càng tốt</b> (hoặc vát mép thay góc nhọn): cho phép dùng dao đường kính lớn, bóc nhiều vật liệu mỗi lượt cắt, rút ngắn thời gian và giảm mài mòn dao.</li>
+        <li><b>2. Giảm số hướng tiếp cận / lần kẹp đặt lại:</b> thiết kế để mọi đặc điểm nằm trên ít mặt nhất. Mỗi lần lật phôi là thêm thời gian setup và thêm nguồn sai số.</li>
+        <li><b>3. Cân nhắc giá &amp; khả năng cắt của vật liệu:</b> inox/titan đắt hơn nhôm không chỉ ở giá phôi mà ở tốc độ cắt chậm và tuổi dao ngắn. Đừng chọn vật liệu "dư tính năng".</li>
+      </ol>
+      <div class="grid c3" style="margin-top:26px">
+        <div class="card">
+          <span class="n">BƯỚC 1</span>
+          <h3>Xuất file CAD</h3>
+          <p>Xuất định dạng trung tính (STEP / IGES) để đọc được trên mọi hệ CAD/CAM; giữ nguyên đơn vị và trục tọa độ.</p>
+        </div>
+        <div class="card">
+          <span class="n">BƯỚC 2</span>
+          <h3>Chuẩn bị bản vẽ</h3>
+          <p>Bản vẽ 2D ghi dung sai, ren, độ nhám, xử lý bề mặt và GD&amp;T cho các bề mặt lắp ghép.</p>
+        </div>
+        <div class="card">
+          <span class="n">BƯỚC 3</span>
+          <h3>Báo giá &amp; sản xuất</h3>
+          <p>Gửi CAD + bản vẽ cho xưởng/mạng lưới dịch vụ, nhận báo giá tức thì, duyệt DFM (phản hồi thiết kế) rồi đặt lệnh.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KẾT -->
+  <section class="sec alt" id="ket">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">11</span><span class="line"></span><span class="eyebrow-label">Kết luận · Useful resources</span></div>
+      <div class="sec-head">
+        <h2>Học tiếp <span class="dim" style="font-weight:400;font-size:.6em">What's next?</span></h2>
+        <p>Cẩm nang gốc khép lại với danh mục tài nguyên: cơ sở kiến thức (knowledge base) về thiết kế &amp; vật liệu, các kênh thực hành như NYCCNC, và mạng lưới Fab Lab / MakerSpace để tiếp cận máy thật. Trên trang này bạn có thể đọc tiếp các bản tiếng Việt khác: <a href="co-ban-lap-trinh-cnc.html">Cơ bản lập trình CNC</a>, <a href="tu-che-may-cnc.html">Tự chế máy CNC</a>, <a href="cam-nang-sinh-vien-tormach.html">Cẩm nang sinh viên Tormach</a>.</p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="../../books/files/cnc-machining-complete-guide.pdf" target="_blank" rel="noopener">Đọc PDF gốc (EN) ▸</a>
+        <a class="btn btn-s" href="index.html">← Về thư viện sách</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-l">
+      <span class="brand-mini">Gia công CNC — Cẩm nang Kỹ thuật · Chế tạo máy</span>
+      <p>Bản chuyển soạn nguyên bản tiếng Việt dựa trên <em>CNC machining: The Complete Engineering Guide</em> (3D Hubs / Hubs). Không thay thế bản gốc. PDF gốc © tác giả / nhà xuất bản.</p>
+    </div>
+    <div class="foot-r">
+      <span class="mono"><a href="../../index.html">← Trang chủ / Home</a></span>
+      <span class="mono">machine-ctm.github.io</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

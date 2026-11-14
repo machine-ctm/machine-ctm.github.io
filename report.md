@@ -19,6 +19,9 @@
 | Video Library (EN) | https://machine-ctm.github.io/videos/ |
 | Video Library (VI) | https://machine-ctm.github.io/vi/videos/ |
 | Build Your Own CNC Machine — TIẾNG VIỆT | https://machine-ctm.github.io/vi/books/tu-che-may-cnc.html |
+| CNC Programming Basics — TIẾNG VIỆT | https://machine-ctm.github.io/vi/books/co-ban-lap-trinh-cnc.html |
+| CNC Machining: The Complete Engineering Guide — TIẾNG VIỆT | https://machine-ctm.github.io/vi/books/cam-nang-gia-cong-cnc.html |
+| Tormach CNC Student Guide — TIẾNG VIỆT | https://machine-ctm.github.io/vi/books/cam-nang-sinh-vien-tormach.html |
 
 A **VI / EN** switch in the top bar toggles the whole page (state persisted in `localStorage`).
 
@@ -28,6 +31,7 @@ A **VI / EN** switch in the top bar toggles the whole page (state persisted in `
 
 - **Homepage** — hero (design → machining → inspection → product diagram), stats strip, discipline, process families, curriculum (5 modules + course table), tools & machines, traditional-vs-CNC comparison, careers, learning path, library/education teasers.
 - **Book Library** (`/books`, `/vi/books`) — hosted PDF textbooks (Read/Download), free open-access books (Internet Archive + other free hosts), library/academic references (BCIT LibGuide, ResearchGate, etc.), a G/M-code quick reference, and an **A/B/C grade** on every hosted book (see §3).
+- **Vietnamese study guides** — 4 original Vietnamese adaptations of the grade-A books under `/vi/books/` (see §5), each an ~11-section illustrated guide with a copyright note, G-code examples and cross-links.
 - **Education** (`/education`, `/vi/education`) — career path, program structure, training programs/curricula (Bharat Skills, SkilledTradesBC, HUST), essential books, online training.
 - Design system adapted from `pro-instcontrol.github.io` (light technical theme, burnt-orange + steel palette).
 
@@ -66,12 +70,18 @@ Verified live: EN `/books` returns `A=4, B=2, C=2`; all 6 newly added PDFs resol
 
 ---
 
-## 5. Pending work
+## 5. Translation job & remaining work
 
 1. **Video Library — DONE.** Eight YouTube videos built into `/videos` (EN) and `/vi/videos` (VI) with responsive embeds; nav wired into all page pairs.
 2. **First A-grade book translated to Vietnamese — DONE (original adaptation).** "Build Your Own CNC Machine" → `vi/books/tu-che-may-cnc.html`, an original Vietnamese study guide (11 sections, copyright note + link to original PDF). Wired into both `/books` and `/vi/books` cards. A verbatim full translation was deliberately avoided to respect Apress copyright.
-3. *(Optional)* Other A-grade books (CNC Programming Basics, CNC Machining Complete Guide, Tormach Student Guide) could get similar Vietnamese pages.
+3. **Remaining A-grade books translated to Vietnamese — DONE (original adaptations).** All three remaining grade-A books now have Vietnamese study guides, so the A-grade translation job is complete (4/4):
+   - `CNC Programming Basics` → `vi/books/co-ban-lap-trinh-cnc.html` (11 sections: hệ tọa độ, loại máy, tuyệt đối/tương đối, nội suy, định dạng khối lệnh, mã G/M, offset gốc, ví dụ phay + tiện G-code).
+   - `CNC Machining: The Complete Engineering Guide` → `vi/books/cam-nang-gia-cong-cnc.html` (11 sections: nguyên lý cắt gọt, lược sử, máy 3/5 trục, lợi ích/hạn chế, ứng dụng vs in 3D, thiết kế DFM + bảng quy tắc, undercuts, vật liệu/bề mặt, 3 mẹo giảm chi phí và 3 bước bắt đầu).
+   - `Tormach CNC Student Guide` → `vi/books/cam-nang-sinh-vien-tormach.html` (11 sections: 7 quy tắc an toàn, bảng thuật ngữ, hệ tọa độ máy/WCS, G-code + ví dụ, dao & đồ gá, tổng quan máy, Mach3, Fusion 360 CAD/CAM, quy trình 10 bước).
+   - All four pages use the site design system, carry a **copyright note** (original adaptation, not a verbatim translation), link back to the original PDF, and are **cross-linked** to each other. Wired into the A-grade cards of both `/books` (EN, "Bản TV" buttons) and `/vi/books` (VI, "Bản TV" buttons).
+   - Bug fixed: `tu-che-may-cnc.html` had PDF links using `../books/files/...` (nonexistent path); corrected to `../../books/files/...`.
 4. *(Optional)* The Eagle Group and Boothroyd PDFs are currently linked **externally** in the free-books section; local copies already exist in `books/files/` if you later want them as hosted "Read/Download" cards.
+5. *(Optional)* Grade-B books (`CNC Programming for Lathe`, `Fundamentals of CNC Machining`) could get similar Vietnamese pages; grade-C reference works are intentionally left out (dense, hard to translate).
 
 ---
 

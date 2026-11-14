@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cơ bản Lập trình CNC — Hướng dẫn tiếng Việt · Chế tạo máy</title>
+<meta name="description" content="Bản hướng dẫn tiếng Việt (chuyển soạn nguyên bản) dựa trên cuốn CNC Programming Basics: hệ tọa độ, máy CNC, lập trình tuyệt đối/tương đối, nội suy, mã G/M, offset gốc chi tiết và ví dụ phay/tiện.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua nội dung</a>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../../index.html" aria-label="Chế tạo máy">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="16" cy="16" r="6.5"/><circle cx="16" cy="16" r="2.2" fill="currentColor" stroke="none"/>
+            <path d="M16 4.5v3M16 24.5v3M4.5 16h3M24.5 16h3M7.6 7.6l2.1 2.1M22.3 22.3l2.1 2.1M24.4 7.6l-2.1 2.1M9.7 22.3l-2.1 2.1"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand-txt"><strong>Chế tạo máy</strong><em>Machine Building</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a class="nav-link" href="../../index.html#discipline">Kỷ thuật</a>
+      <a class="nav-link" href="../../index.html#processes">Quy trình</a>
+      <a class="nav-link" href="../../index.html#curriculum">Chương trình</a>
+      <a class="nav-link" href="../../index.html#tools">Thiết bị</a>
+      <a class="nav-link" href="../../index.html#careers">Nghề nghiệp</a>
+      <a class="nav-link" href="../../books/">Sách (EN)</a>
+      <a class="nav-link" href="../../education/">Giáo dục</a>
+      <a class="nav-link" href="../../videos/">Video</a>
+    </nav>
+    <div class="bar-right">
+      <div class="lang" title="Đổi ngôn ngữ / Switch language">
+        <a href="../../books/" style="color:inherit">EN</a><span class="lang-sep">/</span><span class="on">VI</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="kicker"><span class="dot"></span>Sách · Cơ bản Lập trình CNC</span>
+        <h1>Cơ bản lập trình CNC<span class="thin">Hướng dẫn tiếng Việt chuyển soạn từ cuốn <em>CNC Programming Basics</em>.</span></h1>
+        <p class="lede">Một bản hướng dẫn nguyên bản bằng tiếng Việt, dựa trên các chủ đề của cuốn sách — từ hệ tọa độ Descartes, các loại máy CNC, hệ thống lập trình, nội suy, định dạng khối lệnh, mã G/M, offset gốc chi tiết cho đến hai ví dụ lập trình phay và tiện hoàn chỉnh. <span class="dim">Bản gốc (PDF): <a href="../../books/files/cnc-programming-basics.pdf" target="_blank" rel="noopener">cnc-programming-basics.pdf ↗</a></span></p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#chuong-1">Bắt đầu đọc →</a>
+          <a class="btn btn-s" href="../../books/files/cnc-programming-basics.pdf" target="_blank" rel="noopener">PDF gốc (EN)</a>
+        </div>
+      </div>
+      <div class="figure">
+        <svg viewBox="0 0 360 240" role="img" aria-label="Hệ tọa độ CNC 3 trục">
+          <g stroke="#2f5d80" stroke-width="2" fill="none" stroke-linecap="round">
+            <line x1="60" y1="200" x2="300" y2="200"/>
+            <line x1="90" y1="220" x2="90" y2="40"/>
+            <line x1="90" y1="200" x2="150" y2="120"/>
+          </g>
+          <g fill="#2f5d80" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600">
+            <text x="296" y="220">X</text>
+            <text x="78" y="36">Z</text>
+            <text x="152" y="112">Y</text>
+          </g>
+          <g fill="#c2540b">
+            <circle cx="200" cy="150" r="9"/>
+            <line x1="200" y1="150" x2="200" y2="110" stroke="#c2540b" stroke-width="3"/>
+          </g>
+          <g stroke="#c2540b" stroke-width="2" stroke-linecap="round">
+            <line x1="70" y1="232" x2="320" y2="232"/>
+            <line x1="70" y1="238" x2="320" y2="238"/>
+          </g>
+        </svg>
+        <div class="figcap">Hệ trục X / Y / Z · quy tắc bàn tay phải</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIỚI THIỆU -->
+  <section class="sec" id="gioi-thieu">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">00</span><span class="line"></span><span class="eyebrow-label">Giới thiệu · Introduction</span></div>
+      <div class="sec-head">
+        <h2>Tại sao học lập trình CNC? <span class="dim" style="font-weight:400;font-size:.6em">Why learn CNC programming?</span></h2>
+        <p>Lập trình CNC (Computer Numerical Control — điều khiển số bằng máy tính) là "ngôn ngữ" dùng để ra lệnh cho máy công cụ: bạn mô tả đường chạy dao bằng các mã G/M, máy tự dịch chuyển dao cắt theo đúng tọa độ với độ lặp lại rất cao. Dù phần mềm CAM đã sinh mã tự động, hiểu được cấu trúc chương trình vẫn giúp bạn đọc, sửa lỗi, tối ưu thời gian gia công và vận hành an toàn.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">HIỂU</span>
+          <h3>Đọc được mã G/M</h3>
+          <p>Biết từng khối lệnh (block) nghĩa là gì giúp bạn kiểm tra chương trình trước khi chạy và chẩn đoán sai hỏng.</p>
+        </div>
+        <div class="card">
+          <span class="n">CHÍNH XÁC</span>
+          <h3>Lặp lại không sai số</h3>
+          <p>Cùng một chương trình chạy bao nhiêu lần cũng cho chi tiết giống hệt nhau — ưu điểm lớn nhất của CNC so với gia công thủ công.</p>
+        </div>
+        <div class="card">
+          <span class="n">NGHỀ NGHIỆP</span>
+          <h3>Kỹ năng cốt lõi</h3>
+          <p>Lập trình CNC là năng lực nền tảng của thợ phay/tiện CNC, kỹ thuật viên và kỹ sư chế tạo máy.</p>
+        </div>
+      </div>
+      <p class="note warn" style="margin-top:24px">
+        <span class="lbl">LƯU Ý BẢN QUYỀN</span>
+        <span class="t-vi">Đây là <b>bản chuyển soạn nguyên bản</b> (original adaptation) bằng tiếng Việt dựa trên các chủ đề của cuốn <em>Computer Numerical Control Programming Basics</em> (Steve Krar &amp; Arthur Gill, Industrial Press). Nội dung được viết lại bằng lời văn riêng nhằm mục đích giáo dục và không sao chép nguyên văn bản gốc. Toàn văn gốc (tiếng Anh) xem tại PDF liên kết ở trên.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 1 -->
+  <section class="sec alt" id="chuong-1">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">01</span><span class="line"></span><span class="eyebrow-label">Chương 1 · Cartesian Coordinate System</span></div>
+      <div class="sec-head">
+        <h2>Hệ tọa độ Descartes <span class="dim" style="font-weight:400;font-size:.6em">Cartesian Coordinate System</span></h2>
+        <p>Máy CNC định vị dao cắt trong không gian bằng ba trục tọa độ vuông góc X, Y, Z (hệ Descartes). Chiều dương của các trục tuân theo <b>quy tắc bàn tay phải</b> (right-hand rule): giơ ngón cái, ngón trỏ, ngón giữa vuông góc nhau — ngón cái = X+, ngón trỏ = Y+, ngón giữa = Z+.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">TRỤC</span>
+          <h3>X · Y · Z</h3>
+          <p><b>X</b> ngang (trái/phải), <b>Y</b> ngang (trước/sau), <b>Z</b> thẳng đứng (lên/xuống — độ sâu cắt). Trên máy phay, Z+ thường hướng lên; trên máy tiện, trục chính nằm dọc theo trục Z.</p>
+        </div>
+        <div class="card">
+          <span class="n">CHIỀU</span>
+          <h3>Quy tắc bàn tay phải</h3>
+          <p>Ba trục X/Y/Z vuông góc nhau từng đôi một. Quy tắc này xác định nhất quán chiều dương của mọi chuyển động trên máy.</p>
+        </div>
+        <div class="card">
+          <span class="n">GỐC</span>
+          <h3>Gốc máy &amp; gốc chi tiết</h3>
+          <p><b>Gốc máy (Machine Zero)</b> là điểm chuẩn cố định do nhà sản xuất quy định. <b>Gốc chi tiết (Part/Work Zero)</b> là điểm gốc bạn tự đặt trên phôi — chương trình được viết theo gốc này.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 2 -->
+  <section class="sec" id="chuong-2">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">02</span><span class="line"></span><span class="eyebrow-label">Chương 2 · Machines Using CNC</span></div>
+      <div class="sec-head">
+        <h2>Các máy dùng CNC <span class="dim" style="font-weight:400;font-size:.6em">Machines Using CNC</span></h2>
+        <p>Hai nhóm máy công cụ phổ biến nhất dùng CNC là <b>máy tiện</b> và <b>máy phay</b>. Cách bố trí trục và cách kẹp phôi khác nhau, nên quy ước tọa độ và cách viết chương trình cũng khác nhau.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">TIỆN</span>
+          <h3>Máy tiện (Lathe)</h3>
+          <p>Phôi quay tròn, dao tiến theo <b>X</b> (bán kính/đường kính) và <b>Z</b> (dọc trục). X− đưa dao lại gần tâm trục chính. Dùng gia công chi tiết tròn xoay: trục, bạc, ren, côn, mặt bích.</p>
+        </div>
+        <div class="card">
+          <span class="n">PHAY</span>
+          <h3>Máy phay (Milling Machine)</h3>
+          <p>Dao quay, phôi được kẹp trên bàn di chuyển theo X/Y, trục chính di chuyển theo Z. Dùng phay mặt, rãnh, khoan, taro và phay biên dạng (contour).</p>
+        </div>
+      </div>
+      <p class="note" style="margin-top:22px">
+        <span class="lbl">MỞ RỘNG</span>
+        <span class="t-vi">Khi thêm trục quay (trục B/C) hoặc bàn xoay, máy trở thành <b>trung tâm gia công (machining center)</b> đa trục, cắt được biên dạng phức tạp. Ngoài ra còn có máy cắt laser, plasma và EDM — những nhóm này không nằm trong phạm vi của sách này.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 3 -->
+  <section class="sec alt" id="chuong-3">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">03</span><span class="line"></span><span class="eyebrow-label">Chương 3 · Programming Systems</span></div>
+      <div class="sec-head">
+        <h2>Hệ thống lập trình: tuyệt đối &amp; tương đối <span class="dim" style="font-weight:400;font-size:.6em">Absolute vs Incremental</span></h2>
+        <p>Có hai cách khai báo tọa độ trong một chương trình — chúng quy định cách bộ điều khiển hiểu giá trị X/Y/Z bạn gõ vào.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">G90</span>
+          <h3>Tuyệt đối (Absolute)</h3>
+          <p>Mọi tọa độ đều tính từ <b>gốc chi tiết</b>, bất kể dao đang ở đâu. <code>G90</code> bật chế độ này. Dễ đọc, dễ kiểm tra — là chuẩn phổ biến nhất.</p>
+        </div>
+        <div class="card">
+          <span class="n">G91</span>
+          <h3>Tương đối / gia số (Incremental)</h3>
+          <p>Mỗi tọa độ là <b>độ dịch chuyển so với vị trí hiện tại</b> của dao (<code>G91</code>). Tiện cho các chuỗi lặp, nhưng dễ cộng dồn sai số nếu gõ nhầm một con số.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 4 -->
+  <section class="sec" id="chuong-4">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">04</span><span class="line"></span><span class="eyebrow-label">Chương 4 · Point-to-Point or Continuous Path</span></div>
+      <div class="sec-head">
+        <h2>Định vị điểm‑điểm &amp; đường liên tục <span class="dim" style="font-weight:400;font-size:.6em">Point-to-Point &amp; Continuous Path</span></h2>
+        <p>Cách máy di chuyển giữa các điểm chia làm hai kiểu chính, ảnh hưởng trực tiếp đến đường chạy dao và chất lượng bề mặt.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">PTP</span>
+          <h3>Định vị điểm‑điểm</h3>
+          <p>Máy chỉ quan tâm đến <b>vị trí cần tới</b>, không quan tâm đường đi giữa hai điểm (vd: khoan, doa, taro). Đường di chuyển thường là chạy nhanh (rapid) ở độ cao an toàn.</p>
+        </div>
+        <div class="card">
+          <span class="n">CONTOUR</span>
+          <h3>Đường liên tục (Contouring)</h3>
+          <p>Máy điều khiển đồng thời nhiều trục để cắt theo <b>biên dạng liên tục</b> (đường thẳng nghiêng, cung tròn, profile). Yêu cầu nội suy — xem Chương 5.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 5 -->
+  <section class="sec alt" id="chuong-5">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">05</span><span class="line"></span><span class="eyebrow-label">Chương 5 · Interpolation</span></div>
+      <div class="sec-head">
+        <h2>Nội suy <span class="dim" style="font-weight:400;font-size:.6em">Interpolation</span></h2>
+        <p>Khi cắt biên dạng, bộ điều khiển tự tính toán hàng nghìn điểm trung gian giữa điểm đầu và điểm cuối — gọi là <b>nội suy (interpolation)</b>. Ba dạng chính:</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">G01</span>
+          <h3>Nội suy thẳng</h3>
+          <p>Di chuyển theo đường thẳng ở tốc độ tiến dao <code>F</code> đã khai báo. Dùng phay rãnh, cạnh, mặt côn hoặc tiện mặt đầu.</p>
+        </div>
+        <div class="card">
+          <span class="n">G02</span>
+          <h3>Cung tròn thuận chiều</h3>
+          <p>Cắt cung tròn theo chiều <b>thuận</b> (clockwise). Cần khai báo bán kính <code>R</code> hoặc tọa độ tâm cung <code>I/J/K</code>.</p>
+        </div>
+        <div class="card">
+          <span class="n">G03</span>
+          <h3>Cung tròn nghịch chiều</h3>
+          <p>Cắt cung tròn theo chiều <b>nghịch</b> (counterclockwise), cùng quy ước bán kính/tâm như G02.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 6 -->
+  <section class="sec" id="chuong-6">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">06</span><span class="line"></span><span class="eyebrow-label">Chương 6 · Programming Format</span></div>
+      <div class="sec-head">
+        <h2>Định dạng chương trình &amp; khối lệnh <span class="dim" style="font-weight:400;font-size:.6em">Programming Format &amp; Block</span></h2>
+        <p>Định dạng phổ biến nhất là <b>word address</b> (địa chỉ từ): mỗi lệnh gồm một chữ cái địa chỉ đi kèm một giá trị số. Một <b>khối lệnh (block)</b> thường tương ứng một dòng, bắt đầu bằng số thứ tự <code>N</code>.</p>
+      </div>
+      <div class="card">
+        <span class="n">CẤU TRÚC</span>
+        <h3>Một khối lệnh điển hình</h3>
+        <p><code>N010 G01 X2.000 Y1.500 Z-0.125 F10 S2000 T01 M03</code></p>
+        <p style="margin-top:8px"><b>N</b> số thứ tự · <b>G</b> mã chuẩn bị (chế độ) · <b>X/Y/Z</b> tọa độ · <b>F</b> tiến dao · <b>S</b> tốc độ trục chính · <b>T</b> số hiệu dao · <b>M</b> mã phụ (bật/tắt chức năng). Không phải từ nào cũng xuất hiện trong mọi khối — các giá trị còn hiệu lực (modal) sẽ được giữ cho đến khi bị thay thế.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 7 -->
+  <section class="sec alt" id="chuong-7">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">07</span><span class="line"></span><span class="eyebrow-label">Chương 7 · G &amp; M Codes</span></div>
+      <div class="sec-head">
+        <h2>Mã G &amp; mã M <span class="dim" style="font-weight:400;font-size:.6em">G-codes &amp; M-codes</span></h2>
+        <p><b>Mã G</b> (preparatory) chuẩn bị chế độ cắt: kiểu di chuyển, mặt phẳng, offset, chu trình. <b>Mã M</b> (miscellaneous) bật/tắt chức năng của máy: trục chính, nước làm mát, đổi dao. Dưới đây là các mã cốt lõi.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">G</span>
+          <h3>Mã chuẩn bị</h3>
+          <p><code>G00</code> chạy dao nhanh · <code>G01</code> nội suy thẳng · <code>G02/G03</code> cung tròn thuận/nghịch · <code>G20/G21</code> inch/metric · <code>G90/G91</code> tuyệt đối/tương đối · <code>G40/41/42</code> bù bán kính dao tắt/trái/phải · <code>G54–G59</code> offset gốc chi tiết · <code>G92</code> offset gốc lập trình · <code>G28</code> về điểm gốc.</p>
+        </div>
+        <div class="card">
+          <span class="n">M</span>
+          <h3>Mã chức năng</h3>
+          <p><code>M00</code> dừng chương trình · <code>M02</code> kết thúc · <code>M03/M04</code> trục chính thuận/nghịch · <code>M05</code> dừng trục chính · <code>M06</code> đổi dao · <code>M08/M09</code> nước làm mát bật/tắt · <code>M30</code> kết thúc và quay về đầu chương trình · <code>M98/M99</code> gọi/kết thúc chương trình con.</p>
+        </div>
+      </div>
+      <p class="note" style="margin-top:22px">
+        <span class="lbl">LƯU Ý</span>
+        <span class="t-vi">Một số mã trong tài liệu gốc là quy ước của bộ điều khiển minh họa (vd: <code>G73</code> chu trình tiện thô, <code>G72</code> chu trình tiện tinh). Thực tế mỗi dòng máy / bộ điều khiển (Fanuc, Siemens, Haas…) có thể khác — luôn tra cứu tài liệu máy trước khi chạy.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 8 -->
+  <section class="sec" id="chuong-8">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">08</span><span class="line"></span><span class="eyebrow-label">Chương 8 · Work Settings &amp; Offsets</span></div>
+      <div class="sec-head">
+        <h2>Gốc máy, gốc chi tiết &amp; offset <span class="dim" style="font-weight:400;font-size:.6em">Work Settings &amp; Offsets</span></h2>
+        <p>Máy có một <b>gốc máy cố định (R — reference point)</b>; bạn đặt một <b>gốc chi tiết (W — work zero)</b> ngay trên phôi. Bộ điều khiển cần biết khoảng cách R → W để dịch tọa độ chương trình sang tọa độ máy. Có hai cách khai báo:</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">G54–G59</span>
+          <h3>Offset lưu sẵn (stored zero shift)</h3>
+          <p>Người vận hành đo và lưu offset vào bảng G54…G59 trên máy. Chương trình chỉ cần gọi <code>G54</code> — thuận tiện, dễ quản lý nhiều chi tiết / nhiều đồ gá.</p>
+        </div>
+        <div class="card">
+          <span class="n">G92</span>
+          <h3>Offset lập trình (programmed zero shift)</h3>
+          <p>Khối <code>G92 X.. Y.. Z..</code> khai báo tọa độ của vị trí dao hiện tại tính từ gốc chi tiết. Hữu ích khi muốn "dời" gốc ngay trong chương trình, thường đi cùng <code>G28</code> về điểm gốc.</p>
+        </div>
+      </div>
+      <p class="note warn" style="margin-top:22px">
+        <span class="lbl">AN TOÀN</span>
+        <span class="t-vi">Luôn <b>chạy thử không tải</b> (dry run) ở chế độ từng khối lệnh (single block) và xác nhận đúng gốc chi tiết trước khi cắt. Sai offset gốc là nguyên nhân hàng đầu gây va dao (crash).</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 9 -->
+  <section class="sec alt" id="chuong-9">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">09</span><span class="line"></span><span class="eyebrow-label">Chương 9 · Milling &amp; Drilling Programming</span></div>
+      <div class="sec-head">
+        <h2>Ví dụ lập trình phay &amp; khoan <span class="dim" style="font-weight:400;font-size:.6em">Milling &amp; Drilling Example</span></h2>
+        <p>Thứ tự tư duy khi lập trình phay: điểm gốc máy → điểm đổi dao → gốc chi tiết → đường chạy dao → về vị trí an toàn. Dưới đây là chương trình mẫu phay rãnh vuông, khoan hai lỗ, phay rãnh xiên và rãnh cung tròn (đơn vị inch).</p>
+      </div>
+      <div class="card">
+        <span class="n">VÍ DỤ</span>
+        <h3>Chương trình phay + khoan</h3>
+        <pre style="background:#f4f7f9;color:#22323d;padding:16px 18px;border-radius:10px;overflow-x:auto;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;line-height:1.7;border:1px solid #d9e1e8;margin-top:10px">N5  G92 X-1.000 Y1.000 Z1.000   (offset gốc lập trình)
+N10 G20 G90                    (inch, tuyệt đối)
+N15 M06 T01                    (đổi dao #1: dao phay ngón Ø.250, 2 me)
+N20 S2000 M03                  (trục chính 2000 v/ph, thuận)
+N25 G00 X0 Y0 Z.100            (chạy nhanh về góc, cách mặt .100)
+N30 X.375 Y-.375
+N35 G01 Z-.125 F10             (cắt sâu .125, tiến dao 10 in/ph)
+N40 X1.625 Y-.375              (cạnh trên của rãnh vuông)
+N45 Y-1.625                    (cạnh phải)
+N50 X.375                      (cạnh dưới)
+N55 Y-.375                     (cạnh trái — xong rãnh vuông)
+N60 G00 Z.100                  (nâng dao về độ cao an toàn)
+N65 G00 X.875 Y-.750           (tới tâm lỗ 1)
+N70 G01 Z-.250 F10             (khoan lỗ)
+N75 G00 Z.100
+N80 X1.250 Y-1.125             (tới tâm lỗ 2)
+N85 G01 Z-.250 F10
+N90 G00 Z.100
+N95 X1.125 Y-.875              (điểm B của rãnh xiên)
+N100 G01 Z-.125 F10
+N105 X1.250 Y-.750             (cắt rãnh xiên)
+N110 G00 Z.100
+N115 X.750 Y-1.000             (điểm C của rãnh cung)
+N120 G01 Z-.125 F10
+N125 G03 X1.000 Y-1.250 R.250  (nội suy cung tròn nghịch, R.250)
+N130 G00 Z.100
+N135 X-1.000 Y1.000            (về vị trí đổi dao)
+N140 M05                       (dừng trục chính)
+N145 M30                       (kết thúc chương trình)</pre>
+        <p style="margin-top:10px"><span class="dim">Giải thích từng khối lệnh nằm trong PDF gốc. Chú ý các lỗ ở đây dùng G00 tới tâm rồi G01 cắt sâu, thay vì chu trình khoan chuyên dụng (G81/G83) như trên máy công nghiệp.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 10 -->
+  <section class="sec" id="chuong-10">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">10</span><span class="line"></span><span class="eyebrow-label">Chương 10 · Turning Programming</span></div>
+      <div class="sec-head">
+        <h2>Ví dụ lập trình tiện <span class="dim" style="font-weight:400;font-size:.6em">Turning Example</span></h2>
+        <p>Trên máy tiện, tọa độ thường là <b>X</b> (theo đường kính) và <b>Z</b> (dọc trục chi tiết). Các chu trình tiện thô / tiện tinh giúp bóc lượng dư rồi hoàn thiện biên dạng chỉ với vài khối lệnh. Dưới đây là chương trình mẫu theo quy ước Fanuc tương thích của sách.</p>
+      </div>
+      <div class="card">
+        <span class="n">VÍ DỤ</span>
+        <h3>Chương trình tiện thô + tinh</h3>
+        <pre style="background:#f4f7f9;color:#22323d;padding:16px 18px;border-radius:10px;overflow-x:auto;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;line-height:1.7;border:1px solid #d9e1e8;margin-top:10px">N05 G20 G90 G40         (inch, tuyệt đối, huỷ bù dao)
+N10 G95 G96 S2000 M03   (tiến dao /vòng, tốc độ bề mặt không đổi)
+N15 T0202                (gọi dao #2 kèm offset #2)
+N20 G00 X1.200 Z.100     (về điểm tham chiếu / đổi dao)
+N25 G73 U.05 R.05        (chu trình tiện thô, để dư .05)
+N30 G73 P35 Q95 U.025 W.005 F.008  (biên dạng từ N35 đến N95)
+N35 G00 X.300 Z.050
+N40 G01 Z0               (dao chạm mặt đầu phôi)
+N45 G03 X.500 Z-.100 R.100    (cung lượn R.100)
+N50 G01 Z-.650           (tiện Ø.500 dài .650)
+N55 X.580
+N60 X.700 Z-.710         (vát mép / côn)
+N65 Z-1.150
+N70 X.750
+N75 X.875 Z-1.800        (tiện côn dài)
+N80 X.925
+N85 Z-2.050
+N90 X1.050
+N95 G00 X1.200 Z.100     (về điểm tham chiếu)
+N100 G72 P35 Q95 F.005   (chu trình tiện tinh)
+N105 G00 X2.000 Z.500    (về vị trí home)
+N110 M30                 (kết thúc)</pre>
+        <p style="margin-top:10px"><span class="dim">Chú thích đầy đủ trong PDF gốc. <code>G96</code> giữ tốc độ cắt bề mặt không đổi (tự tăng vòng quay khi đường kính giảm); <code>G73/G72</code> là quy ước của tài liệu này — Fanuc thực tế thường dùng <code>G71/G70</code>.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KẾT -->
+  <section class="sec alt" id="ket">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">11</span><span class="line"></span><span class="eyebrow-label">Kết luận · Next steps</span></div>
+      <div class="sec-head">
+        <h2>Bước tiếp theo <span class="dim" style="font-weight:400;font-size:.6em">What's next?</span></h2>
+        <p>Sau khi nắm được tọa độ, khối lệnh, mã G/M và offset, bạn có thể thực hành: dùng trình mô phỏng CNC để chạy thử chương trình, học thêm các chu trình khoan/tiện (canned cycles), bù trừ bán kính dao (G41/G42) và lập trình biên dạng phức tạp. Xem bảng tra cứu mã G/M nhanh trên trang thư viện và đọc PDF gốc để có hình ảnh minh họa chi tiết.</p>
+        <p style="margin-top:14px"><span class="dim">Đọc thêm các bản tiếng Việt khác:</span> <a href="tu-che-may-cnc.html">Tự chế máy CNC</a> · <a href="cam-nang-gia-cong-cnc.html">Cẩm nang Gia công CNC</a> · <a href="cam-nang-sinh-vien-tormach.html">Cẩm nang Sinh viên Tormach</a></p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="../../books/files/cnc-programming-basics.pdf" target="_blank" rel="noopener">Đọc PDF gốc (EN) ▸</a>
+        <a class="btn btn-s" href="index.html">← Về thư viện sách</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-l">
+      <span class="brand-mini">Cơ bản Lập trình CNC — Chế tạo máy</span>
+      <p>Bản chuyển soạn nguyên bản tiếng Việt dựa trên <em>Computer Numerical Control Programming Basics</em> (Steve Krar &amp; Arthur Gill, Industrial Press). Không thay thế bản gốc. PDF gốc © tác giả / nhà xuất bản.</p>
+    </div>
+    <div class="foot-r">
+      <span class="mono"><a href="../../index.html">← Trang chủ / Home</a></span>
+      <span class="mono">machine-ctm.github.io</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

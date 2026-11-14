@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cẩm nang Sinh viên Tormach CNC — Chế tạo máy</title>
+<meta name="description" content="Bản hướng dẫn tiếng Việt (chuyển soạn nguyên bản) dựa trên Student CNC Guide: an toàn, thuật ngữ, hệ tọa độ, G-code, dao & đồ gá, Mach3, Fusion 360 và quy trình gia công một chi tiết.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua nội dung</a>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../../index.html" aria-label="Chế tạo máy">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="16" cy="16" r="6.5"/><circle cx="16" cy="16" r="2.2" fill="currentColor" stroke="none"/>
+            <path d="M16 4.5v3M16 24.5v3M4.5 16h3M24.5 16h3M7.6 7.6l2.1 2.1M22.3 22.3l2.1 2.1M24.4 7.6l-2.1 2.1M9.7 22.3l-2.1 2.1"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand-txt"><strong>Chế tạo máy</strong><em>Machine Building</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a class="nav-link" href="../../index.html#discipline">Kỷ thuật</a>
+      <a class="nav-link" href="../../index.html#processes">Quy trình</a>
+      <a class="nav-link" href="../../index.html#curriculum">Chương trình</a>
+      <a class="nav-link" href="../../index.html#tools">Thiết bị</a>
+      <a class="nav-link" href="../../index.html#careers">Nghề nghiệp</a>
+      <a class="nav-link" href="../../books/">Sách (EN)</a>
+      <a class="nav-link" href="../../education/">Giáo dục</a>
+      <a class="nav-link" href="../../videos/">Video</a>
+    </nav>
+    <div class="bar-right">
+      <div class="lang" title="Đổi ngôn ngữ / Switch language">
+        <a href="../../books/" style="color:inherit">EN</a><span class="lang-sep">/</span><span class="on">VI</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="kicker"><span class="dot"></span>Sách · Cẩm nang Sinh viên</span>
+        <h1>Cẩm nang sinh viên CNC<span class="thin">Hướng dẫn tiếng Việt chuyển soạn từ <em>Student CNC Guide</em> (Tormach).</span></h1>
+        <p class="lede">Từ bản vẽ đến chi tiết hoàn thiện trên máy phay Tormach: quy tắc an toàn, thuật ngữ, hệ tọa độ, G-code, dao &amp; đồ gá, phần mềm điều khiển Mach3, CAD/CAM với Fusion 360 và quy trình gia công từng bước. <span class="dim">Bản gốc (PDF): <a href="../../books/files/tormach-cnc-student-guide.pdf" target="_blank" rel="noopener">tormach-cnc-student-guide.pdf ↗</a></span></p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#chuong-1">Bắt đầu đọc →</a>
+          <a class="btn btn-s" href="../../books/files/tormach-cnc-student-guide.pdf" target="_blank" rel="noopener">PDF gốc (EN)</a>
+        </div>
+      </div>
+      <div class="figure">
+        <svg viewBox="0 0 360 240" role="img" aria-label="Máy phay CNC để bàn Tormach">
+          <g fill="none" stroke="#2f5d80" stroke-width="2">
+            <rect x="70" y="60" width="220" height="140" rx="8" fill="#fff" stroke="#d2d8e0"/>
+            <rect x="90" y="80" width="130" height="70" rx="4" fill="#e9f0f5" stroke="#d2d8e0"/>
+            <rect x="240" y="80" width="34" height="70" rx="4" fill="#e9f0f5" stroke="#2f5d80"/>
+            <rect x="150" y="160" width="120" height="18" rx="3" fill="#e9f0f5" stroke="#2f5d80"/>
+          </g>
+          <g stroke="#c2540b" stroke-width="3" stroke-linecap="round" fill="none">
+            <line x1="257" y1="80" x2="257" y2="52"/>
+            <line x1="257" y1="52" x2="257" y2="140"/>
+            <line x1="248" y1="140" x2="266" y2="140"/>
+          </g>
+          <g stroke="#c2540b" stroke-width="2" stroke-linecap="round">
+            <line x1="70" y1="214" x2="290" y2="214"/>
+            <line x1="70" y1="220" x2="290" y2="220"/>
+          </g>
+        </svg>
+        <div class="figcap">Máy phay CNC để bàn · 3 trục + trục chính</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIỚI THIỆU -->
+  <section class="sec" id="gioi-thieu">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">00</span><span class="line"></span><span class="eyebrow-label">Giới thiệu · Introduction</span></div>
+      <div class="sec-head">
+        <h2>Dành cho người lần đầu đứng trước máy <span class="dim" style="font-weight:400;font-size:.6em">For first-time CNC mill operators</span></h2>
+        <p>Cuốn sổ tay này nhằm giúp sinh viên <b>nhanh chóng tự vận hành</b> máy phay Tormach và tạo ra chi tiết chính xác, chất lượng cao cho đồ án. Lộ trình: máy phay CNC là gì → G-code → dao &amp; đồ gá → cấu tạo máy → phần mềm điều khiển → CAD/CAM → quy trình từ bản vẽ đến chi tiết hoàn thiện, kèm các bảng tra cứu tốc độ cắt và mã G/M.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">AN TOÀN</span>
+          <h3>Trước hết là an toàn</h3>
+          <p>Máy CNC chạy rất nhanh và rất khỏe. Nắm quy tắc an toàn trước khi bật nguồn, không phải sau khi có sự cố.</p>
+        </div>
+        <div class="card">
+          <span class="n">THỰC HÀNH</span>
+          <h3>Học theo quy trình</h3>
+          <p>Mỗi bước từ thiết kế, xuất mã, kẹp phôi, lấy gốc đến chạy thử được trình bày theo thứ tự thật trên xưởng.</p>
+        </div>
+        <div class="card">
+          <span class="n">TỰ TIN</span>
+          <h3>Hiểu rồi mới bấm chạy</h3>
+          <p>Biết DRO đang hiển thị gì, MDI dùng để làm gì và mã G nào sắp thực thi — đó là khác biệt giữa vận hành và đoán mò.</p>
+        </div>
+      </div>
+      <p class="note warn" style="margin-top:24px">
+        <span class="lbl">LƯU Ý BẢN QUYỀN</span>
+        <span class="t-vi">Đây là <b>bản chuyển soạn nguyên bản</b> (original adaptation) bằng tiếng Việt dựa trên các chủ đề của <em>Student CNC Guide</em> (Derek Murphy, Studica Canada / Tormach). Nội dung được viết lại bằng lời văn riêng nhằm mục đích giáo dục và không sao chép nguyên văn bản gốc. Toàn văn gốc (tiếng Anh) xem tại PDF liên kết ở trên.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 1 -->
+  <section class="sec alt" id="chuong-1">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">01</span><span class="line"></span><span class="eyebrow-label">Chương 1 · CNC Machining Safety</span></div>
+      <div class="sec-head">
+        <h2>An toàn khi gia công CNC <span class="dim" style="font-weight:400;font-size:.6em">CNC Machining Safety</span></h2>
+        <p>Vận hành đúng quy trình thì máy CNC khá an toàn — nhưng <b>chỉ khi</b> tuân thủ tuyệt đối các quy tắc dưới đây. Dao gãy, phoi văng hay phôi bị bung ra đều xảy ra trong tích tắc.</p>
+      </div>
+      <ol class="steps">
+        <li><b>Không tự chạy máy khi chưa chắc chắn.</b> Nếu không hiểu một lệnh hay một thao tác, gọi người có kinh nghiệm hỗ trợ.</li>
+        <li><b>Luôn đeo kính bảo hộ</b> khi ở gần máy. Dao gãy, phoi hoặc mảnh vật liệu có thể văng ra.</li>
+        <li><b>Kiểm tra dao đã kẹp chặt chưa.</b> Dao lỏng gây rung và có thể bị văng ra khi cắt.</li>
+        <li><b>Kẹp chặt phôi.</b> Vật liệu phải được giữ chắc trên bàn/ê tô trước khi chạy.</li>
+        <li><b>Bấm dừng khẩn cấp (E‑stop / Esc) ngay khi có dấu hiệu bất thường.</b> Dừng nhanh là ưu tiên số một.</li>
+        <li><b>Không đưa tay, ngón tay hay đầu lại gần dao đang quay.</b> Dùng Feed Hold để tạm dừng, chỉnh rồi tiếp tục.</li>
+        <li><b>Không bao giờ rời khỏi máy khi đang chạy.</b> Phải có người thường trực để dừng máy nếu sự cố xảy ra.</li>
+      </ol>
+      <p class="note warn" style="margin-top:20px">
+        <span class="lbl">THÓI QUEN</span>
+        <span class="t-vi">Trước mỗi lần bấm Cycle Start: kiểm tra dao, phôi, gốc tọa độ, chiều cao an toàn và chạy thử không tải (dry run) ở chế độ single block.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 2 -->
+  <section class="sec" id="chuong-2">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">02</span><span class="line"></span><span class="eyebrow-label">Chương 2 · Technical Glossary</span></div>
+      <div class="sec-head">
+        <h2>Bảng thuật ngữ kỹ thuật <span class="dim" style="font-weight:400;font-size:.6em">Technical Glossary</span></h2>
+        <p>Nắm bảy từ khóa này là bạn đọc được hầu hết tài liệu và giao diện điều khiển của máy phay CNC.</p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th></tr></thead>
+          <tbody>
+            <tr><td><b>Stock Material</b></td><td>Phôi — khối vật liệu thô sẽ được cắt gọt thành chi tiết.</td></tr>
+            <tr><td><b>G‑Code</b></td><td>Ngôn ngữ lập trình của máy phay CNC; chuỗi lệnh điều khiển chuyển động và chức năng máy.</td></tr>
+            <tr><td><b>Feedrate</b></td><td>Tốc độ tiến dao (tốc độ di chuyển của các trục), thường ký hiệu <code>F</code>.</td></tr>
+            <tr><td><b>CAD</b></td><td>Phần mềm dựng mô hình 3D của chi tiết (vd: Fusion 360, FreeCAD).</td></tr>
+            <tr><td><b>CAM</b></td><td>Phần mềm sinh đường chạy dao và xuất G‑code từ file CAD.</td></tr>
+            <tr><td><b>MDI</b></td><td>Manual Data Input — nhập và thực thi trực tiếp một dòng G‑code trên giao diện điều khiển.</td></tr>
+            <tr><td><b>DRO</b></td><td>Digital Read Out — vùng hiển thị số, thường là tọa độ trục hiện tại của máy.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 3 -->
+  <section class="sec alt" id="chuong-3">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">03</span><span class="line"></span><span class="eyebrow-label">Chương 3 · What is a CNC Milling Machine?</span></div>
+      <div class="sec-head">
+        <h2>Máy phay CNC là gì? <span class="dim" style="font-weight:400;font-size:.6em">What is a CNC milling machine?</span></h2>
+        <p>Máy phay CNC là máy được điều khiển bằng máy tính, có thể tạo ra chi tiết rất chính xác. Máy lấy vật liệu ra khỏi phôi bằng <b>dao cắt quay</b>, dẫn hướng dao theo cả ba phương của hệ tọa độ Descartes — X, Y và Z.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">X</span>
+          <h3>Trục X</h3>
+          <p>Chuyển động ngang, thường là trái ↔ phải khi đứng trước máy; cũng là trục có hành trình dài nhất trên nhiều máy để bàn.</p>
+        </div>
+        <div class="card">
+          <span class="n">Y</span>
+          <h3>Trục Y</h3>
+          <p>Chuyển động ngang vuông góc với X, thường là trước ↔ sau (ra vào thân máy).</p>
+        </div>
+        <div class="card">
+          <span class="n">Z</span>
+          <h3>Trục Z</h3>
+          <p>Chuyển động thẳng đứng của trục chính — quyết định độ sâu cắt. Z+ thường hướng lên, ra xa phôi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 4 -->
+  <section class="sec" id="chuong-4">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">04</span><span class="line"></span><span class="eyebrow-label">Chương 4 · Coordinate Systems</span></div>
+      <div class="sec-head">
+        <h2>Các hệ tọa độ <span class="dim" style="font-weight:400;font-size:.6em">Absolute &amp; Work Coordinate Systems</span></h2>
+        <p>Đây là phần dễ nhầm nhất với người mới: cùng một điểm vật lý nhưng có thể được biểu diễn bằng những con số khác nhau tùy hệ tọa độ đang dùng.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">MACHINE</span>
+          <h3>Hệ tọa độ tuyệt đối / máy</h3>
+          <p>Gốc là <b>điểm gốc máy</b> (machine zero / home), cố định theo hành trình, thường nằm ở vị trí về gốc (homing). DRO hiển thị tọa độ này khi ở chế độ Machine Coord. Không nên viết chương trình theo hệ này.</p>
+        </div>
+        <div class="card">
+          <span class="n">WORK / G54</span>
+          <h3>Hệ tọa độ chi tiết (WCS)</h3>
+          <p>Gốc do <b>người vận hành đặt trên chính phôi</b> (thường góc trên‑trái hoặc tâm mặt phôi). Chương trình G‑code luôn viết theo hệ này. Việc "lấy gốc" (set origin / zeroing) là gán offset giữa gốc máy và gốc chi tiết.</p>
+        </div>
+      </div>
+      <p class="note" style="margin-top:22px">
+        <span class="lbl">VÍ DỤ</span>
+        <span class="t-vi">Dao đang ở machine X = −210, bạn bấm "Zero X" tại mép phôi → DRO ở chế độ Work hiển thị X = 0. Từ đây mọi lệnh <code>X10</code> nghĩa là "cách mép phôi 10 mm", không phải "tọa độ máy −200".</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 5 -->
+  <section class="sec alt" id="chuong-5">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">05</span><span class="line"></span><span class="eyebrow-label">Chương 5 · G-Code Programming Language</span></div>
+      <div class="sec-head">
+        <h2>Ngôn ngữ G‑code <span class="dim" style="font-weight:400;font-size:.6em">G-Code Programming Language</span></h2>
+        <p>G‑code là tập lệnh dòng (block). Mỗi dòng gồm các "từ" (word): một chữ cái địa chỉ + giá trị. Bộ điều khiển đọc tuần tự từ trên xuống.</p>
+      </div>
+      <div class="card">
+        <span class="n">VÍ DỤ</span>
+        <h3>Một đoạn chương trình tối thiểu</h3>
+        <pre style="background:#f4f7f9;color:#22323d;padding:16px 18px;border-radius:10px;overflow-x:auto;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;line-height:1.7;border:1px solid #d9e1e8;margin-top:10px">(Gia công rãnh đơn giản, mm)
+G21 G90 G17        (mm, tuyệt đối, mặt phẳng XY)
+G54                (dùng hệ tọa độ chi tiết)
+M03 S5000          (bật trục chính, 5000 v/ph)
+G00 X0 Y0 Z5       (chạy nhanh về gốc, cao 5 mm)
+G01 Z-1 F200       (hạ dao sâu 1 mm, tiến 200 mm/ph)
+G01 X50 F300       (cắt thẳng tới X50)
+G00 Z5             (nâng dao về cao an toàn)
+M05                (tắt trục chính)
+M30                (kết thúc chương trình)</pre>
+        <p style="margin-top:10px"><span class="dim">Bảng tra cứu G‑code / M‑code và bảng "prefix" (ý nghĩa các chữ cái N, G, X, Y, Z, F, S, T, M…) nằm ở cuối PDF gốc, rất hữu ích khi mới bắt đầu.</span></p>
+      </div>
+      <div class="grid c2" style="margin-top:22px">
+        <div class="card">
+          <span class="n">G</span>
+          <h3>Mã G thường dùng</h3>
+          <p><code>G00</code> chạy nhanh · <code>G01</code> cắt thẳng · <code>G02/G03</code> cung tròn · <code>G17/18/19</code> chọn mặt phẳng · <code>G20/G21</code> inch/mm · <code>G28</code> về gốc · <code>G54–G59</code> WCS · <code>G90/G91</code> tuyệt đối/tương đối.</p>
+        </div>
+        <div class="card">
+          <span class="n">M</span>
+          <h3>Mã M thường dùng</h3>
+          <p><code>M03/M04</code> trục chính thuận/nghịch · <code>M05</code> dừng trục chính · <code>M06</code> đổi dao · <code>M08/M09</code> nước làm mát · <code>M00/M01</code> dừng · <code>M30</code> kết thúc.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 6 -->
+  <section class="sec" id="chuong-6">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">06</span><span class="line"></span><span class="eyebrow-label">Chương 6 · Tools &amp; Fixtures</span></div>
+      <div class="sec-head">
+        <h2>Dao cắt, giá kẹp dao &amp; đồ gá <span class="dim" style="font-weight:400;font-size:.6em">Tools, Toolholders &amp; Fixtures</span></h2>
+        <p>Chọn đúng dao và kẹp phôi chắc chắn quan trọng không kém việc viết đúng mã. Hai nhóm kiến thức đi cùng nhau.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">DAO</span>
+          <h3>Dao phay ngón (End mill)</h3>
+          <p>Dao phổ biến nhất: cắt rãnh, hốc, biên dạng. Có đáy phẳng (flat) hoặc đầu cầu (ball nose) cho bề mặt 3D. Số me (2/3/4) ảnh hưởng đến thoát phoi và độ bóng.</p>
+        </div>
+        <div class="card">
+          <span class="n">DAO</span>
+          <h3>Mũi khoan &amp; dao phay mặt</h3>
+          <p>Mũi khoan tạo lỗ theo trục Z; dao phay mặt (face mill / fly cutter) làm phẳng mặt trên của phôi với đường kính cắt lớn.</p>
+        </div>
+        <div class="card">
+          <span class="n">KẸP DAO</span>
+          <h3>Collet &amp; toolholder</h3>
+          <p>Ống kẹp (collet) giữ chuôi dao trong giá kẹp (toolholder). Hệ TTS của Tormach cho phép đổi dao nhanh, lặp lại được chiều dài dao.</p>
+        </div>
+        <div class="card">
+          <span class="n">ĐỒ GÁ</span>
+          <h3>Ê tô (Vise)</h3>
+          <p>Cách kẹp phổ biến nhất. Dùng căn mẫu (parallels) để phôi nhô lên đều và song song với bàn máy.</p>
+        </div>
+        <div class="card">
+          <span class="n">ĐỒ GÁ</span>
+          <h3>Cặp kẹp &amp; đồ gá chuyên dụng</h3>
+          <p>Clamp / strap clamp giữ phôi dạng tấm lớn; fixture thiết kế riêng dùng khi sản xuất nhiều chi tiết giống nhau.</p>
+        </div>
+        <div class="card">
+          <span class="n">PHỤ KIỆN</span>
+          <h3>Đầu dò &amp; làm mát</h3>
+          <p>Đầu dò zero dao (tool zero probe), đầu dò chạm (touch probe), bơm nước làm mát, vỏ che phoi và bộ hút bụi.</p>
+        </div>
+      </div>
+      <p class="note warn" style="margin-top:22px">
+        <span class="lbl">SPEEDS &amp; FEEDS</span>
+        <span class="t-vi">Tốc độ trục chính <code>S</code> (vòng/phút) và tiến dao <code>F</code> (mm/phút) phải phù hợp với <b>đường kính dao, số me và vật liệu phôi</b>. PDF gốc có bảng tra cứu theo từng vật liệu — đừng đoán, hãy tra bảng rồi tinh chỉnh theo tiếng cắt thực tế.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 7 -->
+  <section class="sec alt" id="chuong-7">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">07</span><span class="line"></span><span class="eyebrow-label">Chương 7 · Machine Overview</span></div>
+      <div class="sec-head">
+        <h2>Tổng quan máy Tormach <span class="dim" style="font-weight:400;font-size:.6em">Machine Overview &amp; Accessories</span></h2>
+        <p>Máy phay để bàn (bench‑top) của Tormach được thiết kế cho giảng dạy và xưởng nhỏ: đủ cứng để cắt kim loại, đủ nhỏ gọn để đặt trong phòng thực hành.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">CẤU TẠO</span>
+          <h3>Các cụm chính</h3>
+          <p>Thân máy / cột, bàn máy chạy theo X‑Y có rãnh T để kẹp đồ gá, đầu trục chính chạy theo Z, động cơ bước hoặc servo, vít me, tủ điều khiển và bảng điều khiển E‑stop / Feed Hold / Cycle Start.</p>
+        </div>
+        <div class="card">
+          <span class="n">TRỤC CHÍNH</span>
+          <h3>Spindle &amp; kẹp dao</h3>
+          <p>Trục chính quay dao với tốc độ điều khiển được. Cơ cấu kẹp (drawbar) giữ toolholder; cần kiểm tra độ chặt trước mỗi lần chạy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 8 -->
+  <section class="sec" id="chuong-8">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">08</span><span class="line"></span><span class="eyebrow-label">Chương 8 · Mach 3 Control Software</span></div>
+      <div class="sec-head">
+        <h2>Phần mềm điều khiển Mach3 <span class="dim" style="font-weight:400;font-size:.6em">Mach 3 Overview</span></h2>
+        <p>Đây là nơi bạn "nói chuyện" với máy. Chỉ cần nắm vài màn hình và thao tác tối thiểu là có thể vận hành an toàn.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">DRO</span>
+          <h3>Đọc tọa độ</h3>
+          <p>Luôn biết DRO đang hiển thị tọa độ <b>Machine</b> hay <b>Work</b>. Nhầm giữa hai chế độ là lỗi kinh điển dẫn đến va dao.</p>
+        </div>
+        <div class="card">
+          <span class="n">JOGGING</span>
+          <h3>Chạy jog từng trục</h3>
+          <p>Dùng phím/bàn điều khiển để đưa dao đến vị trí lấy gốc. Bắt đầu ở tốc độ thấp, tăng dần khi đã gần phôi.</p>
+        </div>
+        <div class="card">
+          <span class="n">SET ORIGIN</span>
+          <h3>Đặt gốc WCS</h3>
+          <p>Đưa dao chạm mép phôi (bằng giấy căn / đầu dò), rồi bấm Zero X / Zero Y / Zero Z để gán gốc chi tiết.</p>
+        </div>
+        <div class="card">
+          <span class="n">MDI</span>
+          <h3>Nhập lệnh thủ công</h3>
+          <p>Gõ một dòng G‑code (vd: <code>G00 X0 Y0</code>) và thực thi ngay — tiện để kiểm tra chiều trục hoặc đưa dao về vị trí an toàn.</p>
+        </div>
+        <div class="card">
+          <span class="n">WIZARDS</span>
+          <h3>Trình hướng dẫn</h3>
+          <p>Các tiện ích sinh sẵn chương trình cho khoan lỗ, phay rãnh, mặt phẳng… mà không cần viết G‑code tay.</p>
+        </div>
+        <div class="card">
+          <span class="n">PROBE</span>
+          <h3>Đầu dò</h3>
+          <p><b>Auto Tool Zero</b> tự đặt Z khi thay dao; <b>Touch Probe</b> dò mép/tâm phôi để lấy gốc X/Y nhanh và lặp lại chính xác.</p>
+        </div>
+      </div>
+      <p class="note warn" style="margin-top:22px">
+        <span class="lbl">TRƯỚC KHI CHẠY</span>
+        <span class="t-vi">Nạp chương trình → kiểm tra lại offset dao và gốc WCS → bật <b>Single Block</b> → chạy thử vài dòng đầu với tay để sẵn trên nút dừng. Chỉ bỏ single block khi đã chắc chắn.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 9 -->
+  <section class="sec alt" id="chuong-9">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">09</span><span class="line"></span><span class="eyebrow-label">Chương 9 · CAD/CAM — Fusion 360</span></div>
+      <div class="sec-head">
+        <h2>Từ CAD đến G‑code với Fusion 360 <span class="dim" style="font-weight:400;font-size:.6em">CAD/CAM Software Overview</span></h2>
+        <p>Bạn không cần viết tay từng dòng G‑code: phần mềm CAM sinh đường chạy dao từ mô hình 3D, rồi <b>bộ hậu xử lý (post processor)</b> dịch sang đúng ngôn ngữ của máy (vd: Mach3 / Tormach).</p>
+      </div>
+      <ol class="steps">
+        <li><b>1. Dựng mô hình (Design):</b> tạo chi tiết 3D trong môi trường Design, kèm kích thước và ràng buộc.</li>
+        <li><b>2. Thiết lập (Setup) trong Manufacture:</b> khai báo kích thước phôi (stock), vị trí gốc WCS, hướng trục và dao sẽ dùng.</li>
+        <li><b>3. Chọn chiến lược đường chạy dao:</b> phay mặt (Face), phay hốc (Pocket), phay biên dạng (Contour), khoan (Drill), phay 3D (Adaptive/Parallel…).</li>
+        <li><b>4. Mô phỏng (Simulate):</b> xem trước toàn bộ quá trình cắt, phát hiện va chạm, dao đi vào vùng cấm hay còn dư vật liệu.</li>
+        <li><b>5. Xuất mã (Post Process):</b> chọn đúng post processor cho bộ điều khiển, sinh file .nc / .tap rồi nạp vào Mach3.</li>
+      </ol>
+      <p class="note" style="margin-top:20px">
+        <span class="lbl">LƯU Ý</span>
+        <span class="t-vi">Gốc trong CAM phải <b>trùng với gốc bạn lấy trên máy thật</b>. Đây là lỗi phổ biến nhất khiến chương trình chạy sai vị trí dù mô phỏng vẫn đẹp.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 10 -->
+  <section class="sec" id="chuong-10">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">10</span><span class="line"></span><span class="eyebrow-label">Chương 10 · Workflow of Machining a Part</span></div>
+      <div class="sec-head">
+        <h2>Quy trình gia công một chi tiết <span class="dim" style="font-weight:400;font-size:.6em">From drawing to finished part</span></h2>
+        <p>Đây là chuỗi thao tác đầy đủ trên xưởng — in ra dán cạnh máy nếu bạn mới bắt đầu.</p>
+      </div>
+      <ol class="steps">
+        <li><b>1. Đọc bản vẽ:</b> xác định vật liệu, kích thước phôi, dung sai và mặt nào là mặt chuẩn.</li>
+        <li><b>2. Chuẩn bị dao:</b> chọn dao theo đặc điểm nhỏ nhất (góc trong, rãnh hẹp), lắp vào toolholder, kiểm tra độ chặt.</li>
+        <li><b>3. Kẹp phôi:</b> dùng ê tô + căn mẫu hoặc cặp kẹp; đảm bảo phôi không bị nhổ lên khi cắt.</li>
+        <li><b>4. Bật máy &amp; về gốc:</b> cấp nguồn, mở phần mềm điều khiển, homing các trục.</li>
+        <li><b>5. Lấy gốc chi tiết:</b> dò mép X/Y bằng đầu dò hoặc giấy căn, đặt Z bằng Auto Tool Zero.</li>
+        <li><b>6. Khai báo dao &amp; offset:</b> nhập chiều dài/đường kính dao, chọn đúng WCS (G54).</li>
+        <li><b>7. Nạp chương trình:</b> mở file G‑code đã post từ Fusion 360, đọc lướt các dòng đầu.</li>
+        <li><b>8. Chạy thử:</b> dry run / single block, dao cách mặt phôi một khoảng an toàn, quan sát DRO.</li>
+        <li><b>9. Gia công:</b> bật nước làm mát nếu cần, chạy chương trình, luôn có người trực máy và tay sẵn E‑stop.</li>
+        <li><b>10. Kiểm tra &amp; hoàn thiện:</b> đo lại kích thước bằng thước kẹp, gỡ bavia, vệ sinh máy và ghi nhận thông số cắt cho lần sau.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- KẾT -->
+  <section class="sec alt" id="ket">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">11</span><span class="line"></span><span class="eyebrow-label">Kết luận · Next steps</span></div>
+      <div class="sec-head">
+        <h2>Bước tiếp theo <span class="dim" style="font-weight:400;font-size:.6em">What's next?</span></h2>
+        <p>Khi đã quen quy trình trên, hãy luyện thêm: đọc và sửa G‑code trực tiếp trong MDI, dùng chu trình khoan (G81/G83), bù bán kính dao (G41/G42), và các chiến lược CAM nâng cao. Đọc tiếp <a href="co-ban-lap-trinh-cnc.html">Cơ bản lập trình CNC</a> để nắm chắc cú pháp, hoặc <a href="cam-nang-gia-cong-cnc.html">Cẩm nang Gia công CNC</a> để tối ưu thiết kế chi tiết. Bảng tốc độ cắt, prefix và mã G/M đầy đủ nằm ở cuối PDF gốc.</p>
+        <p style="margin-top:14px"><span class="dim">Bản tiếng Việt khác:</span> <a href="tu-che-may-cnc.html">Tự chế máy CNC</a></p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="../../books/files/tormach-cnc-student-guide.pdf" target="_blank" rel="noopener">Đọc PDF gốc (EN) ▸</a>
+        <a class="btn btn-s" href="index.html">← Về thư viện sách</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-l">
+      <span class="brand-mini">Cẩm nang Sinh viên CNC — Chế tạo máy</span>
+      <p>Bản chuyển soạn nguyên bản tiếng Việt dựa trên <em>Student CNC Guide</em> (Derek Murphy, Studica Canada / Tormach). Không thay thế bản gốc. PDF gốc © tác giả / nhà xuất bản.</p>
+    </div>
+    <div class="foot-r">
+      <span class="mono"><a href="../../index.html">← Trang chủ / Home</a></span>
+      <span class="mono">machine-ctm.github.io</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
