@@ -341,3 +341,6 @@ html.lang-en .t-vi{display:none}
 .grade.g-B{background:#b9791b}
 .grade.g-C{background:#9a3b3b}
 .grade.g-VI{background:#2f5d80}
+/* responsive video embeds */
+.vid{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#0e1726;margin-bottom:12px}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
