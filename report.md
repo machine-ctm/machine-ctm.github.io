@@ -24,6 +24,9 @@
 | Tormach CNC Student Guide — TIẾNG VIỆT | https://machine-ctm.github.io/vi/books/cam-nang-sinh-vien-tormach.html |
 | CNC Programming for Lathe — TIẾNG VIỆT | https://machine-ctm.github.io/vi/books/lap-trinh-cnc-may-tien.html |
 | Fundamentals of CNC Machining — TIẾNG VIỆT | https://machine-ctm.github.io/vi/books/nen-tang-gia-cong-cnc.html |
+| Metal Forming Handbook — TIẾNG VIỆT | https://machine-ctm.github.io/vi/books/cam-nang-gia-cong-ap-luc.html |
+| Machining Processes and Machines — TIẾNG VIỆT | https://machine-ctm.github.io/vi/books/quy-trinh-va-may-gia-cong.html |
+| Consolidated Vietnamese guides index | https://machine-ctm.github.io/vi/books/#huong-dan |
 
 A **VI / EN** switch in the top bar toggles the whole page (state persisted in `localStorage`).
 
@@ -33,7 +36,7 @@ A **VI / EN** switch in the top bar toggles the whole page (state persisted in `
 
 - **Homepage** — hero (design → machining → inspection → product diagram), stats strip, discipline, process families, curriculum (5 modules + course table), tools & machines, traditional-vs-CNC comparison, careers, learning path, library/education teasers.
 - **Book Library** (`/books`, `/vi/books`) — hosted PDF textbooks (Read/Download), free open-access books (Internet Archive + other free hosts), library/academic references (BCIT LibGuide, ResearchGate, etc.), a G/M-code quick reference, and an **A/B/C grade** on every hosted book (see §3).
-- **Vietnamese study guides** — 6 original Vietnamese adaptations under `/vi/books/` (all 4 grade-A + both grade-B books, see §5), each an ~8–11-section illustrated guide with a copyright note, G-code examples and cross-links to the other five.
+- **Vietnamese study guides** — 8 original Vietnamese adaptations under `/vi/books/`, covering **every graded English book** (4 grade-A + 2 grade-B + 2 grade-C, see §5). Each is an ~8–11-section illustrated guide with a copyright note, source-PDF link and cross-links to the other seven. A consolidated eight-card index lives at `/vi/books/#huong-dan`, linked from both library heroes and from every guide.
 - **Education** (`/education`, `/vi/education`) — career path, program structure, training programs/curricula (Bharat Skills, SkilledTradesBC, HUST), essential books, online training.
 - Design system adapted from `pro-instcontrol.github.io` (light technical theme, burnt-orange + steel palette).
 
@@ -58,9 +61,11 @@ Grades reflect **quality** and **ease of translation** into Vietnamese.
 | 10 | Tormach CNC Student Guide | `tormach-cnc-student-guide.pdf` | **A** |
 | 11 | Machining Processes and Machines | `machining-processes-and-machines.pdf` | **C** |
 
-**First grade-A book in reading order → "Build Your Own CNC Machine"** (the translation candidate).
+**First grade-A book in reading order → "Build Your Own CNC Machine"** (the original translation candidate).
 
 Verified live: EN `/books` returns `A=4, B=2, C=2`; all 6 newly added PDFs resolve; VI mirrors the same grades.
+
+> **Source discovery (grade C):** `machining-processes-and-machines.pdf` is the **32-page CRC Press / Taylor & Francis publisher preview** (copyright page, complete table of contents, preface, and Chapter 1 only) — **not the full 16-chapter book**. The library card copy that previously claimed "full PDF hosted here" was corrected in both EN and VI indexes; the ResearchGate card now explicitly points to obtaining the full text. `metal-forming-handbook-schuler-1998.pdf` is the complete 573-page Springer/Schuler handbook.
 
 ---
 
@@ -86,8 +91,12 @@ Verified live: EN `/books` returns `A=4, B=2, C=2`; all 6 newly added PDFs resol
    - `CNC Programming for Lathe` → `vi/books/lap-trinh-cnc-may-tien.html` (8 sections: cấu tạo máy tiện & trục X/Z, cấu trúc khối lệnh/địa chỉ, các hàm G/S/T/M, tuyệt đối/tương đối & lập trình theo đường kính, G00/G01/G02/G03/G04, hệ tọa độ & G28, chương trình tiện mẫu có chú thích). Nguồn là khóa e‑learning *The Basics of CNC Machining Programming (for Lathe)* (© Mitsubishi Electric) — ghi rõ định dạng lệnh thay đổi theo nhà sản xuất máy.
    - `Fundamentals of CNC Machining` → `vi/books/nen-tang-gia-cong-cnc.html` (10 sections: quy trình CAD/CAM/CNC & SRP, an toàn xưởng, dao cắt & thông số cắt, hệ tọa độ & offset/TLO, ngôn ngữ G/M & canned cycles, quy trình vận hành máy, đường chạy dao 2D, tiện CNC & 3D, đồ gá/kẹp phôi). Nguồn là giáo trình *Fundamentals of CNC Machining: A Practical Guide for Beginners* (© Autodesk) — văn bản gốc cấm dịch/sao chép nên bản này được **viết lại hoàn toàn**, ghi rõ "không phải bản dịch".
    - Cả hai dùng chung design system, có copyright note, liên kết PDF gốc, và được **cross-link** với 4 trang A-grade. Đã nối vào card grade-B của cả `/books` (EN) và `/vi/books` (VI). Tất cả 6 trang hiện liên kết chéo tới 5 trang còn lại.
-5. *(Optional)* Grade-C reference works (`Metal Forming Handbook`, `Machining Processes and Machines`) are intentionally left out — dense, academic, hard to translate; better suited as reference PDFs.
-6. **Correction:** an earlier version of this report claimed local copies of the Eagle Group and Boothroyd PDFs "already exist in `books/files/`". They do **not** — both are linked **externally only** (referenceglobe.com / Eagle Group hub), consistent with the site's copyright convention of not re-hosting licensed material. `books/files/` holds exactly 11 PDFs.
+5. **Grade-C reference works — DONE (original adaptations).** Both dense academic references now have Vietnamese study guides, so **all 8 graded English books (A+B+C) are covered**:
+   - `Metal Forming Handbook` → `vi/books/cam-nang-gia-cong-ap-luc.html` (8 sections: DIN 8580 classification, flow stress/flow curve/formability, press design & drives, dies & deep drawing, blanking/fine blanking/bending, hydroforming, solid forming/forging, and how to use a 573-page reference). Source: Schuler / Springer 1998, which explicitly reserves translation rights — the page states it is **not a translation**.
+   - `Machining Processes and Machines` → `vi/books/quy-trinh-va-may-gia-cong.html` (9 sections: book overview & publisher-preview disclosure, the machining system and the three cutting conditions `v/f/d`, four process families, industrial applications & limitations, roughing vs finishing table, machinability & machinable materials, the 4-part/16-chapter map, and shop-floor calculations). Source: Zainul Huda, CRC Press 2021 — © Taylor & Francis prohibits reproduction, so this is an original adaptation of Chapter 1 + the full TOC only.
+   - Both pages carry explicit copyright notes, link back to the source PDF, and are cross-linked to the other seven. Wired into the grade-C cards of both `/books` and `/vi/books` ("Bản TV" button + inline link).
+6. **Consolidated guide index & cross-links — DONE.** `/vi/books/#huong-dan` is a new section with all 8 guides as grade-badged cards plus a copyright note; it is linked from the VI hero CTA, the textbooks section header, the EN hero (bilingual link), and the conclusion of every guide. Section numbering in the VI index was shifted 01–06 and alternating `sec`/`sec alt` bands preserved. All 8 guides now carry a normalized 7-link "Các bản tiếng Việt khác" line plus a "Tất cả 8 bản" link.
+7. **Correction:** an earlier version of this report claimed local copies of the Eagle Group and Boothroyd PDFs "already exist in `books/files/`". They do **not** — both are linked **externally only** (referenceglobe.com / Eagle Group hub), consistent with the site's copyright convention of not re-hosting licensed material. `books/files/` holds exactly 11 PDFs. A second false claim — that the *full* `Machining Processes and Machines` PDF was hosted — was also corrected (see §3 note).
 
 ---
 

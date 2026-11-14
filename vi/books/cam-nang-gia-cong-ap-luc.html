@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cẩm nang Gia công Áp lực — Chế tạo máy</title>
+<meta name="description" content="Bản hướng dẫn tiếng Việt (chuyển soạn nguyên bản) dựa trên Metal Forming Handbook (Schuler, Springer 1998): nguyên lý tạo hình, máy ép, dập tấm, cắt dập, hydroforming và rèn/ép đùn khối.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua nội dung</a>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../../index.html" aria-label="Chế tạo máy">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="16" cy="16" r="6.5"/><circle cx="16" cy="16" r="2.2" fill="currentColor" stroke="none"/>
+            <path d="M16 4.5v3M16 24.5v3M4.5 16h3M24.5 16h3M7.6 7.6l2.1 2.1M22.3 22.3l2.1 2.1M24.4 7.6l-2.1 2.1M9.7 22.3l-2.1 2.1"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand-txt"><strong>Chế tạo máy</strong><em>Machine Building</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a class="nav-link" href="../../index.html#discipline">Kỷ thuật</a>
+      <a class="nav-link" href="../../index.html#processes">Quy trình</a>
+      <a class="nav-link" href="../../index.html#curriculum">Chương trình</a>
+      <a class="nav-link" href="../../index.html#tools">Thiết bị</a>
+      <a class="nav-link" href="../../index.html#careers">Nghề nghiệp</a>
+      <a class="nav-link" href="../../books/">Sách (EN)</a>
+      <a class="nav-link" href="../../education/">Giáo dục</a>
+      <a class="nav-link" href="../../videos/">Video</a>
+    </nav>
+    <div class="bar-right">
+      <div class="lang" title="Đổi ngôn ngữ / Switch language">
+        <a href="../../books/" style="color:inherit">EN</a><span class="lang-sep">/</span><span class="on">VI</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="kicker"><span class="dot"></span>Sách · Gia công Áp lực</span>
+        <h1>Gia công áp lực<span class="thin">Hướng dẫn tiếng Việt chuyển soạn từ <em>Metal Forming Handbook</em> (Schuler).</span></h1>
+        <p class="lede">Khác với gia công cắt gọt, gia công áp lực <b>tạo hình mà không bóc vật liệu</b>: phôi bị biến dạng dẻo dưới lực ép để thành chi tiết. Bản hướng dẫn này tóm lược sáu chương của cẩm nang Schuler — nguyên lý tạo hình &amp; đường cong chảy, máy ép, dập tấm, cắt dập &amp; dập tinh, hydroforming và tạo hình khối (rèn/ép đùn). <span class="dim">Bản gốc (PDF): <a href="../../books/files/metal-forming-handbook-schuler-1998.pdf" target="_blank" rel="noopener">metal-forming-handbook-schuler-1998.pdf ↗</a></span></p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#chuong-1">Bắt đầu đọc →</a>
+          <a class="btn btn-s" href="../../books/files/metal-forming-handbook-schuler-1998.pdf" target="_blank" rel="noopener">PDF gốc (EN)</a>
+        </div>
+      </div>
+      <div class="figure">
+        <svg viewBox="0 0 360 240" role="img" aria-label="Máy ép và khuôn dập">
+          <g fill="none" stroke="#2f5d80" stroke-width="2">
+            <rect x="70" y="30" width="220" height="30" rx="4" fill="#e9f0f5" stroke="#2f5d80"/>
+            <line x1="120" y1="60" x2="120" y2="105" stroke="#c2540b" stroke-width="3"/>
+            <line x1="240" y1="60" x2="240" y2="105" stroke="#c2540b" stroke-width="3"/>
+            <rect x="100" y="105" width="160" height="24" rx="3" fill="#fff" stroke="#2f5d80"/>
+            <path d="M130 129q50 26 100 0" fill="#fbeee2" stroke="#c2540b"/>
+            <rect x="90" y="160" width="180" height="22" rx="3" fill="#e9f0f5" stroke="#2f5d80"/>
+          </g>
+          <g stroke="#c2540b" stroke-width="2.5" stroke-linecap="round" fill="none">
+            <line x1="180" y1="66" x2="180" y2="98"/>
+            <path d="M173 91l7 7 7-7"/>
+          </g>
+          <g stroke="#c2540b" stroke-width="2" stroke-linecap="round">
+            <line x1="70" y1="200" x2="290" y2="200"/>
+            <line x1="70" y1="206" x2="290" y2="206"/>
+          </g>
+        </svg>
+        <div class="figcap">Con trượt · chày · cối · phôi tấm</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIỚI THIỆU -->
+  <section class="sec" id="gioi-thieu">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">00</span><span class="line"></span><span class="eyebrow-label">Giới thiệu · Introduction</span></div>
+      <div class="sec-head">
+        <h2>Tại sao cần một cẩm nang riêng cho tạo hình? <span class="dim" style="font-weight:400;font-size:.6em">Why forming deserves its own handbook</span></h2>
+        <p>Công nghệ tạo hình kim loại giữ vai trò trung tâm trong sản xuất hiện đại: bên cạnh bán thành phẩm từ cán, kéo sợi, ép đùn, còn là <b>chế tạo chi tiết rời từ tấm và từ phôi khối</b>. Ứng dụng trải từ công nghiệp ô tô, hàng không, điện‑điện tử đến đồ gia dụng. Cẩm nang của Schuler (xuất bản bởi Springer, 1998; 573 trang) là tài liệu tham khảo chuẩn công nghiệp, do các chuyên gia của hãng máy ép Schuler biên soạn, với sự cố vấn của GS Taylan Altan (ĐH Bang Ohio).</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">KHÁC BIỆT</span>
+          <h3>Không tạo phoi</h3>
+          <p>Vật liệu được giữ nguyên khối lượng và liên kết, chỉ thay đổi hình dạng — tiết kiệm vật liệu hơn hẳn cắt gọt.</p>
+        </div>
+        <div class="card">
+          <span class="n">CƠ TÍNH</span>
+          <h3>Bền hơn</h3>
+          <p>Biến dạng dẻo làm hướng chảy của vật liệu đi theo biên dạng chi tiết, cải thiện độ bền so với cắt từ khối đặc.</p>
+        </div>
+        <div class="card">
+          <span class="n">SẢN LƯỢNG</span>
+          <h3>Tối ưu cho loạt lớn</h3>
+          <p>Khuôn đắt nhưng một lần dập ra một chi tiết — cực kỳ cạnh tranh khi sản xuất hàng loạt.</p>
+        </div>
+      </div>
+      <p class="note warn" style="margin-top:24px">
+        <span class="lbl">LƯU Ý BẢN QUYỀN</span>
+        <span class="t-vi">Đây là <b>bản chuyển soạn nguyên bản</b> (original adaptation) bằng tiếng Việt, viết lại hoàn toàn bằng lời văn riêng dựa trên <b>các chủ đề</b> của <em>Metal Forming Handbook / Schuler</em> (© Springer‑Verlag Berlin Heidelberg 1998; bản gốc tiếng Đức: <em>Handbuch der Umformtechnik</em>). Văn bản gốc bảo lưu rõ ràng quyền dịch thuật, nên đây <b>không phải bản dịch</b> và không sao chép nguyên văn hay hình ảnh nào. Toàn văn gốc (tiếng Anh) xem tại PDF liên kết ở trên.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 1 -->
+  <section class="sec alt" id="chuong-1">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">01</span><span class="line"></span><span class="eyebrow-label">Chương 1 · Phân loại quy trình</span></div>
+      <div class="sec-head">
+        <h2>Sáu nhóm quy trình chế tạo theo DIN 8580 <span class="dim" style="font-weight:400;font-size:.6em">Classification of manufacturing processes</span></h2>
+        <p>Chương 2 của sách mở đầu bằng khung phân loại chuẩn Đức <b>DIN 8580</b>, chia mọi quy trình chế tạo thành sáu nhóm chính. Đặt đúng vị trí của "tạo hình" trong khung này là nền tảng để đọc các chương sau.</p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Nhóm</th><th>Ý nghĩa</th></tr></thead>
+          <tbody>
+            <tr><td><b>Tạo hình sơ bộ</b> (Primary shaping)</td><td>Tạo hình ban đầu từ trạng thái nóng chảy, khí hoặc rắn vô định hình (đúc, ép phun…).</td></tr>
+            <tr><td><b>Tạo hình</b> (Forming)</td><td><b>Biến dạng dẻo ba chiều, giữ nguyên khối lượng và sự liên kết vật liệu</b> — chủ đề của cuốn sách. Là quy trình <b>không có phoi</b>.</td></tr>
+            <tr><td><b>Phân chia</b> (Dividing)</td><td>Tách vật liệu cục bộ mà không tạo phoi: cắt dập (shear cutting), cắt nêm, xé, bẻ gãy.</td></tr>
+            <tr><td><b>Lắp ghép</b> (Joining)</td><td>Ghép các chi tiết thành cụm, hoặc lấp đầy/tẩm thấm vật liệu rỗng.</td></tr>
+            <tr><td><b>Biến tính</b> (Modifying properties)</td><td>Thay đổi đặc tính vật liệu: tôi, ủ kết tinh lại…</td></tr>
+            <tr><td><b>Phủ lớp</b> (Coating)</td><td>Tạo lớp mỏng trên bề mặt: mạ, sơn, bọc foil.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:22px">
+        <span class="lbl">THỰC TẾ</span>
+        <span class="t-vi">Trong xưởng, "công nghệ tạo hình" thường được hiểu rộng hơn định nghĩa hẹp: gồm cả <b>phân chia</b> và <b>lắp ghép bằng tạo hình</b>, và thường kết hợp với các quy trình khác trong cùng một dây chuyền. Phân biệt quan trọng: <b>biến dạng</b> là sự thay đổi hình dạng nói chung, còn <b>tạo hình</b> là sự thay đổi có kiểm soát về hình học.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 2 -->
+  <section class="sec" id="chuong-2">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">02</span><span class="line"></span><span class="eyebrow-label">Chương 2 · Cơ sở lý thuyết</span></div>
+      <div class="sec-head">
+        <h2>Ứng suất chảy, đường cong chảy &amp; khả năng tạo hình <span class="dim" style="font-weight:400;font-size:.6em">Flow curve, flow stress &amp; formability</span></h2>
+        <p>Kim loại có thể tạo hình vì các hàng nguyên tử trong tinh thể trượt lên nhau khi vượt quá một giới hạn ứng suất — nhờ các <b>dislocation (sai lệch mạng)</b> — mà vẫn giữ được liên kết. Đây gọi là <b>tính dẻo / khả năng tạo hình</b>.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">k<sub>f</sub></span>
+          <h3>Ứng suất chảy &amp; đường cong chảy</h3>
+          <p><b>Flow stress</b> (ứng suất chảy) phụ thuộc vào vật liệu, nhiệt độ, độ biến dạng và <b>tốc độ biến dạng</b>. <b>Đường cong chảy</b> biểu diễn quan hệ này — là dữ liệu đầu vào cho mọi tính toán lực ép. Nếu thiếu, có thể xác định bằng thử kéo, thử nén hoặc thử lõm thủy lực.</p>
+        </div>
+        <div class="card">
+          <span class="n">NGUỘI / NÓNG</span>
+          <h3>Vai trò của nhiệt độ</h3>
+          <p><b>Dưới nhiệt độ kết tinh lại</b> (tạo hình nguội): ứng suất chảy tăng theo độ biến dạng (biến cứng), ảnh hưởng của nhiệt độ và tốc độ rất nhỏ. <b>Trên nhiệt độ kết tinh lại</b> (tạo hình nóng): ứng suất chảy phụ thuộc chủ yếu vào nhiệt độ &amp; tốc độ, giảm khi nóng hơn và biến dạng chậm hơn.</p>
+        </div>
+        <div class="card">
+          <span class="n">BIẾN DẠNG</span>
+          <h3>Độ biến dạng &amp; định luật thể tích</h3>
+          <p>Tổng ba thành phần biến dạng bằng <b>0</b> (thể tích không đổi): nếu ép giảm chiều cao thì chiều rộng và chiều dài phải tăng. Thành phần có trị tuyệt đối lớn nhất gọi là <b>biến dạng chính</b> — cơ sở để tính lực biến dạng.</p>
+        </div>
+        <div class="card">
+          <span class="n">LỰC &amp; CÔNG</span>
+          <h3>Lực, công &amp; giới hạn tạo hình</h3>
+          <p>Từ ứng suất chảy và thể tích dịch chuyển suy ra <b>công biến dạng</b> rồi <b>lực ép</b> cần thiết. <b>Khả năng tạo hình</b> được xác định tại thời điểm vật liệu phá hủy (nứt trượt hoặc nứt tách) — vượt quá giới hạn là không thể tạo hình tiếp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 3 -->
+  <section class="sec alt" id="chuong-3">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">03</span><span class="line"></span><span class="eyebrow-label">Chương 3 · Máy ép</span></div>
+      <div class="sec-head">
+        <h2>Cấu tạo &amp; phân loại máy ép <span class="dim" style="font-weight:400;font-size:.6em">Fundamentals of press design</span></h2>
+        <p>Chương 3 là phần rất thực hành của cẩm nang: từ khung máy, cơ cấu dẫn động con trượt, đệm kéo (draw cushion) đến hệ điều khiển và an toàn.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">CẤU TẠO</span>
+          <h3>Khung, con trượt, dẫn động</h3>
+          <p><b>Khung máy</b> chịu toàn bộ lực ép (khung chữ C hay khung cột/O‑frame). <b>Cơ cấu dẫn động con trượt</b> biến quay thành tịnh tiến: trục khuỷu, trục lệch tâm, tay quay, cam, hoặc truyền động vít. <b>Đệm kéo</b> giữ lực ép lên mép tấm khi dập sâu.</p>
+        </div>
+        <div class="card">
+          <span class="n">CƠ KHÍ / THỦY LỰC</span>
+          <h3>Hai họ máy ép</h3>
+          <p><b>Máy ép cơ khí</b>: động cơ + bánh đà tích năng lượng, ly hợp/phanh nhả năng lượng theo chu kỳ — rất nhanh, hợp dập tấm loạt lớn. <b>Máy ép thủy lực</b>: lực và hành trình điều khiển linh hoạt, giữ áp được — hợp dập sâu, tạo hình khối, hydroforming.</p>
+        </div>
+        <div class="card">
+          <span class="n">ĐIỀU KHIỂN</span>
+          <h3>PLC, thay khuôn &amp; an toàn</h3>
+          <p>Hệ điều khiển gồm PLC, màn hình vận hành, các thành phần điện/ khí nén/ thủy lực/ bôi trơn. <b>Thay khuôn nhanh</b> (thiết bị kẹp, xe đẩy khuôn) quyết định thời gian dừng máy. An toàn gồm phòng ngừa tai nạn, quy định pháp lý, yêu cầu châu Âu &amp; <b>dấu CE</b>, và nghĩa vụ của đơn vị sử dụng.</p>
+        </div>
+        <div class="card">
+          <span class="n">THÔNG SỐ</span>
+          <h3>Đọc thông số máy</h3>
+          <p>Lực danh định, hành trình, số hành trình/phút, chiều cao kẹp khuôn, kích thước bàn, năng lượng bánh đà, độ song song con trượt — các đại lượng quyết định máy có làm được chi tiết hay không.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 4 -->
+  <section class="sec" id="chuong-4">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">04</span><span class="line"></span><span class="eyebrow-label">Chương 4 · Khuôn &amp; dập tấm</span></div>
+      <div class="sec-head">
+        <h2>Khuôn dập &amp; dập kéo sâu <span class="dim" style="font-weight:400;font-size:.6em">Die manufacture &amp; deep drawing</span></h2>
+        <p>Chương 4 (dài nhất) đi từ thiết kế/chế tạo khuôn đến toàn bộ dây chuyền gia công tấm.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">KHUÔN</span>
+          <h3>Phân loại &amp; vật liệu</h3>
+          <p>Khuôn được phân loại theo nguyên công và mức độ tự động; quy trình phát triển gồm thiết kế, đúc/chế tạo, thử khuôn (try‑out) và mô phỏng chuyển phôi. Vật liệu khuôn &amp; xử lý bề mặt quyết định tuổi thọ.</p>
+        </div>
+        <div class="card">
+          <span class="n">DẬP KÉO</span>
+          <h3>Deep drawing &amp; stretch drawing</h3>
+          <p>Chày kéo tấm vào lòng cối, đệm kéo giữ mép để vật liệu <b>chảy vào</b> chứ không bị rách. Khác với dập kéo căng (stretch), ở đó phôi bị kẹp chặt và kéo giãn. Ma sát, mài mòn và <b>bôi trơn</b> là ba yếu tố then chốt.</p>
+        </div>
+        <div class="card">
+          <span class="n">BIẾN THỂ</span>
+          <h3>Dập kéo có hỗ trợ thủy lực</h3>
+          <p>Hydro‑mechanical deep drawing dùng áp suất chất lỏng thay cho cối cứng, giúp phân bố biến dạng đều hơn, tăng chiều sâu kéo và giảm mài mòn.</p>
+        </div>
+        <div class="card">
+          <span class="n">DÂY CHUYỀN</span>
+          <h3>Coil lines &amp; press lines</h3>
+          <p>Từ cuộn thép → cắt phôi (blanking) → xếp/dỡ phôi → chuỗi máy ép (press line) hoặc <b>máy ép chuyển giao (transfer press)</b> có tay gắp chuyển chi tiết giữa các trạm.</p>
+        </div>
+        <div class="card">
+          <span class="n">VẬT LIỆU TẤM</span>
+          <h3>Thép tấm &amp; tailored blanks</h3>
+          <p>Độ dày, cấp thép, lớp mạ và tính dẻo quyết định khả năng dập. <b>Tailored blanks</b> ghép các tấm khác độ dày/cấp liệu trước khi dập — giảm trọng lượng thân xe.</p>
+        </div>
+        <div class="card">
+          <span class="n">NHÀ MÁY</span>
+          <h3>Tổ chức xưởng dập</h3>
+          <p>Thiết kế, bố trí mặt bằng (layout) và <b>đảm bảo chất lượng bằng kiểm soát quy trình</b> là phần cuối chương — nơi kỹ thuật gặp quản trị sản xuất.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 5 -->
+  <section class="sec alt" id="chuong-5">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">05</span><span class="line"></span><span class="eyebrow-label">Chương 4 · Cắt dập &amp; uốn</span></div>
+      <div class="sec-head">
+        <h2>Cắt dập, dập tinh &amp; uốn <span class="dim" style="font-weight:400;font-size:.6em">Blanking, fine blanking &amp; bending</span></h2>
+        <p>Ba nhóm nguyên công chiếm phần lớn sản lượng chi tiết tấm, mỗi nhóm có cơ chế phá hủy/ biến dạng riêng.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">CẮT DẬP</span>
+          <h3>Blanking &amp; shearing</h3>
+          <p>Chày và cối có khe hở nhỏ tạo vết cắt xuyên suốt chiều dày tấm mà <b>không tạo phoi</b> (theo DIN 8588: cắt cắt, cắt nêm, xé, bẻ). Dây chuyền gồm xẻ băng (slitting), cắt phôi, cắt tốc độ cao, và dây chuyền lá thép stator/roto.</p>
+        </div>
+        <div class="card">
+          <span class="n">DẬP TINH</span>
+          <h3>Fine blanking</h3>
+          <p>Biến thể cho cạnh cắt <b>nhẵn, vuông góc, dung sai chặt</b> ngay sau một lần dập: kẹp chặt phôi bằng vòng răng (V‑ring), khe hở cực nhỏ, lực ép ba tác động. Dùng cho bánh răng, đĩa phanh, chi tiết cơ khí chính xác.</p>
+        </div>
+        <div class="card">
+          <span class="n">UỐN</span>
+          <h3>Bending &amp; roll forming</h3>
+          <p>Uốn quanh bán kính chày; cần tính <b>đàn hồi ngược (springback)</b> để bù góc. <b>Cán tạo hình</b> (roll forming) đưa băng thép qua loạt trục cán liên tục thành profile dài; <b>cán thẳng</b> (roller straightening) sửa phẳng tấm.</p>
+        </div>
+      </div>
+      <p class="note warn" style="margin-top:22px">
+        <span class="lbl">THIẾT KẾ</span>
+        <span class="t-vi">Khe hở chày–cối (die clearance), bán kính cạnh cắt và hướng chảy của vật liệu quyết định chất lượng cạnh cắt. Chọn sai khe hở gây bavia lớn, mài mòn khuôn nhanh và lực cắt tăng vọt.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 6 -->
+  <section class="sec" id="chuong-6">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">06</span><span class="line"></span><span class="eyebrow-label">Chương 5 · Hydroforming</span></div>
+      <div class="sec-head">
+        <h2>Tạo hình bằng chất lỏng (Hydroforming) <span class="dim" style="font-weight:400;font-size:.6em">Hydroforming</span></h2>
+        <p>Dùng <b>áp suất chất lỏng</b> thay cho một nửa khuôn cứng để ép phôi (ống hoặc tấm) áp sát lòng cối. Ưu điểm: chi tiết rỗng, liền khối, ít mối hàn, độ cứng cao và giảm trọng lượng.</p>
+      </div>
+      <ol class="steps">
+        <li><b>1. Nguyên lý:</b> phôi ống/tấm được đặt trong khuôn, bịt kín hai đầu, bơm chất lỏng áp suất cao đồng thời có thể đẩy trục vào (axial feed) để đẩy vật liệu vào vùng phình.</li>
+        <li><b>2. Dạng chi tiết &amp; ứng dụng:</b> ống dẫn, khung phụ ô tô, trụ A/B, chi tiết hệ xả, vỏ/hộp rỗng — đặc biệt trong công nghiệp ô tô.</li>
+        <li><b>3. Phát triển chi tiết:</b> quản trị dự án theo yêu cầu người dùng → nghiên cứu khả thi → thiết kế chi tiết tối ưu cho áp suất.</li>
+        <li><b>4. Khuôn &amp; bôi trơn:</b> bố trí mặt phân khuôn, đường kính phôi, chất bôi trơn để kiểm soát ma sát và độ dày thành.</li>
+        <li><b>5. Vật liệu &amp; phôi:</b> thép, nhôm, hợp kim; xử lý nhiệt, chuẩn bị phôi (uốn sơ, hàn ống) trước khi tạo hình.</li>
+        <li><b>6. Máy ép &amp; kinh tế:</b> máy ép chuyên dụng có hệ thống áp suất &amp; kẹp khuôn; cân nhắc giữa lợi ích kỹ thuật và chi phí/thời gian chu kỳ.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 7 -->
+  <section class="sec alt" id="chuong-7">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">07</span><span class="line"></span><span class="eyebrow-label">Chương 6 · Tạo hình khối</span></div>
+      <div class="sec-head">
+        <h2>Tạo hình khối / Rèn &amp; ép đùn <span class="dim" style="font-weight:400;font-size:.6em">Solid forming (Forging)</span></h2>
+        <p>Chương cuối chuyển từ tấm mỏng sang <b>phôi khối</b>. Ở đây vật liệu chảy trong lòng kín dưới áp suất rất cao — tạo ra chi tiết đặc có cơ tính tốt và gần như không phế liệu.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">LỢI ÍCH</span>
+          <h3>Kinh tế &amp; cơ tính</h3>
+          <p>Gần như không mất vật liệu, tận dụng được phôi rẻ hơn, sản lượng cao; hướng chảy vật liệu đi theo biên dạng giúp chi tiết <b>chịu tải tốt hơn</b> so với cắt từ thanh đặc.</p>
+        </div>
+        <div class="card">
+          <span class="n">CHUẨN BỊ</span>
+          <h3>Vật liệu, phôi &amp; bề mặt</h3>
+          <p>Chọn cấp thép/nhôm theo độ dẻo; cắt phôi (billet/slug) đúng thể tích; xử lý bề mặt (tẩy gỉ, phốt phát, bôi trơn) để giảm ma sát và tăng tuổi khuôn.</p>
+        </div>
+        <div class="card">
+          <span class="n">KẾ HOẠCH</span>
+          <h3>Chi tiết &amp; quy trình</h3>
+          <p>Từ chi tiết hoàn thiện thiết kế ngược dãy nguyên công (process plan): mỗi bước biến dạng vừa đủ, có thể cần ủ trung gian để khử biến cứng trước bước tiếp theo.</p>
+        </div>
+        <div class="card">
+          <span class="n">LỰC</span>
+          <h3>Lực &amp; công theo nguyên công</h3>
+          <p>Mỗi dạng chảy có công thức lực riêng — ép đùn thanh/ống thuận, ép đùn cốc ngược, vuốt mỏng (ironing), chồn (upsetting), ép đùn ngang. Đây là phần "tính toán" đặc trưng của cuốn sách.</p>
+        </div>
+        <div class="card">
+          <span class="n">CHUYỂN PHÔI</span>
+          <h3>Cấp phôi &amp; thiết kế khuôn</h3>
+          <p>Trạm nạp, cơ cấu chuyển phôi giữa các trạm, giá khuôn, thiết kế chày/cối, vật liệu khuôn và <b>hệ thống kẹp khuôn nhiều tác động</b>.</p>
+        </div>
+        <div class="card">
+          <span class="n">MÁY</span>
+          <h3>Máy ép &amp; dây chuyền</h3>
+          <p>Chọn máy ép cơ khí hay thủy lực, thiết bị phụ trợ, đặc thù dây chuyền tạo hình nóng/ấm, máy ép dập kích thước (sizing/coining) và dây chuyền đúc tiền/blanking phôi xu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KẾT -->
+  <section class="sec" id="ket">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">08</span><span class="line"></span><span class="eyebrow-label">Kết luận · Cách dùng cẩm nang</span></div>
+      <div class="sec-head">
+        <h2>Đọc một quyển sách 573 trang như thế nào? <span class="dim" style="font-weight:400;font-size:.6em">How to use this reference</span></h2>
+        <p>Đây là <b>sách tra cứu</b>, không phải giáo trình đọc liền mạch. Cách dùng hiệu quả: bắt đầu từ Chương 2 để nắm khung khái niệm (DIN 8580, ứng suất chảy, biến dạng, lực &amp; công), rồi nhảy thẳng tới chương của nguyên công bạn đang làm — Chương 3 nếu chọn/thiết lập máy ép, Chương 4 nếu dập tấm, Chương 5 nếu hydroforming, Chương 6 nếu rèn/ép đùn. Mỗi chương có bảng thông số, sơ đồ nguyên lý và tài liệu tham khảo riêng.</p>
+        <p style="margin-top:14px"><span class="dim">Các bản tiếng Việt khác:</span> <a href="tu-che-may-cnc.html">Tự chế máy CNC</a> · <a href="co-ban-lap-trinh-cnc.html">Cơ bản lập trình CNC</a> · <a href="cam-nang-gia-cong-cnc.html">Cẩm nang Gia công CNC</a> · <a href="cam-nang-sinh-vien-tormach.html">Cẩm nang Sinh viên Tormach</a> · <a href="lap-trinh-cnc-may-tien.html">Lập trình CNC máy Tiện</a> · <a href="nen-tang-gia-cong-cnc.html">Nền tảng Gia công CNC</a> · <a href="quy-trinh-va-may-gia-cong.html">Quy trình &amp; Máy Gia công</a> · <a href="index.html#huong-dan">Tất cả 8 bản ▸</a></p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="../../books/files/metal-forming-handbook-schuler-1998.pdf" target="_blank" rel="noopener">Đọc PDF gốc (EN) ▸</a>
+        <a class="btn btn-s" href="index.html">← Về thư viện sách</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-l">
+      <span class="brand-mini">Gia công Áp lực — Chế tạo máy</span>
+      <p>Bản chuyển soạn nguyên bản tiếng Việt dựa trên các chủ đề của <em>Metal Forming Handbook / Schuler</em> (© Springer‑Verlag 1998). Không phải bản dịch, không thay thế bản gốc. PDF gốc © tác giả / nhà xuất bản.</p>
+    </div>
+    <div class="foot-r">
+      <span class="mono"><a href="../../index.html">← Trang chủ / Home</a></span>
+      <span class="mono">machine-ctm.github.io</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

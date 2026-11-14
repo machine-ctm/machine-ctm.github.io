@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quy trình &amp; Máy Gia công — Chế tạo máy</title>
+<meta name="description" content="Bản hướng dẫn tiếng Việt (chuyển soạn nguyên bản) dựa trên Machining Processes and Machines (Zainul Huda, CRC Press 2021): phân loại gia công cắt gọt, thông số cắt, thô &amp; tinh, khả năng gia công và cấu trúc 16 chương.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua nội dung</a>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../../index.html" aria-label="Chế tạo máy">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="16" cy="16" r="6.5"/><circle cx="16" cy="16" r="2.2" fill="currentColor" stroke="none"/>
+            <path d="M16 4.5v3M16 24.5v3M4.5 16h3M24.5 16h3M7.6 7.6l2.1 2.1M22.3 22.3l2.1 2.1M24.4 7.6l-2.1 2.1M9.7 22.3l-2.1 2.1"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand-txt"><strong>Chế tạo máy</strong><em>Machine Building</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a class="nav-link" href="../../index.html#discipline">Kỷ thuật</a>
+      <a class="nav-link" href="../../index.html#processes">Quy trình</a>
+      <a class="nav-link" href="../../index.html#curriculum">Chương trình</a>
+      <a class="nav-link" href="../../index.html#tools">Thiết bị</a>
+      <a class="nav-link" href="../../index.html#careers">Nghề nghiệp</a>
+      <a class="nav-link" href="../../books/">Sách (EN)</a>
+      <a class="nav-link" href="../../education/">Giáo dục</a>
+      <a class="nav-link" href="../../videos/">Video</a>
+    </nav>
+    <div class="bar-right">
+      <div class="lang" title="Đổi ngôn ngữ / Switch language">
+        <a href="../../books/" style="color:inherit">EN</a><span class="lang-sep">/</span><span class="on">VI</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="kicker"><span class="dot"></span>Sách · Quy trình Gia công</span>
+        <h1>Gia công cắt gọt<span class="thin">Hướng dẫn tiếng Việt chuyển soạn từ <em>Machining Processes and Machines</em> (Z. Huda, CRC Press 2021).</span></h1>
+        <p class="lede">Gia công cắt gọt là <b>chế tạo trừ vật liệu</b>: dao cắt hoặc nguồn năng lượng bóc đi phần dư dưới dạng phoi để đạt kích thước và độ bóng yêu cầu. Bản hướng dẫn này hệ thống lại khung khái niệm của Chương 1 — ba thông số cắt, bốn họ quy trình, thô &amp; tinh, khả năng gia công — và dẫn bạn qua cấu trúc 16 chương của giáo trình. <span class="dim">Tệp PDF trên trang này là <b>bản xem trước của nhà xuất bản</b> (trang bìa, mục lục đầy đủ và Chương 1), không phải toàn bộ sách.</span></p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#chuong-1">Bắt đầu đọc →</a>
+          <a class="btn btn-s" href="../../books/files/machining-processes-and-machines.pdf" target="_blank" rel="noopener">Bản xem trước (EN)</a>
+        </div>
+      </div>
+      <div class="figure">
+        <svg viewBox="0 0 360 240" role="img" aria-label="Sơ đồ tiện: phôi quay, dao tiến, chiều sâu cắt">
+          <g fill="none" stroke="#2f5d80" stroke-width="2">
+            <rect x="45" y="96" width="26" height="48" rx="3" fill="#e9f0f5" stroke="#2f5d80"/>
+            <rect x="71" y="104" width="150" height="32" rx="3" fill="#fff" stroke="#2f5d80"/>
+            <rect x="221" y="88" width="62" height="64" rx="3" fill="#fbeee2" stroke="#c2540b"/>
+            <line x1="283" y1="120" x2="320" y2="120" stroke="#2f5d80"/>
+          </g>
+          <g fill="none" stroke="#2f5d80" stroke-width="1.4">
+            <line x1="71" y1="104" x2="221" y2="104" stroke-dasharray="4 4"/>
+            <line x1="71" y1="136" x2="221" y2="136"/>
+          </g>
+          <g stroke="#c2540b" stroke-width="2.5" stroke-linecap="round" fill="none">
+            <path d="M221 88l26-20"/>
+            <path d="M247 68l-9 1 4 8z" fill="#c2540b" stroke="none"/>
+            <path d="M60 175h120"/>
+            <path d="M172 175l8-5v10z" fill="#c2540b" stroke="none"/>
+            <path d="M205 88v-22"/>
+            <path d="M205 66l-4 8h8z" fill="#c2540b" stroke="none"/>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="12" fill="#2f5d80">
+            <text x="262" y="56">dao</text>
+            <text x="110" y="196">f · bước tiến</text>
+            <text x="212" y="60">d</text>
+            <text x="292" y="112">V</text>
+          </g>
+        </svg>
+        <div class="figcap">V · f · d — ba thông số cắt cơ bản</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIỚI THIỆU -->
+  <section class="sec" id="gioi-thieu">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">00</span><span class="line"></span><span class="eyebrow-label">Giới thiệu · About this book</span></div>
+      <div class="sec-head">
+        <h2>Một giáo trình xây quanh phép tính <span class="dim" style="font-weight:400;font-size:.6em">Fundamentals, Analysis, and Calculations</span></h2>
+        <p><em>Machining Processes and Machines</em> của GS Zainul Huda (ĐH King Abdulaziz, Ả Rập Xê Út) do CRC Press / Taylor &amp; Francis xuất bản năm 2021 là giáo trình bậc đại học cho môn <b>Công nghệ loại bỏ vật liệu</b> (Manufacturing‑2). Điểm khác biệt của sách không nằm ở liệt kê máy móc, mà ở chỗ <b>mọi quy trình đều được mô hình hóa toán học và luyện bằng bài toán</b>: theo lời tựa, sách có khoảng 200 ví dụ tính toán có lời giải, 70 câu trắc nghiệm có đáp án, 120 hình vẽ và gần 200 phương trình. Sách gồm 16 chương chia làm 4 phần, dùng đơn vị SI.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">ĐỐI TƯỢNG</span>
+          <h3>Sinh viên &amp; kỹ sư xưởng</h3>
+          <p>Vừa đủ cho sinh viên cơ khí học môn gia công, vừa có phần thực hành sâu (đặc biệt Chương 10 về chế tạo bánh răng) cho kỹ sư sản xuất và quản đốc phân xưởng.</p>
+        </div>
+        <div class="card">
+          <span class="n">PHƯƠNG PHÁP</span>
+          <h3>Khái niệm → mô hình → bài toán</h3>
+          <p>Mỗi chương mở đầu bằng ý nghĩa công nghệ và sơ đồ nguyên lý, sau đó là phân tích/mô hình hóa, rồi loạt ví dụ tính toán, câu hỏi và bài tập có đáp án ở cuối sách.</p>
+        </div>
+        <div class="card">
+          <span class="n">PHẠM VI</span>
+          <h3>Từ dao cắt đến tia laser</h3>
+          <p>Bao phủ cả gia công truyền thống (tiện, khoan, phay, bào, chuốt), mài &amp; hoàn thiện mài mòn, CNC/CAD/CAM và các quy trình phi truyền thống dùng năng lượng cơ, nhiệt, điện hóa.</p>
+        </div>
+      </div>
+      <p class="note warn" style="margin-top:24px">
+        <span class="lbl">LƯU Ý VỀ TỆP PDF &amp; BẢN QUYỀN</span>
+        <span class="t-vi">Tệp <a href="../../books/files/machining-processes-and-machines.pdf" target="_blank" rel="noopener">machining-processes-and-machines.pdf ↗</a> được lưu trên trang này là <b>bản xem trước 32 trang do nhà xuất bản phát hành</b>: gồm trang thông tin bản quyền, mục lục đầy đủ, lời tựa và <b>riêng Chương 1</b> — <b>không phải toàn bộ sách</b>. Văn bản gốc © 2021 Taylor &amp; Francis Group, LLC và nghiêm cấm sao chép, truyền tải hay sử dụng lại dưới mọi hình thức khi chưa có phép. Vì vậy đây là <b>bản chuyển soạn nguyên bản</b> bằng tiếng Việt, viết lại hoàn toàn bằng lời văn riêng từ <b>các chủ đề</b> của Chương 1 và mục lục; <b>không phải bản dịch</b>, không sao chép nguyên văn hay hình ảnh nào. Để đọc toàn văn, hãy mua sách hoặc yêu cầu bản sao hợp pháp từ tác giả / nhà xuất bản.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 1 -->
+  <section class="sec alt" id="chuong-1">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">01</span><span class="line"></span><span class="eyebrow-label">Chương 1 · Gia công là gì</span></div>
+      <div class="sec-head">
+        <h2>Một hệ gồm phôi, dao và máy <span class="dim" style="font-weight:400;font-size:.6em">Workpiece · tool · machine tool</span></h2>
+        <p>Gia công (machining) là <b>quy trình chế tạo trừ</b>: vật liệu được lấy đi khỏi phôi, thường dưới dạng <b>phoi</b>, bằng dao có lưỡi cắt. Các quy trình phi truyền thống thì bóc vật liệu bằng nguồn năng lượng và <b>không tạo phoi</b> (nóng chảy, bay hơi, hòa tan…). Có thể nhìn gia công như một <b>hệ ba thành phần</b> — phôi, dụng cụ cắt và máy công cụ — với chuyển động tương đối giữa dao và phôi.</p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Thông số</th><th>Ký hiệu</th><th>Ý nghĩa</th></tr></thead>
+          <tbody>
+            <tr><td><b>Tốc độ cắt</b> (cutting speed)</td><td><code>v</code> hoặc <code>V</code></td><td>Vận tốc tương đối lớn nhất giữa dao và phôi. Ở tiện, đó là <b>tốc độ bề mặt của phôi quay</b>, thường tính bằng m/phút.</td></tr>
+            <tr><td><b>Bước tiến</b> (feed)</td><td><code>f</code></td><td>Chuyển động thứ cấp: quãng đường dao (hoặc phôi) đi được <b>trong một vòng quay</b>, thường mm/vòng.</td></tr>
+            <tr><td><b>Chiều sâu cắt</b> (depth of cut)</td><td><code>d</code></td><td>Độ sâu lưỡi dao xâm nhập vào phôi — quyết định lượng vật liệu bị bóc trong một lát cắt.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:22px">
+        <span class="lbl">GHI NHỚ</span>
+        <span class="t-vi">Ba thông số <b>v – f – d</b> là "biến đầu vào" của hầu hết mọi phép tính trong sách: từ tốc độ trục chính, tốc độ loại bỏ vật liệu (MRR), lực cắt, công suất, thời gian cắt cho đến nhiệt độ vùng cắt. Thay đổi một trong ba kéo theo toàn bộ chuỗi tính toán.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 2 -->
+  <section class="sec" id="chuong-2">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">02</span><span class="line"></span><span class="eyebrow-label">Chương 1 · Phân loại quy trình</span></div>
+      <div class="sec-head">
+        <h2>Bốn họ quy trình loại bỏ vật liệu <span class="dim" style="font-weight:400;font-size:.6em">Classification of machining processes</span></h2>
+        <p>Mục 1.3 của sách chia toàn bộ quy trình gia công thành bốn nhóm lớn. Nắm được sơ đồ này là biết ngay một nguyên công bất kỳ nằm ở đâu trong 16 chương.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">NHÓM 1</span>
+          <h3>Gia công truyền thống</h3>
+          <p>Dùng <b>dao có lưỡi cắt xác định</b> và tạo phoi: <b>tiện</b> (phôi quay, dao một lưỡi tiến dọc), <b>phay</b> (dao nhiều lưỡi quay, phôi tiến), khoan, bào/mặt bằng, chuốt. <span class="dim">Phần II · Chương 5–10.</span></p>
+        </div>
+        <div class="card">
+          <span class="n">NHÓM 2</span>
+          <h3>Gia công mài mòn</h3>
+          <p>Vật liệu bị bóc bởi <b>hạt mài cứng</b> liên kết thành đá mài, thanh mài hoặc huyền phù: mài mặt phẳng, mài tròn ngoài, mài vô tâm; hoàn thiện bằng <b>khôn lỗ (honing), rà (lapping), siêu tinh</b>. <span class="dim">Phần III · Chương 11–12.</span></p>
+        </div>
+        <div class="card">
+          <span class="n">NHÓM 3</span>
+          <h3>Gia công phi truyền thống (NTM)</h3>
+          <p><b>Không tạo phoi</b>, dùng năng lượng để cắt, chia bốn nhánh: <b>cơ học</b> (siêu âm USM, tia nước WJM/AWJM, tia mài AJM), <b>nhiệt</b> (EDM, cắt dây EDWC, chùm tia điện tử EBM, laser LBM, plasma PAC), <b>điện hóa ECM</b> (hòa tan anốt trong chất điện giải) và <b>hóa học ChM</b>. <span class="dim">Chương 14–16.</span></p>
+        </div>
+        <div class="card">
+          <span class="n">NHÓM 4</span>
+          <h3>Gia công vi chính xác &amp; siêu chính xác</h3>
+          <p><b>Micro‑precision</b> dùng dao siêu nhỏ có lưỡi xác định để tạo chi tiết/đặc trưng cỡ micromét. <b>UPM</b> đẩy độ chính xác tới giới hạn công nghệ, đạt độ nhám cỡ nanomet — ví dụ <b>tiện kim cương một lưỡi</b> (diamond turning) cho bề mặt quang học phức tạp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 3 -->
+  <section class="sec alt" id="chuong-3">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">03</span><span class="line"></span><span class="eyebrow-label">Chương 1 · Ứng dụng công nghiệp</span></div>
+      <div class="sec-head">
+        <h2>Vị trí của gia công trong tám quy trình chế tạo <span class="dim" style="font-weight:400;font-size:.6em">Industrial applications</span></h2>
+        <p>Sách đặt gia công cạnh bảy nhóm còn lại: <b>đúc kim loại · ép khuôn polymer/gốm · tạo hình kim loại · luyện kim bột · gia công cắt gọt · hàn/ghép nối · nhiệt luyện · kỹ thuật bề mặt</b>. Điểm mấu chốt: sản phẩm đúc, tạo hình hay ép khuôn gần như luôn cần <b>một công đoạn cắt gọt</b> để đạt dung sai và độ bóng cuối cùng.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">ƯU ĐIỂM</span>
+          <h3>Vì sao khó thay thế</h3>
+          <p>Gia công được rất nhiều loại vật liệu (kim loại, gốm, gỗ, nhựa); tạo được đa dạng hình dạng và đặc trưng đặc biệt như <b>ren vít, lỗ tròn chính xác</b>; cho <b>cạnh thẳng, mặt phẳng, dung sai chặt và độ bóng tốt</b>. CNC và công nghệ tiên tiến đẩy cả độ chính xác lẫn năng suất lên rất cao — lý do ngành hàng không và thiết bị y tế phụ thuộc vào nó.</p>
+        </div>
+        <div class="card">
+          <span class="n">HẠN CHẾ</span>
+          <h3>Cái giá phải trả</h3>
+          <p><b>Lãng phí vật liệu</b> dưới dạng phoi, <b>tốn thời gian</b> và <b>chi phí cao</b>. Đây là lập luận kinh tế cốt lõi: với loạt lớn, nên tạo hình/đúc gần đúng biên dạng rồi chỉ cắt gọt phần cần thiết, thay vì bóc toàn bộ từ phôi đặc.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 4 -->
+  <section class="sec" id="chuong-4">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">04</span><span class="line"></span><span class="eyebrow-label">Chương 1 · Thô &amp; tinh</span></div>
+      <div class="sec-head">
+        <h2>Hai lát cắt: gia công thô rồi gia công tinh <span class="dim" style="font-weight:400;font-size:.6em">Roughing vs finishing</span></h2>
+        <p>Không thể vừa bóc thật nhanh nhiều vật liệu, vừa đạt bề mặt thật đẹp trong <b>cùng một lát cắt</b>. Vì vậy gia công truyền thống chia làm hai bước với bộ thông số <code>v – f – d</code> khác nhau.</p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Tiêu chí</th><th>Lát thô (roughing)</th><th>Lát tinh (finishing)</th></tr></thead>
+          <tbody>
+            <tr><td><b>Thứ tự</b></td><td>Luôn thực hiện trước</td><td>Chỉ sau khi đã qua lát thô</td></tr>
+            <tr><td><b>Mục tiêu</b></td><td>Bóc nhanh phần vật liệu dư lớn, tạo hình gần đúng</td><td>Đạt độ bóng, độ chính xác kích thước và dung sai</td></tr>
+            <tr><td><b>Bước tiến &amp; chiều sâu cắt</b></td><td><b>Lớn</b></td><td><b>Nhỏ</b></td></tr>
+            <tr><td><b>Tốc độ loại bỏ vật liệu (MRR)</b></td><td>Cao</td><td>Thấp</td></tr>
+            <tr><td><b>Lượng dư</b></td><td>Cố ý chừa lại <b>phần dư gia công tinh</b></td><td>Bóc nốt phần dư đó</td></tr>
+            <tr><td><b>Chất lượng bề mặt</b></td><td>Kém, chưa đạt dung sai</td><td>Tốt, đạt yêu cầu bản vẽ</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 5 -->
+  <section class="sec alt" id="chuong-5">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">05</span><span class="line"></span><span class="eyebrow-label">Chương 1 · Khả năng gia công</span></div>
+      <div class="sec-head">
+        <h2>Thế nào là vật liệu "dễ cắt"? <span class="dim" style="font-weight:400;font-size:.6em">Machinability &amp; machinable materials</span></h2>
+        <p><b>Khả năng gia công</b> (machinability) là mức độ dễ dàng cắt một vật liệu để đạt kết quả mong muốn <b>với chi phí thấp</b>. Đây không phải một con số duy nhất mà được đo bằng nhiều đại lượng: <b>tuổi thọ dao</b>, <b>độ bóng bề mặt</b> đạt được ở chế độ cắt chuẩn, cùng lực cắt, công suất, nhiệt độ và dạng phoi.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">TIÊU CHÍ TỐT</span>
+          <h3>Ba dấu hiệu</h3>
+          <p>Lực cắt, công suất và nhiệt độ <b>nhỏ</b>; dao <b>bền lâu</b> (ít mòn); bề mặt <b>bóng tốt</b>. Đạt được một hoặc vài tiêu chí đã có thể coi là khả năng gia công tốt.</p>
+        </div>
+        <div class="card">
+          <span class="n">ĐẶC TÍNH VẬT LIỆU</span>
+          <h3>Điều nên có</h3>
+          <p>Độ dẻo <b>trung bình</b>, số mũ biến cứng / bền cắt trượt / độ dai phá hủy <b>thấp vừa phải</b>, có tạp chất phi kim mềm đi ở nhiệt độ cao, <b>dẫn nhiệt tốt</b> và ít bám dính kim loại lên dao.</p>
+        </div>
+        <div class="card">
+          <span class="n">CẦN TRÁNH</span>
+          <h3>Điều nên tránh</h3>
+          <p>Vật liệu quá giòn dễ làm sứt lưỡi dao; quá dẻo tạo <b>phoi liên tục khó bẻ</b>. Các hợp chất rất cứng (cacbit, một số oxit, silic) nằm trong vật liệu sẽ <b>làm dao mòn nhanh</b>.</p>
+        </div>
+        <div class="card">
+          <span class="n">VAI TRÒ NHIỆT</span>
+          <h3>Dẫn nhiệt giúp gì</h3>
+          <p>Vật liệu dẫn nhiệt tốt đẩy nhiệt theo <b>phoi</b> ra ngoài, giữ phôi và dao mát hơn — hệ quả trực tiếp là tuổi thọ dao cao hơn.</p>
+        </div>
+        <div class="card">
+          <span class="n">THÉP</span>
+          <h3>Cải thiện thép bằng phụ gia</h3>
+          <p>Thép là vật liệu được gia công nhiều nhất; khả năng cắt được cải thiện bằng <b>phụ gia chì, lưu huỳnh…</b> (thép dễ cắt / free‑machining) hoặc bằng <b>nhiệt luyện</b> để đổi cơ tính.</p>
+        </div>
+        <div class="card">
+          <span class="n">VẬT LIỆU KHÁC</span>
+          <h3>Ngoài thép dễ cắt</h3>
+          <p>Nhôm và hợp kim nhôm mềm, gang cầu, nhựa và gốm nano cũng nằm trong nhóm có khả năng gia công tốt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 6 -->
+  <section class="sec" id="chuong-6">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">06</span><span class="line"></span><span class="eyebrow-label">Cấu trúc · 16 chương</span></div>
+      <div class="sec-head">
+        <h2>Bốn phần của giáo trình <span class="dim" style="font-weight:400;font-size:.6em">How the 16 chapters fit together</span></h2>
+        <p>Mỗi chương đi theo cùng một nhịp: <b>ý nghĩa công nghệ → khái niệm &amp; sơ đồ → phân tích / mô hình toán → ví dụ tính toán → câu hỏi &amp; bài tập</b>. Bảng dưới đây là bản đồ đọc nhanh theo mục lục đầy đủ có trong bản xem trước.</p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Phần</th><th>Chương</th><th>Nội dung</th></tr></thead>
+          <tbody>
+            <tr><td><b>I</b><br><span class="dim">Cơ sở &amp; dao cắt</span></td><td>1–4</td><td>Giới thiệu &amp; phân loại · <b>cơ học hình thành phoi</b> · lực và công suất cắt (vòng tròn lực Merchant, nhiệt độ) · vật liệu &amp; dụng cụ cắt.</td></tr>
+            <tr><td><b>II</b><br><span class="dim">Gia công truyền thống</span></td><td>5–10</td><td><b>Tiện</b> (thẳng, côn, ren, gá phôi) · <b>khoan</b> (mũi khoan xoắn, máy khoan đứng/cần/đa trục) · <b>phay</b> (tốc độ, bàn tiến, MRR, công suất, chia độ) · <b>bào &amp; xọc</b> · <b>chuốt</b> · <b>chế tạo bánh răng</b> (phay, chuốt, xọc, hobbing).</td></tr>
+            <tr><td><b>III</b><br><span class="dim">Mài &amp; hoàn thiện</span></td><td>11–12</td><td>Đá mài &amp; thông số · máy mài mặt phẳng / tròn ngoài / vô tâm · phân tích mài · <b>honing, lapping, siêu tinh</b>.</td></tr>
+            <tr><td><b>IV</b><br><span class="dim">Công nghệ tiên tiến</span></td><td>13–16</td><td><b>CNC</b> (CAD/CAM, hệ không điểm &amp; định vị, vòng hở / vòng kín) · gia công bằng <b>cơ năng</b> (USM, WJM/AWJM, AJM) · <b>nhiệt năng</b> (EDM, cắt dây, EBM, LBM, plasma) · <b>điện hóa &amp; hóa học</b>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:22px">
+        <span class="lbl">GỢI Ý LỘ TRÌNH</span>
+        <span class="t-vi">Nếu bạn đã quen CNC thực hành, hãy đọc Chương 1–3 để nắm lại <b>thông số cắt và cơ chế phoi</b>, rồi nhảy tới Chương 13 (mô hình hóa CNC). Nếu đang làm việc trong xưởng cơ khí, Chương 5–10 (tiện/khoan/phay + bài toán) và Chương 10 (bánh răng) là phần có giá trị dùng ngay.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 7 -->
+  <section class="sec alt" id="chuong-7">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">07</span><span class="line"></span><span class="eyebrow-label">Chương 1 · Tính toán trong xưởng</span></div>
+      <div class="sec-head">
+        <h2>Những phép tính thực sự dùng được <span class="dim" style="font-weight:400;font-size:.6em">Industrial importance of calculations</span></h2>
+        <p>Mục 1.6 của sách nhấn mạnh: tính toán không phải bài tập lý thuyết mà là công cụ ra quyết định hằng ngày. Từ tốc độ cắt suy ra <b>số vòng quay trục chính</b> để cài máy; từ MRR suy ra <b>hiệu suất &amp; năng suất</b>; từ thời gian cắt suy ra <b>tiến độ và chi phí nhân công</b>.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">CÀI MÁY</span>
+          <h3>Tốc độ trục chính</h3>
+          <p>Công thức chuẩn ngành (minh họa, không trích từ sách):</p>
+          <pre style="background:#f4f7f9;color:#22323d;padding:16px 18px;border-radius:10px;overflow-x:auto;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;line-height:1.7;border:1px solid #d9e1e8;margin-top:10px">N = 1000 · V / (π · D)
+(N: vòng/phút · V: m/phút · D: mm)</pre>
+          <p>Dùng chung cho tiện, khoan và phay để chọn đúng dải tốc độ trên máy.</p>
+        </div>
+        <div class="card">
+          <span class="n">NĂNG SUẤT</span>
+          <h3>MRR &amp; thời gian cắt</h3>
+          <p><b>Tốc độ loại bỏ vật liệu</b> cho biết lượng phoi bóc được trong một đơn vị thời gian; <b>thời gian cắt</b> = chiều dài hành trình chia cho tốc độ tiến. Hai con số này quyết định giá thành một chi tiết.</p>
+        </div>
+        <div class="card">
+          <span class="n">HÌNH HỌC</span>
+          <h3>Tiện côn &amp; offset ụ động</h3>
+          <p>Tính <b>góc côn</b> và <b>độ lệch ụ động</b> khi tiện trục côn; sách dành riêng các mục phân tích cho tiện thẳng, tiện côn và tiện ren.</p>
+        </div>
+        <div class="card">
+          <span class="n">CHIA ĐỘ</span>
+          <h3>Đầu chia độ trên máy phay</h3>
+          <p>Tính <b>số vòng quay tay quay chia độ</b> và <b>tỷ số bánh răng thay thế</b> cho chia độ trực tiếp, chia độ đơn và <b>chia độ vi sai</b> — kiến thức cần khi phay răng hoặc chia lỗ theo vòng tròn.</p>
+        </div>
+      </div>
+      <p class="note warn" style="margin-top:22px">
+        <span class="lbl">CÁCH HỌC THEO SÁCH</span>
+        <span class="t-vi">Lời tựa gợi ý một phương pháp cụ thể: <b>lap danh sách công thức liên quan trước</b>, sau đó <b>che lời giải</b> và tự giải ví dụ từ dữ kiện đã cho; chỉ xem lời giải khi thực sự bí. Bài tập cuối mỗi chương nên làm tiếp ngay sau khi đã kiểm chứng đáp án các ví dụ.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- KẾT -->
+  <section class="sec" id="ket">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">08</span><span class="line"></span><span class="eyebrow-label">Kết luận · Cách dùng bản hướng dẫn</span></div>
+      <div class="sec-head">
+        <h2>Đi tiếp từ đây <span class="dim" style="font-weight:400;font-size:.6em">Where to go next</span></h2>
+        <p>Bản hướng dẫn này chỉ là <b>cửa ngõ</b>: nó hệ thống hóa Chương 1 và bản đồ 16 chương của giáo trình Huda. Để học sâu hơn về vận hành và lập trình máy CNC thực tế, hãy chuyển sang các bản tiếng Việt cùng bộ — đặc biệt <a href="nen-tang-gia-cong-cnc.html">Nền tảng Gia công CNC</a> (quy trình CAD/CAM, dao cụ, offset) và <a href="co-ban-lap-trinh-cnc.html">Cơ bản lập trình CNC</a> (mã G/M, nội suy). Ngược lại, nếu bạn quan tâm tới nhánh <b>không bóc vật liệu</b>, xem <a href="cam-nang-gia-cong-ap-luc.html">Cẩm nang Gia công Áp lực</a>. Toàn văn tiếng Anh của sách Huda cần được mua hoặc yêu cầu hợp pháp từ nhà xuất bản / tác giả; liên kết ResearchGate trong thư viện là kênh tham khảo bổ sung.</p>
+        <p style="margin-top:14px"><span class="dim">Các bản tiếng Việt khác:</span> <a href="tu-che-may-cnc.html">Tự chế máy CNC</a> · <a href="co-ban-lap-trinh-cnc.html">Cơ bản lập trình CNC</a> · <a href="cam-nang-gia-cong-cnc.html">Cẩm nang Gia công CNC</a> · <a href="cam-nang-sinh-vien-tormach.html">Cẩm nang Sinh viên Tormach</a> · <a href="lap-trinh-cnc-may-tien.html">Lập trình CNC máy Tiện</a> · <a href="nen-tang-gia-cong-cnc.html">Nền tảng Gia công CNC</a> · <a href="cam-nang-gia-cong-ap-luc.html">Cẩm nang Gia công Áp lực</a> · <a href="index.html#huong-dan">Tất cả 8 bản ▸</a></p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="../../books/files/machining-processes-and-machines.pdf" target="_blank" rel="noopener">Đọc bản xem trước (EN) ▸</a>
+        <a class="btn btn-s" href="index.html">← Về thư viện sách</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-l">
+      <span class="brand-mini">Quy trình &amp; Máy Gia công — Chế tạo máy</span>
+      <p>Bản chuyển soạn nguyên bản tiếng Việt dựa trên các chủ đề của <em>Machining Processes and Machines: Fundamentals, Analysis, and Calculations</em> / Zainul Huda (© 2021 Taylor &amp; Francis Group, LLC). Không phải bản dịch, không thay thế bản gốc. Tệp PDF trên trang là bản xem trước của nhà xuất bản; toàn văn © tác giả / nhà xuất bản.</p>
+    </div>
+    <div class="foot-r">
+      <span class="mono"><a href="../../index.html">← Trang chủ / Home</a></span>
+      <span class="mono">machine-ctm.github.io</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
