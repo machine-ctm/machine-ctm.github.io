@@ -10,10 +10,14 @@ current state and the exact next steps so work can resume without re-deriving co
 Bilingual (EN / VI) static GitHub Pages site about Machine Building / Machining.
 **Done:** homepage, `/books` + `/vi/books` (11 hosted PDFs + free/external references,
 A/B/C grading live), `/education` + `/vi/education`, `/videos` + `/vi/videos`,
-and **Vietnamese study-guide pages for every graded English book — 4 grade-A + 2 grade-B + 2 grade-C (8 total)**,
-plus a consolidated eight-card index at `/vi/books/#huong-dan`.
+**Foundation Science** `/foundation` + `/vi/foundation` (13 free science books per language,
+hosted on the `foundation-v1` GitHub Release), and **Vietnamese study-guide pages for every
+graded English book — 4 grade-A + 2 grade-B + 2 grade-C (8 total)**, plus a consolidated
+eight-card index at `/vi/books/#huong-dan`.
 **Nothing pending** from the original handoff — Tasks A, B, the remaining A-books, the grade-B
 books and the grade-C reference works are all complete. The translation job is finished (8/8).
+The Foundation Science section (basic Maths / Physics / Chemistry / General Science for young
+readers) is also complete and live.
 
 Live: https://machine-ctm.github.io/ · Repo: `machine-ctm/machine-ctm.github.io` · branch `main`.
 
@@ -93,6 +97,15 @@ and to the corresponding library cards in both indexes. `<pre>` blocks carry inl
 
 - **Copyright:** only host the user's own PDFs from `E:\Ebooks\Che Tao May`. Link external/
   licensed material (CnCCookbook, Internet Archive, referenceglobe, Eagle, ResearchGate, BCIT).
+- **Large / free PDFs → GitHub Releases, not the repo tree.** The Foundation Science PDFs
+  (26 files, several tens of MB) are uploaded to the `foundation-v1` release on
+  `machine-ctm/machine-ctm.github.io` and linked via
+  `https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/<slug>.pdf`.
+  This keeps the Pages repo lean and handles large binaries. Only *freely downloadable* works are
+  included (public domain, Project Gutenberg, US DOE handbooks, Internet Archive CC BY-NC-ND) —
+  **never** borrowed/lending-only copies. Create/replace a release with `gh release create` using
+  `GH_TOKEN` (read from the PAT in `git remote get-url origin`); `gh auth status` keyring tokens
+  are currently invalid, so set `GH_TOKEN` explicitly.
 - **Metadata for any new page:** add `<link rel="canonical" href="https://machine-ctm.github.io/<path>">`,
   Open Graph tags (`og:type`, `og:site_name`, `og:title`, `og:description`, `og:url`) and
   `<meta name="twitter:card" content="summary">`, derived from its `<title>` / `<meta name="description">`.
@@ -129,12 +142,14 @@ machine-ctm-site/
 ├── vi/education/index.html     # Education VI
 ├── videos/index.html           # Video Library EN
 ├── vi/videos/index.html        # Video Library VI
+├── foundation/index.html       # Foundation Science EN (PDFs on GitHub Release foundation-v1)
+├── vi/foundation/index.html    # Foundation Science VI
 ├── books/files/                # 11 hosted PDFs (ASCII filenames)
 ├── education/files/            # Bharat Skills + SkilledTradesBC PDFs
 ├── assets/style.css            # design system (+ .grade badges added)
 ├── assets/favicon.svg
 ├── 404.html                    # custom bilingual 404 (noindex)
-├── sitemap.xml                 # 15 content pages + 3 EN/VI hreflang pairs
+├── sitemap.xml                 # 17 content pages + 4 EN/VI hreflang pairs
 ├── robots.txt                  # Allow: / + Sitemap reference
 ├── README.md
 ├── report.md                   # status report
@@ -149,10 +164,16 @@ machine-ctm-site/
 sleep 60
 for u in sitemap.xml robots.txt 404.html \
          books vi/books education vi/education videos vi/videos \
+         foundation vi/foundation \
          vi/books/tu-che-may-cnc.html vi/books/co-ban-lap-trinh-cnc.html \
          vi/books/cam-nang-gia-cong-cnc.html vi/books/cam-nang-sinh-vien-tormach.html \
          vi/books/lap-trinh-cnc-may-tien.html vi/books/nen-tang-gia-cong-cnc.html \
          vi/books/cam-nang-gia-cong-ap-luc.html vi/books/quy-trinh-va-may-gia-cong.html; do
   curl -sL "https://machine-ctm.github.io/$u" -o /tmp/p.html -w "$u -> HTTP %{http_code} %{size_download}B\n"
+done
+# Foundation Science PDFs are on the GitHub Release, not the repo tree:
+for f in flatland.pdf amusements-in-mathematics.pdf toan-hoc-sieu-hay.pdf vat-ly-ngo-ngan.pdf; do
+  curl -sI -L -o /dev/null -w "asset $f -> HTTP %{http_code} %{size_download}B\n" \
+    "https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/$f"
 done
 ```

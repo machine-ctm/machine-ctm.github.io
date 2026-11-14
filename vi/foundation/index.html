@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khoa học nền tảng — Chế tạo máy / Machine Building</title>
+<meta name="description" content="Kệ sách khoa học miễn phí dành cho bạn đọc trẻ: câu đố Toán, mẹo Vật lý, chuyện Hóa học và những điều kỳ thú về thế giới tự nhiên. 13 PDF miễn phí, không cần đăng ký.">
+<link rel="canonical" href="https://machine-ctm.github.io/vi/foundation/">
+<link rel="alternate" hreflang="en" href="https://machine-ctm.github.io/foundation/">
+<link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/vi/foundation/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Chế tạo máy / Machine Building">
+<meta property="og:title" content="Khoa học nền tảng — Chế tạo máy / Machine Building">
+<meta property="og:description" content="Kệ sách khoa học miễn phí dành cho bạn đọc trẻ: câu đố Toán, mẹo Vật lý, chuyện Hóa học và những điều kỳ thú về thế giới tự nhiên.">
+<meta property="og:url" content="https://machine-ctm.github.io/vi/foundation/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua nội dung</a>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../../index.html" aria-label="Chế tạo máy">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="16" cy="16" r="6.5"/><circle cx="16" cy="16" r="2.2" fill="currentColor" stroke="none"/>
+            <path d="M16 4.5v3M16 24.5v3M4.5 16h3M24.5 16h3M7.6 7.6l2.1 2.1M22.3 22.3l2.1 2.1M24.4 7.6l-2.1 2.1M9.7 22.3l-2.1 2.1"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand-txt"><strong>Chế tạo máy</strong><em>Machine Building</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a class="nav-link" href="../../index.html#discipline">Kỷ thuật</a>
+      <a class="nav-link" href="../../index.html#processes">Quy trình</a>
+      <a class="nav-link" href="../../index.html#curriculum">Chương trình</a>
+      <a class="nav-link" href="../../index.html#tools">Thiết bị</a>
+      <a class="nav-link" href="../../index.html#careers">Nghề nghiệp</a>
+      <a class="nav-link" href="../books/">Sách</a>
+      <a class="nav-link active" href="index.html">Nền tảng</a>
+      <a class="nav-link" href="../education/">Giáo dục</a>
+      <a class="nav-link" href="../videos/">Video</a>
+    </nav>
+    <div class="bar-right">
+      <div class="lang" title="Đổi ngôn ngữ / Switch language">
+        <a href="../../foundation/" style="color:inherit">EN</a><span class="lang-sep">/</span><span class="on">VI</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="kicker"><span class="dot"></span>Khởi đầu · Foundation science</span>
+        <h1>Bắt đầu từ một câu hỏi<span class="thin">Toán, Lý, Hóa và những điều kỳ lạ ẩn ngay dưới chân mình.</span></h1>
+        <p class="lede">Tại sao bầu trời lại xanh? Một hình vuông có thể bước sang chiều thứ tư không? Chuyện gì đang xảy ra bên trong ngọn lửa của cây nến? Kệ sách này dành cho phần trong bạn vẫn còn hay hỏi những điều đó. <b>Mười ba cuốn sách hoàn toàn miễn phí</b> — câu đố, mẹo vật lý thời xưa, chuyện kể về các nguyên tố và vài ý tưởng rất kỳ về vũ trụ. Không đăng ký, không trả phí, không có bài kiểm tra cuối chương. <span class="dim">English version: <a href="../../foundation/">/foundation</a></span></p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#toan">Chọn một môn →</a>
+          <a class="btn btn-s" href="#bat-dau">Đọc thế nào cho vui</a>
+          <a class="btn btn-s" href="../../foundation/">Read in English ▸</a>
+        </div>
+      </div>
+      <div class="figure">
+        <svg viewBox="0 0 360 240" role="img" aria-label="Lăng kính, nguyên tử, đồ thị và bình thí nghiệm — bốn góc của sự tò mò">
+          <rect x="10" y="10" width="340" height="220" rx="14" fill="#fdfbf9" stroke="#e6d9cd"/>
+          <g stroke="#2f5d80" stroke-width="2" fill="none" stroke-linejoin="round">
+            <path d="M48 92 L78 46 L108 92 Z" fill="#e9f0f5"/>
+            <path d="M22 68 L62 68" stroke="#c2540b" stroke-width="2.4"/>
+          </g>
+          <g stroke-width="2.2" stroke-linecap="round">
+            <path d="M96 66 L150 56" stroke="#c2540b"/><path d="M96 70 L150 66" stroke="#e0a02a"/>
+            <path d="M96 74 L150 76" stroke="#4f8a55"/><path d="M96 78 L150 86" stroke="#2f5d80"/>
+            <path d="M96 82 L150 96" stroke="#7a5aa6"/>
+          </g>
+          <g stroke="#c2540b" stroke-width="1.8" fill="none" transform="translate(258 66)">
+            <ellipse rx="40" ry="15"/><ellipse rx="40" ry="15" transform="rotate(60)"/><ellipse rx="40" ry="15" transform="rotate(120)"/>
+            <circle r="6" fill="#c2540b" stroke="none"/>
+            <circle cx="40" cy="0" r="3.6" fill="#2f5d80" stroke="none"/>
+          </g>
+          <g transform="translate(28 130)">
+            <path d="M0 82 H110 M0 82 V0" stroke="#9aa7b1" stroke-width="1.6" fill="none"/>
+            <path d="M0 76 C 28 74, 40 12, 66 30 S 92 68, 110 6" stroke="#2f5d80" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <circle cx="66" cy="30" r="4" fill="#c2540b"/>
+            <path d="M20 10 L20 76 M40 10 L40 76 M60 10 L60 76 M80 10 L80 76" stroke="#e3e8ec" stroke-width="1"/>
+          </g>
+          <g transform="translate(205 128)" stroke="#c2540b" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M32 0 V30 L8 76 Q4 84 12 84 H72 Q80 84 76 76 L52 30 V0" fill="#fff"/>
+            <path d="M20 62 Q40 54 60 62 Q62 78 46 80 Q22 80 20 62 Z" fill="#e9f0f5" stroke="#2f5d80"/>
+            <path d="M26 0 H58" stroke-width="2.6"/>
+            <circle cx="34" cy="68" r="2.6" fill="#2f5d80" stroke="none"/>
+            <circle cx="50" cy="72" r="2" fill="#2f5d80" stroke="none"/>
+            <path d="M40 36 Q34 26 42 20 M52 28 Q58 20 50 14" stroke="#9aa7b1"/>
+          </g>
+        </svg>
+        <div class="figcap">13 PDF miễn phí · 4 môn · không bài tập về nhà</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BẮT ĐẦU -->
+  <section class="sec" id="bat-dau">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">01</span><span class="line"></span><span class="eyebrow-label">Bắt đầu · Before you begin</span></div>
+      <div class="sec-head">
+        <h2>Chẳng ai đọc từ trang một <span class="dim" style="font-weight:400;font-size:.6em">Nobody starts at chapter one</span></h2>
+        <p>Đây không phải sách giáo khoa trá hình. Phần lớn được viết để <i>thích thú</i> — cho những bạn nhỏ ngồi trong một khán phòng có cây nến đặt trên bàn, hoặc cho một người chỉ muốn giải được câu đố trước khi ăn sáng xong. Và đây là cách đọc hợp lý duy nhất.</p>
+      </div>
+      <div class="grid c2">
+        <div>
+          <ol class="steps">
+            <li><b>Chọn cuốn có cái tên lạ nhất.</b> Thật đấy. "Lịch sử hóa học" nghe có vẻ khô, nhưng bên trong là chuyện các nhà giả kim thuật đã đoán sai thế nào suốt mấy trăm năm. Đó là lý do hay hơn nhiều so với "vì có trong chương trình".</li>
+            <li><b>Đọc năm trang rồi hãy quyết định.</b> Nếu trang thứ năm vẫn buồn ngủ, gập lại không cần thấy tội lỗi và cầm cuốn khác. Sự tò mò được phép kén chọn.</li>
+            <li><b>Thử một việc bằng tay.</b> Đặt nam châm gần la bàn, nhìn bóng của cái cốc di chuyển, thổi nhẹ vào ngọn nến rồi nhìn hình dạng của nó. Một cuốn sách về thế giới hay hơn gấp mười khi thế giới đang ở ngay trước mặt.</li>
+            <li><b>Cãi lại cuốn sách.</b> Có cuốn viết từ những năm 1970, có ý giờ đã sai. Nhận ra <i>tại sao</i> nó sai chính là khoảnh khắc khoa học bắt đầu thuộc về bạn.</li>
+            <li><b>Nhảy sang môn khác.</b> Một câu đố dẫn tới hình học, hình học dẫn tới ánh sáng, ánh sáng dẫn tới hóa học. Bốn môn dưới đây là bốn cánh cửa vào cùng một căn phòng.</li>
+          </ol>
+        </div>
+        <div>
+          <p class="note warn">
+            <span class="lbl">LƯU Ý VỀ THÍ NGHIỆM CŨ</span>
+            Một vài cuốn mô tả thí nghiệm có lửa, axit, tĩnh điện và khí đốt theo cách của thế kỷ trước. Hãy đọc như <b>chuyện kể và tư liệu lịch sử</b>, không phải tờ hướng dẫn thí nghiệm. Nếu muốn thử điều gì đó ngoài đời, cần có người lớn, kính bảo hộ và một bản hướng dẫn hiện đại đã được kiểm chứng.
+          </p>
+          <p class="note">
+            <span class="lbl">SAO FILE LẠI NẰM CHỖ KHÁC</span>
+            Có bản quét nặng tới 70 MB, nên toàn bộ PDF được lưu trên <a href="https://github.com/machine-ctm/machine-ctm.github.io/releases/tag/foundation-v1" target="_blank" rel="noopener">GitHub Releases ↗</a> thay vì nhét vào trang web. Trang thì vẫn nhẹ, sách thì vẫn miễn phí và tải được mãi mãi. Nhấn nút <b>Tải về</b> là máy bạn sẽ lưu file PDF.
+          </p>
+          <p class="small dim">Muốn sang phần chế tạo máy? <a href="../books/">Thư viện sách</a> có tài liệu CNC và công nghệ chế tạo, kèm <a href="../books/#huong-dan">8 bản hướng dẫn tiếng Việt</a> đi cùng.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOÁN -->
+  <section class="sec alt" id="toan">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">02</span><span class="line"></span><span class="eyebrow-label">Toán · Maths</span></div>
+      <div class="sec-head">
+        <h2>Toán là nghệ thuật bị bất ngờ <span class="dim" style="font-weight:400;font-size:.6em">Maths</span></h2>
+        <p>Không phải những dãy bài tập dài dằng dặc. Ba cuốn này đầy câu đố tưởng không giải nổi, thế giới có ít chiều hơn thế giới mình, và những con người thật sự thấy hào hứng vì một con số.</p>
+      </div>
+      <div class="grid c3">
+
+        <div class="card">
+          <span class="n">01 · CC BY-NC-ND · 2017</span>
+          <h3>Toán Học Siêu Hay</h3>
+          <p class="small dim" style="margin-bottom:10px">Katie Hewett &amp; Tracie Young · có minh họa</p>
+          <p>Một cuốn sách dày hình ảnh, đưa Toán ra khỏi trang giấy: mẹo tính nhẩm, hình khối, xác suất trong trò chơi, và những câu hỏi khiến bạn phải lấy giấy bút ra ngay. Được viết cho người từng nghĩ "mình không giỏi Toán" — tức là gần như tất cả chúng ta.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: đọc một mẹo tính nhẩm rồi thử với người ngồi cạnh trước khi xem đáp án.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/toan-hoc-sieu-hay.pdf" download>Tải về · 39 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/toan-hoc-sieu-hay-katie-hewett-tracie-young" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="n">02 · CC BY-NC-ND</span>
+          <h3>Thợ Cơ Khí Toán học</h3>
+          <p class="small dim" style="margin-bottom:10px">Mark Levi · giải Toán bằng đồ vật</p>
+          <p>Ý tưởng của cuốn sách cực kỳ thú vị: nhiều định lý Toán có thể "nhìn thấy" bằng một sợi dây, một cái lò xo, một đòn bẩy hay một giọt xà phòng. Không cần bảng công thức — chỉ cần tưởng tượng vật thể sẽ làm gì. Rất hợp với những bạn thích chế tạo máy.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: căng một sợi dây giữa hai điểm và đoán nó sẽ thành hình gì.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/tho-co-khi-toan-hoc.pdf" download>Tải về · 7,9 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/tho-co-khi-toan-hoc-mark-levi" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="n">03 · ARCHIVE.ORG · TẢI MIỄN PHÍ</span>
+          <h3>Danh Nhân Toán Học</h3>
+          <p class="small dim" style="margin-bottom:10px">Lê Hải Châu · chuyện đời các nhà Toán học</p>
+          <p>Đằng sau mỗi định lý là một con người: có người bị đuổi học, có người làm kế toán ban ngày và giải Toán ban đêm, có người đấu tranh cả đời chỉ để được ai đó đọc công trình của mình. Đọc chuyện đời họ xong, mấy con số bỗng có mặt mũi hẳn lên.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: chọn một cái tên bạn chưa từng nghe và kể lại chuyện đó cho ai đó trong hai phút.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/danh-nhan-toan-hoc.pdf" download>Tải về · 1,6 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/danh-nhan-toan-hoc-tg-lehaichau" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VẬT LÝ -->
+  <section class="sec" id="vat-ly">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">03</span><span class="line"></span><span class="eyebrow-label">Vật lý · Physics</span></div>
+      <div class="sec-head">
+        <h2>Thế giới đang làm trò ảo thuật. Đây là cách nó làm. <span class="dim" style="font-weight:400;font-size:.6em">Physics</span></h2>
+        <p>Tại sao miếng bánh mì phết bơ dường như <i>luôn</i> rơi úp mặt bơ xuống đất? Một dây đàn rung thì liên quan gì đến ánh sáng? Ba cuốn này chọn những câu hỏi nghe như đùa, rồi nghiêm túc chỉ cho bạn câu trả lời.</p>
+      </div>
+      <div class="grid c3">
+
+        <div class="card">
+          <span class="n">04 · CC BY-NC-ND</span>
+          <h3>Vật Lý Ngo Ngạn</h3>
+          <p class="small dim" style="margin-bottom:10px">John Townsend · nhưng câu hỏi tưởng là đùa</p>
+          <p>Những câu hỏi kiểu "tại sao bầu trời không tím?", "chuyện gì xảy ra nếu Trái Đất ngừng quay?", "có thể nấu trứng bằng hai cục nam châm không?". Nghe ngốc nghếch, vậy mà mỗi câu kéo ra nguyên một phần vật lý thật. Mỏng, nhanh, rất dễ đọc.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: tự đoán câu trả lời trước, rồi mới lật sang trang giải thích.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/vat-ly-ngo-ngan.pdf" download>Tải về · 9,5 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/vat-ly-ngo-ngan-john-townsend" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="n">05 · CC BY-NC-ND</span>
+          <h3>Một Vũ Trụ Lạ Thường</h3>
+          <p class="small dim" style="margin-bottom:10px">Robert B. Laughlin · giải Nobel Vật lý</p>
+          <p>Một nhà vật lý đoạt giải Nobel kể rằng vũ trụ không giống cái máy khổng lồ mà người ta vẫn tưởng, mà giống một thứ gì đó mềm mại, bất ngờ và khó đoán hơn nhiều. Không nặng về công thức; nặng về việc nhìn lại mọi thứ quanh mình.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: tìm một đoạn bạn không đồng ý và viết ra lý do.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/mot-vu-tru-la-thuong.pdf" download>Tải về · 2,8 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/mot-vu-tru-la-thuong-robert-b-laughlin" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="n">06 · ARCHIVE.ORG · 1978</span>
+          <h3>Vật Lý và Âm Nhạc</h3>
+          <p class="small dim" style="margin-bottom:10px">Gleb Anfilov · khi dao động trở thành giai điệu</p>
+          <p>Một sợi dây đàn, một cột không khí trong sáo, một tia sáng — hoá ra đều là sóng, chỉ khác tần số. Cuốn sách cũ này đi từ cây đàn đến phòng thí nghiệm mà không bao giờ làm bạn thấy đang bị dạy học. Đọc xong, nghe một bản nhạc sẽ khác hẳn.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: căng một sợi chun, gảy rồi thay đổi độ dài và nghe cao độ đổi thế nào.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/vat-ly-va-am-nhac.pdf" download>Tải về · 6,4 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/vat-ly-va-am-nhac-1978" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HÓA HỌC -->
+  <section class="sec alt" id="hoa-hoc">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">04</span><span class="line"></span><span class="eyebrow-label">Hóa học · Chemistry</span></div>
+      <div class="sec-head">
+        <h2>Đốt một cây nến, rồi hỏi nó đủ thứ <span class="dim" style="font-weight:400;font-size:.6em">Chemistry</span></h2>
+        <p>Bảng tuần hoàn không bắt đầu bằng những ô chữ nhật. Nó bắt đầu bằng sự tò mò: chất này biến thành chất kia bằng cách nào? Ba cuốn dưới đây kể chuyện hóa học theo kiểu có nhân vật, có bất ngờ, có cả những lần đoán sai.</p>
+      </div>
+      <div class="grid c3">
+
+        <div class="card">
+          <span class="n">07 · CC BY-NC-ND · 2006</span>
+          <h3>Truyện Kể Về 109 Nguyên Tố Hóa Học</h3>
+          <p class="small dim" style="margin-bottom:10px">Trần Ngọc Mai · mỗi nguyên tố một câu chuyện</p>
+          <p>Cuốn sách yêu thích của rất nhiều bạn trẻ: mỗi nguyên tố được kể như một nhân vật — ai tìm ra, đặt tên theo ai, từng gây chuyện gì, có mặt ở đâu trong đời thường. Đọc xong, bảng tuần hoàn không còn là cái bảng phải học thuộc nữa.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: chọn một nguyên tố có trong đồ vật trên bàn và đọc truyện của nó.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/truyen-ke-109-nguyen-to.pdf" download>Tải về · 7,6 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/truyen-ke-ve-109-nguyen-to-hoa-hoc" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="n">08 · CC BY-NC-ND</span>
+          <h3>Hóa Học Vui</h3>
+          <p class="small dim" style="margin-bottom:10px">Lê Thành · thí nghiệm và câu đố</p>
+          <p>Đúng với cái tên: những thí nghiệm nhỏ, hiện tượng lạ và câu đố hóa học được kể bằng giọng nhẹ tênh, không mang dáng dấp sách giáo khoa. Rất hợp để mở đại một trang bất kỳ lúc rảnh.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: đọc một hiện tượng và tự giải thích trước khi xem lời giải.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/hoa-hoc-vui.pdf" download>Tải về · 28,8 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/hoa-hoc-vui-le-thanh" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="n">09 · CC BY-NC-ND</span>
+          <h3>Lịch Sử Hóa Học</h3>
+          <p class="small dim" style="margin-bottom:10px">Giáo trình · từ giả kim thuật đến bảng tuần hoàn</p>
+          <p>Con người đã mất hàng trăm năm, bao nhiêu lần nổ tung phòng thí nghiệm và bao nhiêu giả thuyết sai, mới đi tới bảng tuần hoàn. Đây là chuyện của những lần sai đó — và hóa ra chúng thú vị hơn nhiều so với bản kết quả cuối cùng.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: tìm một ý tưởng cũ đã bị bác bỏ và hỏi xem lúc ấy người ta có lý do gì để tin.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/lich-su-hoa-hoc.pdf" download>Tải về · 4 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/lich-su-hoa-hoc-download-tai-tailieutuoi.com" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KHOA HỌC CHUNG -->
+  <section class="sec" id="khoa-hoc-chung">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">05</span><span class="line"></span><span class="eyebrow-label">Khoa học chung · General science</span></div>
+      <div class="sec-head">
+        <h2>Mọi thứ đều dính vào nhau, và đó mới là điều vui <span class="dim" style="font-weight:400;font-size:.6em">General science</span></h2>
+        <p>Tia nắng, bông tuyết, hạt cát, một vì sao xa xôi. Bốn cuốn này dành cho cảm giác bước ra ngoài và chợt nhận ra: một câu hỏi nhỏ có thể kéo ra một sợi dây chẳng biết đâu là đầu.</p>
+      </div>
+      <div class="grid c3">
+
+        <div class="card">
+          <span class="n">10 · CC BY-NC-ND</span>
+          <h3>Bên Lề Khoa Học</h3>
+          <p class="small dim" style="margin-bottom:10px">Trương Văn Tân · góc khuất của phòng thí nghiệm</p>
+          <p>Những chuyện ít khi có trong sách giáo khoa: chuyện đời của các nhà khoa học, những phát hiện tình cờ, những tranh cãi kéo dài, và cách khoa học vận hành ngoài đời thực. Đọc như đọc tập tản văn, vậy mà hiểu thêm rất nhiều về cách người ta tìm ra tri thức.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: chọn một phát hiện tình cờ và kể lại nó như một câu chuyện cười.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/ben-le-khoa-hoc.pdf" download>Tải về · 27 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/ben-le-khoa-hoc-truong-van-tan" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="n">11 · CC BY-NC-ND · TỦ SÁCH EM YÊU KHOA HỌC</span>
+          <h3>Đường Vào Vũ Trụ</h3>
+          <p class="small dim" style="margin-bottom:10px">28 trang · dành cho bạn đọc nhỏ tuổi nhất</p>
+          <p>Một tập mỏng trong "Tủ sách em yêu khoa học" của thập niên 1980: tên lửa, quỹ đạo, vì sao và những câu hỏi rất hồn nhiên về chuyện bay lên trời. Ngắn đến nỗi đọc xong trong một buổi chiều, mà dư âm thì lâu hơn thế nhiều.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: vẽ lại hành trình của một con tàu từ mặt đất tới quỹ đạo bằng ba mũi tên.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/duong-vao-vu-tru.pdf" download>Tải về · 2 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/01-nhung-cuoc-chinh-phuc-ky-dieu" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="n">12 · CC BY-NC-ND</span>
+          <h3>Vũ Trụ Và Hoa Sen</h3>
+          <p class="small dim" style="margin-bottom:10px">Trịnh Xuân Thuận, Phạm Văn Thiều · đối thoại Đông – Tây</p>
+          <p>Một nhà thiên văn học và một học giả Phật học cùng ngồi nói chuyện về nguồn gốc vũ trụ, về hạt và về hoa sen. Hai cách nhìn tưởng xa lạ mà gặp nhau ở chính sự kinh ngạc. Đây là cuốn "khoa học chung" mang tính trò chuyện nhất trong kệ sách này.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: tìm một câu hỏi mà cả hai người cùng đặt ra nhưng trả lời khác nhau.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/vu-tru-va-hoa-sen.pdf" download>Tải về · 13,8 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/vu-tru-va-hoa-sen" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="n">13 · CC BY-NC-ND · FILE LỚN 69,8 MB</span>
+          <h3>Trò Chơi Lý Thú Theo Bách Khoa Khoa Học</h3>
+          <p class="small dim" style="margin-bottom:10px">Phạm Cao Hoàn (biên dịch) · cả một kho câu hỏi</p>
+          <p>Đúng kiểu cuốn sách để đặt giữa nhà: mở trang nào cũng gặp một câu hỏi, một trò chơi hay một điều lạ để mang ra khoe với người khác. Là file nặng nhất ở đây, nên nó được gửi lên GitHub Releases — trang web vẫn tải nhanh, còn bạn vẫn có trọn bộ sách.</p>
+          <p class="small dim" style="margin-top:10px">Thử ngay: mở ngẫu nhiên một trang và thách người thân trả lời trong một phút.</p>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn btn-p" href="https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/tro-choi-ly-thu-bach-khoa.pdf" download>Tải về · 69,8 MB</a>
+            <a class="btn btn-s" href="https://archive.org/details/tro-choi-ly-thu-theo-bach-khoa-khoa-hoc" target="_blank" rel="noopener">Nguồn ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KỆ SÁCH CÁ NHÂN -->
+  <section class="sec alt" id="ke-sach">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">06</span><span class="line"></span><span class="eyebrow-label">Trên kệ sách · Also worth hunting down</span></div>
+      <div class="sec-head">
+        <h2>Những cuốn tìm thấy trên kệ, nhưng không copy lên đây <span class="dim" style="font-weight:400;font-size:.6em">Gợi ý thêm</span></h2>
+        <p>Chúng tôi cũng tìm trong hai bộ sưu tập lớn trên máy (<span class="mono">E:\Ebooks</span> và <span class="mono">New_Acquisitions</span>) để chọn sách khoa học phổ thông dễ đọc. Đây là các bản thương mại hiện đại, nên chúng tôi <b>chỉ giới thiệu tên, không sao chép file</b>. Hãy tìm ở thư viện, nhà sách hoặc trang nhà xuất bản; trong lúc chờ thì đọc mấy cuốn miễn phí ở trên nhé.</p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Tên sách</th><th>Môn</th><th>Vì sao đáng đọc</th></tr></thead>
+          <tbody>
+            <tr><td>Lược Sử Thời Gian — Stephen Hawking</td><td>Vật lý</td><td>Hố đen, thời gian và hình dạng vũ trụ, bằng tiếng Việt, gần như không có phương trình.</td></tr>
+            <tr><td>Khám phá cơ thể con người</td><td>Khoa học chung</td><td>Cỗ máy phức tạp nhất mà bạn sở hữu, giải thích bằng tranh ảnh.</td></tr>
+            <tr><td>200 Câu Hỏi Và Lời Giải Đáp Thế Giới Khoa Học</td><td>Khoa học chung</td><td>Hai trăm câu "tại sao" — rất hợp để đặt ở chỗ nhiều người có thể tranh luận.</td></tr>
+            <tr><td>Hiểu Biết Về Khoa Học — How Science Works</td><td>Khoa học chung</td><td>Bách khoa toàn thư có minh họa, nặng 255 MB nên không mirror ở đây; <a href="https://archive.org/details/ebook-hieu-biet-ve-khoa-hoc-how-science-works" target="_blank" rel="noopener">có bản đọc miễn phí trên archive.org ↗</a>.</td></tr>
+            <tr><td>A Short History of Nearly Everything — Bill Bryson</td><td>Khoa học chung</td><td>Từ Vụ Nổ Lớn đến chính nguyên tử trong cơ thể bạn, kể bởi một người cứ hỏi "khoan đã, làm sao họ biết?"</td></tr>
+            <tr><td>Nguồn Gốc Các Loài</td><td>Khoa học chung</td><td>Cuốn sách đã đổi cách chúng ta nhìn mọi sinh vật quanh mình.</td></tr>
+            <tr><td>Physics Demystified — Stan Gibilisco</td><td>Vật lý</td><td>Lộ trình tự học thân thiện qua cơ học, nhiệt, ánh sáng và điện.</td></tr>
+            <tr><td>The Nothing That Is — Robert Kaplan</td><td>Toán</td><td>Cả một cuốn sách về số không. Nghe thì lạ, đọc thì không dứt được.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- NGUỒN -->
+  <section class="sec" id="nguon">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">07</span><span class="line"></span><span class="eyebrow-label">Nguồn &amp; bản quyền · Sources &amp; rights</span></div>
+      <div class="sec-head">
+        <h2>Những cuốn sách này từ đâu tới <span class="dim" style="font-weight:400;font-size:.6em">Sources</span></h2>
+        <p>Mọi PDF trên trang này đều được Internet Archive phát hành dưới dạng <b>tải xuống miễn phí, không cần mượn</b>. Không có bản nào lấy từ sách cho mượn có giới hạn thời hạn. Mỗi đầu sách đều có đường dẫn về trang gốc để bạn tự kiểm tra. Phần lớn được người đóng góp ghi rõ giấy phép <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0 ↗</a> — nghĩa là chia sẻ lại nguyên vẹn, ghi rõ nguồn, không dùng cho mục đích thương mại.</p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Sách</th><th>Tác giả / người dịch</th><th>Nguồn &amp; giấy phép</th></tr></thead>
+          <tbody>
+            <tr><td>Toán Học Siêu Hay</td><td>Katie Hewett, Tracie Young</td><td>archive.org · CC BY-NC-ND 4.0</td></tr>
+            <tr><td>Thợ Cơ Khí Toán học</td><td>Mark Levi</td><td>archive.org · CC BY-NC-ND 4.0</td></tr>
+            <tr><td>Danh Nhân Toán Học</td><td>Lê Hải Châu</td><td>archive.org · tải xuống miễn phí</td></tr>
+            <tr><td>Vật Lý Ngo Ngạn</td><td>John Townsend</td><td>archive.org · CC BY-NC-ND 4.0</td></tr>
+            <tr><td>Một Vũ Trụ Lạ Thường</td><td>Robert B. Laughlin</td><td>archive.org · CC BY-NC-ND 4.0</td></tr>
+            <tr><td>Vật Lý và Âm Nhạc</td><td>Gleb Anfilov (1978)</td><td>archive.org · tải xuống miễn phí</td></tr>
+            <tr><td>Truyện Kể Về 109 Nguyên Tố Hóa Học</td><td>Trần Ngọc Mai</td><td>archive.org · CC BY-NC-ND 4.0</td></tr>
+            <tr><td>Hóa Học Vui</td><td>Lê Thành</td><td>archive.org · CC BY-NC-ND 4.0</td></tr>
+            <tr><td>Lịch Sử Hóa Học</td><td>Giáo trình</td><td>archive.org · CC BY-NC-ND 4.0</td></tr>
+            <tr><td>Bên Lề Khoa Học</td><td>Trương Văn Tân</td><td>archive.org · CC BY-NC-ND 4.0</td></tr>
+            <tr><td>Đường Vào Vũ Trụ</td><td>Tủ sách em yêu khoa học</td><td>archive.org · CC BY-NC-ND 4.0</td></tr>
+            <tr><td>Vũ Trụ Và Hoa Sen</td><td>Trịnh Xuân Thuận, Phạm Văn Thiều</td><td>archive.org · CC BY-NC-ND 4.0</td></tr>
+            <tr><td>Trò Chơi Lý Thú Theo Bách Khoa Khoa Học</td><td>Phạm Cao Hoàn (biên dịch)</td><td>archive.org · CC BY-NC-ND 4.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note warn">
+        <span class="lbl">GHI NHẬN &amp; GỠ BỎ</span>
+        Tên sách, bản quét và bản OCR đều thuộc về tác giả, nhà xuất bản và những người đã số hóa trên Internet Archive; mỗi thẻ sách đều dẫn về trang gốc. Đây là kệ sách phi thương mại phục vụ việc học. Nếu bạn là chủ sở hữu quyền và muốn gỡ một file, vui lòng mở issue trên <a href="https://github.com/machine-ctm/machine-ctm.github.io" target="_blank" rel="noopener">kho mã của dự án ↗</a>; chúng tôi sẽ gỡ ngay.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-l">
+      <span class="brand-mini">Khoa học nền tảng — Chế tạo máy</span>
+      <p>Sách miễn phí cho bạn đọc tò mò · PDF lưu trên GitHub Releases · Bản quyền vẫn thuộc tác giả, nhà xuất bản và người số hóa. Không phải trang chính thức của ĐH Bách khoa Hà Nội.</p>
+    </div>
+    <div class="foot-r">
+      <span class="mono"><a href="../../index.html">← Trang chủ / Home</a></span>
+      <span class="mono">machine-ctm.github.io</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

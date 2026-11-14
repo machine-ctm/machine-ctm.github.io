@@ -80,6 +80,24 @@
   </url>
 
   <url>
+    <loc>https://machine-ctm.github.io/foundation/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-ctm.github.io/foundation/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/vi/foundation/"/>
+  </url>
+
+  <url>
+    <loc>https://machine-ctm.github.io/vi/foundation/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-ctm.github.io/foundation/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/vi/foundation/"/>
+  </url>
+
+  <url>
     <loc>https://machine-ctm.github.io/education/</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>yearly</changefreq>

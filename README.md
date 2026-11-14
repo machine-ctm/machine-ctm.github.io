@@ -22,6 +22,8 @@ machining (burnt-orange + steel palette, light technical theme).
 | Vietnamese study guides | `/vi/books/*.html` | 8 original adaptations, one per graded English book |
 | Education (EN / VI) | `/education/`, `/vi/education/` | Training programs, curricula, trade-theory PDFs |
 | Video Library (EN / VI) | `/videos/`, `/vi/videos/` | 8 curated YouTube videos with responsive embeds |
+| Foundation Science (EN) | `/foundation/` | 13 free science books (Maths, Physics, Chemistry, General Science) hosted on GitHub Releases |
+| Foundation Science (VI) | `/vi/foundation/` | Same 13 books in Vietnamese, lively adaptations for young readers |
 
 The homepage toggles language in place via `.t-vi` / `.t-en` spans and `localStorage`.
 All other pages are separate EN / VI files linked by a language switcher in the top bar.
@@ -37,6 +39,7 @@ and link to their VI sibling sections (`../education/`, `../videos/`, `../books/
 - **Vietnamese study guides** — 8 original, illustrated HTML adaptations under `/vi/books/`. These are written from scratch in Vietnamese from the source books' **topic structure**, not verbatim translations, because the source PDFs are copyrighted (several explicitly reserve translation rights). Every guide has 8–11 sections, diagrams or tables, a copyright note, a link back to its source PDF, and cross-links to the other seven.
 - **Education** — career paths, program structure, Bharat Skills *CNC Machining Technician* trade-theory PDF, Skilled Trades BC *Machinist Harmonized Program Outline*, the HUST Mechanical Engineering program, and an online metal-machining course.
 - **Video Library** — 8 YouTube videos, each with EN / VI titles and descriptions.
+- **Foundation Science** — 13 free, openly downloadable science books per language (26 total), grouped into **Maths · Physics · Chemistry · General Science**. Written for *curiosity, not exams*: puzzles, vintage science-show tricks, the story of the chemical elements, and a gentle tour of the universe — no sign-up, no paywall. PDFs are hosted on a GitHub Release (`foundation-v1`) because some are large; every book credits its source (Internet Archive item, Project Gutenberg, US DOE handbook, or public-domain classic) and links back to it. Content tone is deliberately lively and inspiring for young readers, not dry/academic.
 
 ### Vietnamese study guides (8/8 graded English books)
 
@@ -67,6 +70,12 @@ Only the user's own PDFs (copied from `E:\Ebooks\Che Tao May`) are hosted under
 `books/files/` and `education/files/`. Licensed / third-party resources are **linked** to
 their original hosts, never re-hosted. The Vietnamese guides are original adaptations that
 state "không phải bản dịch" and credit the source.
+
+The **Foundation Science** PDFs are all *freely downloadable* works: public-domain classics,
+Project Gutenberg editions, US Government (DOE) handbooks, and Internet Archive items released
+for free download (several under CC BY-NC-ND, credited on-page). **No borrowed or lending-only
+copies are included.** PDFs are hosted on the `foundation-v1` GitHub Release (not in the repo
+tree) because several are large; each book card links back to its source item.
 
 ---
 
@@ -100,10 +109,13 @@ machine-ctm-site/
 ├── books/
 │   ├── index.html             # Book Library (EN)
 │   └── files/                 # 11 hosted PDFs (ASCII filenames)
+├── foundation/
+│   └── index.html             # Foundation Science (EN) — PDFs on GitHub Release
 ├── vi/
 │   ├── books/
 │   │   ├── index.html         # Book Library (VI) + #huong-dan guide index
 │   │   └── *.html             # 8 Vietnamese study guides
+│   ├── foundation/index.html  # Foundation Science (VI)
 │   ├── education/index.html
 │   └── videos/index.html
 ├── education/
@@ -111,7 +123,7 @@ machine-ctm-site/
 │   └── files/                 # Bharat Skills + SkilledTradesBC PDFs
 ├── videos/index.html
 ├── 404.html                   # custom bilingual 404 (noindex)
-├── sitemap.xml                # 15 content pages + 3 EN/VI hreflang pairs
+├── sitemap.xml                # 17 content pages + 4 EN/VI hreflang pairs
 ├── robots.txt                 # Allow: / + Sitemap reference
 ├── README.md
 ├── report.md                  # project status report
