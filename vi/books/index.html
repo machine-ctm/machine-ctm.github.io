@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thư viện sách — Chế tạo máy / Machine Building</title>
+<meta name="description" content="Thư viện song ngữ gồm giáo trình chế tạo máy và tài liệu CNC: công nghệ chế tạo, nguyên lý máy, chi tiết máy, gia công áp lực và tham chiếu mã G/M.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua nội dung</a>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../../index.html" aria-label="Chế tạo máy">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="16" cy="16" r="6.5"/><circle cx="16" cy="16" r="2.2" fill="currentColor" stroke="none"/>
+            <path d="M16 4.5v3M16 24.5v3M4.5 16h3M24.5 16h3M7.6 7.6l2.1 2.1M22.3 22.3l2.1 2.1M24.4 7.6l-2.1 2.1M9.7 22.3l-2.1 2.1"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand-txt"><strong>Chế tạo máy</strong><em>Machine Building</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a class="nav-link" href="../../index.html#discipline">Kỷ thuật</a>
+      <a class="nav-link" href="../../index.html#processes">Quy trình</a>
+      <a class="nav-link" href="../../index.html#curriculum">Chương trình</a>
+      <a class="nav-link" href="../../index.html#tools">Thiết bị</a>
+      <a class="nav-link" href="../../index.html#careers">Nghề nghiệp</a>
+      <a class="nav-link active" href="index.html">Sách</a>
+    </nav>
+    <div class="bar-right">
+      <div class="lang" title="Đổi ngôn ngữ / Switch language">
+        <a href="../../books/" style="color:inherit">EN</a><span class="lang-sep">/</span><span class="on">VI</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="kicker"><span class="dot"></span>Thư viện · Library</span>
+        <h1>Thư viện sách<span class="thin">Giáo trình và tài liệu CNC về chế tạo máy.</span></h1>
+        <p class="lede">Năm giáo trình cốt lõi có thể đọc trực tuyến hoặc tải về, cùng tài liệu tham khảo CNC và bảng mã G/M nhanh. <span class="dim">English version: <a href="../../books/">/books</a></span></p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#textbooks">Xem giáo trình →</a>
+          <a class="btn btn-s" href="#gcode">Tham chiếu G / M</a>
+        </div>
+      </div>
+      <div class="figure">
+        <svg viewBox="0 0 360 240" role="img" aria-label="Chồng sách">
+          <g fill="none" stroke="#c2540b" stroke-width="2">
+            <rect x="70" y="150" width="220" height="26" rx="4" fill="#fbeee2"/>
+            <rect x="84" y="120" width="200" height="26" rx="4" fill="#fff" stroke="#d2d8e0"/>
+            <rect x="98" y="90" width="180" height="26" rx="4" fill="#e9f0f5" stroke="#2f5d80"/>
+            <rect x="112" y="60" width="160" height="26" rx="4" fill="#fff" stroke="#d2d8e0"/>
+          </g>
+          <g stroke="#c2540b" stroke-width="2" stroke-linecap="round">
+            <line x1="190" y1="153" x2="250" y2="153"/>
+            <line x1="184" y1="123" x2="244" y2="123"/>
+            <line x1="178" y1="93" x2="238" y2="93"/>
+            <line x1="172" y1="63" x2="232" y2="63"/>
+          </g>
+        </svg>
+        <div class="figcap">5 giáo trình · tài liệu CNC</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIÁO TRÌNH -->
+  <section class="sec" id="textbooks">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">01</span><span class="line"></span><span class="eyebrow-label">Giáo trình · Textbooks</span></div>
+      <div class="sec-head">
+        <h2>Giáo trình <span class="dim" style="font-weight:400;font-size:.6em">Textbooks</span></h2>
+        <p>Năm giáo trình cốt lõi chế tạo máy, có thể đọc trực tuyến hoặc tải về dạng PDF. Tệp được lưu trên trang này.</p>
+      </div>
+      <div class="grid c3">
+
+        <div class="card">
+          <span class="n">CNC</span>
+          <h3>Build Your Own CNC Machine</h3>
+          <p class="small dim" style="margin-bottom:10px">Tự chế máy CNC</p>
+          <p>Hướng dẫn thực hành thiết kế và tự chế máy CNC.</p>
+          <a class="btn btn-s" style="margin-top:14px" href="../../books/files/build-your-own-cnc-machine.pdf" target="_blank" rel="noopener">Đọc ▸</a>
+          <a class="btn btn-p" style="margin-top:14px" href="../../books/files/build-your-own-cnc-machine.pdf" download>Tải về</a>
+        </div>
+
+        <div class="card">
+          <span class="n">CTM</span>
+          <h3>Giáo trình Công nghệ Chế tạo máy</h3>
+          <p class="small dim" style="margin-bottom:10px">Manufacturing Technology — Lecture Notes</p>
+          <p>Giáo trình công nghệ chế tạo (gia công) máy bằng tiếng Việt.</p>
+          <a class="btn btn-s" style="margin-top:14px" href="../../books/files/giao-trinh-cong-nghe-che-tao-may.pdf" target="_blank" rel="noopener">Đọc ▸</a>
+          <a class="btn btn-p" style="margin-top:14px" href="../../books/files/giao-trinh-cong-nghe-che-tao-may.pdf" download>Tải về</a>
+        </div>
+
+        <div class="card">
+          <span class="n">NLM</span>
+          <h3>Giáo trình Nguyên lý máy</h3>
+          <p class="small dim" style="margin-bottom:10px">Theory of Machines &amp; Mechanisms</p>
+          <p>Giáo trình về cơ cấu, động học và nguyên lý máy.</p>
+          <a class="btn btn-s" style="margin-top:14px" href="../../books/files/gt-nguyen-ly-may.pdf" target="_blank" rel="noopener">Đọc ▸</a>
+          <a class="btn btn-p" style="margin-top:14px" href="../../books/files/gt-nguyen-ly-may.pdf" download>Tải về</a>
+        </div>
+
+        <div class="card">
+          <span class="n">CTM</span>
+          <h3>Giáo trình Thiết kế Đồ án Chi tiết máy</h3>
+          <p class="small dim" style="margin-bottom:10px">Machine Elements — Design Projects</p>
+          <p>Thiết kế chi tiết máy và đồ án môn học.</p>
+          <a class="btn btn-s" style="margin-top:14px" href="../../books/files/gt-tk-dacn-ctm.pdf" target="_blank" rel="noopener">Đọc ▸</a>
+          <a class="btn btn-p" style="margin-top:14px" href="../../books/files/gt-tk-dacn-ctm.pdf" download>Tải về</a>
+        </div>
+
+        <div class="card">
+          <span class="n">FORM</span>
+          <h3>Cẩm nang Gia công Áp lực (Metal Forming)</h3>
+          <p class="small dim" style="margin-bottom:10px">Metal Forming Handbook · Schuler, Springer, 1998</p>
+          <p>Tài liệu tham khảo toàn diện về các quá trình gia công áp lực.</p>
+          <a class="btn btn-s" style="margin-top:14px" href="../../books/files/metal-forming-handbook-schuler-1998.pdf" target="_blank" rel="noopener">Đọc ▸</a>
+          <a class="btn btn-p" style="margin-top:14px" href="../../books/files/metal-forming-handbook-schuler-1998.pdf" download>Tải về</a>
+        </div>
+
+        <div class="card">
+          <span class="n">WEB</span>
+          <h3>Tài nguyên thêm ↓</h3>
+          <p class="small dim" style="margin-bottom:10px">Online references</p>
+          <p>Khóa học lập trình CNC và bảng mã G nhanh ở bên dưới.</p>
+          <a class="btn btn-s" style="margin-top:14px" href="#web">Tài nguyên trực tuyến</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TÀI NGUYÊN TRỰC TUYẾN -->
+  <section class="sec alt" id="web">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">02</span><span class="line"></span><span class="eyebrow-label">Tài nguyên trực tuyến · Web references</span></div>
+      <div class="sec-head">
+        <h2>Tài nguyên trực tuyến <span class="dim" style="font-weight:400;font-size:.6em">Web references</span></h2>
+        <p>Tài liệu CNC miễn phí lưu trữ bên ngoài (mở trong thẻ mới).</p>
+      </div>
+      <div class="grid c2">
+        <a class="card" href="https://www.cnccookbook.com/cnc-programming-g-code/" target="_blank" rel="noopener">
+          <span class="n">CNC COOKBOOK</span>
+          <h3>Khóa học lập trình máy CNC</h3>
+          <p>Khóa học G-code 16 chương miễn phí &amp; eBook (hệ Fanuc), kèm ví dụ. — <span class="dim">Free 16-chapter G-code course.</span></p>
+        </a>
+        <a class="card" href="https://www.cnccookbook.com/cnc-programming-pdf-machine-codes/" target="_blank" rel="noopener">
+          <span class="n">CNC COOKBOOK</span>
+          <h3>PDF lập trình CNC tải về</h3>
+          <p>Các eBook PDF lập trình CNC &amp; DFMA tải về được. — <span class="dim">Downloadable CNC &amp; DFMA PDF eBooks.</span></p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÃ G / M -->
+  <section class="sec" id="gcode">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">03</span><span class="line"></span><span class="eyebrow-label">Tham chiếu nhanh · Quick reference</span></div>
+      <div class="sec-head">
+        <h2>Tham chiếu mã G &amp; M <span class="dim" style="font-weight:400;font-size:.6em">G / M-code</span></h2>
+        <p>Các mã phổ biến kiểu Fanuc. Khóa học đầy đủ: <a href="https://www.cnccookbook.com/cnc-programming-g-code/" target="_blank" rel="noopener">CnCCookbook G-code course ↗</a>.</p>
+      </div>
+      <div class="grid c2">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>Mã</th><th>Ý nghĩa · Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><code>G00</code></td><td>Chạy dao nhanh · Rapid positioning</td></tr>
+              <tr><td><code>G01</code></td><td>Nội suy thẳng (cắt) · Linear cut</td></tr>
+              <tr><td><code>G02 / G03</code></td><td>Nội suy cung tròn thuận/nghịch</td></tr>
+              <tr><td><code>G17/18/19</code></td><td>Chọn mặt phẳng XY / ZX / YZ</td></tr>
+              <tr><td><code>G20 / G21</code></td><td>Đơn vị inch / metric</td></tr>
+              <tr><td><code>G28</code></td><td>Về điểm gốc · Return to ref.</td></tr>
+              <tr><td><code>G40/41/42</code></td><td>Bù trừ bán kính dao tắt/trái/phải</td></tr>
+              <tr><td><code>G43</code></td><td>Bù trừ chiều dài dao</td></tr>
+              <tr><td><code>G54–G59</code></td><td>Hệ tọa độ chi tiết (WCS)</td></tr>
+              <tr><td><code>G80</code></td><td>Hủy chu trình · Cancel cycle</td></tr>
+              <tr><td><code>G81 / G83</code></td><td>Chu trình khoan / khoan sâu</td></tr>
+              <tr><td><code>G90 / G91</code></td><td>Tuyệt đối / Tương đối</td></tr>
+              <tr><td><code>G94 / G95</code></td><td>Tiến dao /phút · /vòng</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>Mã</th><th>Ý nghĩa · Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><code>M00</code></td><td>Dừng chương trình · Program stop</td></tr>
+              <tr><td><code>M01</code></td><td>Dừng tùy chọn · Optional stop</td></tr>
+              <tr><td><code>M03 / M04</code></td><td>Trục chính thuận / nghịch</td></tr>
+              <tr><td><code>M05</code></td><td>Dừng trục chính · Spindle stop</td></tr>
+              <tr><td><code>M06</code></td><td>Đổi dao · Tool change</td></tr>
+              <tr><td><code>M08 / M09</code></td><td>Bơm/nước tắt · Coolant on/off</td></tr>
+              <tr><td><code>M30</code></td><td>Kết thúc &amp; reset · End &amp; reset</td></tr>
+              <tr><td><code>M98 / M99</code></td><td>Gọi / về chương trình con</td></tr>
+              <tr><td><code>S</code></td><td>Tốc độ trục chính (vòng/phút)</td></tr>
+              <tr><td><code>F</code></td><td>Tiến dao · Feed rate</td></tr>
+              <tr><td><code>T</code></td><td>Số hiệu dao · Tool number</td></tr>
+              <tr><td><code>N</code></td><td>Số thứ tự dòng · Sequence no.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="note warn" style="margin-top:22px">
+        <span class="lbl">LƯU Ý</span>
+        <span class="t-vi">Mã G/M chuẩn Fanuc; thực tế tùy thuộc máy và bộ điều khiển. Luôn kiểm tra tài liệu máy trước khi chạy.</span>
+        <span class="t-en">Standard Fanuc-style codes; actual behavior depends on the machine and controller. Always verify against your machine manual before running.</span>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-l">
+      <span class="brand-mini">Thư viện sách — Chế tạo máy</span>
+      <p>Giáo trình lưu trên trang này · Tài liệu CNC © tác giả tương ứng (CnCCookbook). Trang tham khảo học thuật, không phải trang chính thức của HUST.</p>
+    </div>
+    <div class="foot-r">
+      <span class="mono"><a href="../../index.html">← Trang chủ / Home</a></span>
+      <span class="mono">machine-ctm.github.io</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

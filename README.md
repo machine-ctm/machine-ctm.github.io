@@ -17,6 +17,7 @@ machining (burnt-orange + steel palette).
 - **Comparison** — conventional vs CNC machining.
 - **Careers** — employers, roles, program lengths, program director.
 - **Learning path** — a 4-step study route.
+- **Book library** (`/books`, `/vi/books`) — five hosted machining textbooks (read/download) plus CNC web references (CnCCookbook G-code course & PDF hub) and a G/M-code quick reference.
 
 A **VI / EN** switch in the top bar toggles the whole page (persisted in `localStorage`).
 
