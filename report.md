@@ -28,7 +28,7 @@
 | Machining Processes and Machines — TIẾNG VIỆT | https://machine-ctm.github.io/vi/books/quy-trinh-va-may-gia-cong.html |
 | Consolidated Vietnamese guides index | https://machine-ctm.github.io/vi/books/#huong-dan |
 
-A **VI / EN** switch in the top bar toggles the whole page (state persisted in `localStorage`).
+The **homepage** has a VI / EN toggle in the top bar (`.t-vi` / `.t-en` spans, state persisted in `localStorage`). All other pages are separate EN / VI files paired by a language switcher; `/vi/**` navigation links resolve to the VI sibling sections.
 
 ---
 
@@ -45,7 +45,7 @@ A **VI / EN** switch in the top bar toggles the whole page (state persisted in `
 ## 3. Book Library — hosted textbooks & A/B/C grading
 
 Grades reflect **quality** and **ease of translation** into Vietnamese.
-`A` = high quality & easy to translate · `B` = good but more technical · `C` = dense/reference (hard to translate) · `VI` = already in Vietnamese.
+`A` = high quality & easy to translate · `B` = good but more technical · `C` = dense/reference (hard to translate). In this report's table, `VI` additionally marks the three natively-Vietnamese lecture-note PDFs; the live site indexes use only A/B/C for the English books, all of which now have Vietnamese guides.
 
 | # | Book | File | Grade |
 |---|------|------|-------|
@@ -61,7 +61,7 @@ Grades reflect **quality** and **ease of translation** into Vietnamese.
 | 10 | Tormach CNC Student Guide | `tormach-cnc-student-guide.pdf` | **A** |
 | 11 | Machining Processes and Machines | `machining-processes-and-machines.pdf` | **C** |
 
-**First grade-A book in reading order → "Build Your Own CNC Machine"** (the original translation candidate).
+**First grade-A book in reading order → "Build Your Own CNC Machine"** (the first book adapted into a Vietnamese study guide).
 
 Verified live: EN `/books` returns `A=4, B=2, C=2`; all 6 newly added PDFs resolve; VI mirrors the same grades.
 
@@ -77,7 +77,7 @@ Verified live: EN `/books` returns `A=4, B=2, C=2`; all 6 newly added PDFs resol
 
 ---
 
-## 5. Translation job & remaining work
+## 5. Translation job — complete (8/8)
 
 1. **Video Library — DONE.** Eight YouTube videos built into `/videos` (EN) and `/vi/videos` (VI) with responsive embeds; nav wired into all page pairs.
 2. **First A-grade book translated to Vietnamese — DONE (original adaptation).** "Build Your Own CNC Machine" → `vi/books/tu-che-may-cnc.html`, an original Vietnamese study guide (11 sections, copyright note + link to original PDF). Wired into both `/books` and `/vi/books` cards. A verbatim full translation was deliberately avoided to respect Apress copyright.
@@ -97,6 +97,7 @@ Verified live: EN `/books` returns `A=4, B=2, C=2`; all 6 newly added PDFs resol
    - Both pages carry explicit copyright notes, link back to the source PDF, and are cross-linked to the other seven. Wired into the grade-C cards of both `/books` and `/vi/books` ("Bản TV" button + inline link).
 6. **Consolidated guide index & cross-links — DONE.** `/vi/books/#huong-dan` is a new section with all 8 guides as grade-badged cards plus a copyright note; it is linked from the VI hero CTA, the textbooks section header, the EN hero (bilingual link), and the conclusion of every guide. Section numbering in the VI index was shifted 01–06 and alternating `sec`/`sec alt` bands preserved. All 8 guides now carry a normalized 7-link "Các bản tiếng Việt khác" line plus a "Tất cả 8 bản" link.
 7. **Correction:** an earlier version of this report claimed local copies of the Eagle Group and Boothroyd PDFs "already exist in `books/files/`". They do **not** — both are linked **externally only** (referenceglobe.com / Eagle Group hub), consistent with the site's copyright convention of not re-hosting licensed material. `books/files/` holds exactly 11 PDFs. A second false claim — that the *full* `Machining Processes and Machines` PDF was hosted — was also corrected (see §3 note).
+8. **Full-site consistency audit — DONE.** With the translation job complete, all 15 HTML pages were revalidated (tag balance, local link & anchor resolution, CJK contamination, bare ampersands, undefined CSS classes, duplicate IDs): **0 real problems**. Fixed a genuine bilingual navigation bug: every `/vi/**` page linked "Sách / Giáo dục / Video" to the **English** `/books/`, `/education/`, `/videos/` sections instead of `/vi/books/`, `/vi/education/`, `/vi/videos/`; 32 lines across 11 files corrected (language switchers, homepage links and PDF paths deliberately left unchanged). Refreshed stale "five core textbooks / 5 textbooks / năm giáo trình" copy on the homepage teaser and both library indexes to reflect **11 hosted PDFs + 8 Vietnamese guides**, and added a direct homepage link to `/vi/books/#huong-dan`. `README.md` was rewritten: it still described the site as "a single self-contained page" with 5 textbooks and a 3-file structure tree.
 
 ---
 

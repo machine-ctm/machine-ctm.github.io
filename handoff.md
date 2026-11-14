@@ -93,7 +93,8 @@ and to the corresponding library cards in both indexes. `<pre>` blocks carry inl
 
 - **Copyright:** only host the user's own PDFs from `E:\Ebooks\Che Tao May`. Link external/
   licensed material (CnCCookbook, Internet Archive, referenceglobe, Eagle, ResearchGate, BCIT).
-- **Bilingual toggle:** `<html>` class `lang-vi`/`lang-en`; `.t-vi`/`.t-en` spans; `localStorage`.
+- **Bilingual toggle:** `<html>` class `lang-vi`/`lang-en`; `.t-vi`/`.t-en` spans; `localStorage` (homepage only). Other pages are separate EN/VI files with a top-bar language switcher.
+- **`/vi/**` relative paths:** assets and hosted files go two levels up (`../../assets/…`, `../../books/files/…`, `../../education/files/…`); the homepage is `../../index.html`. But **navigation to sibling VI sections is one level up** — `../books/`, `../education/`, `../videos/` — and a guide's "Sách" link is `index.html`. A previous version incorrectly used `../../books/` etc. in the nav and silently sent VI readers to the English sections. Keep the language switcher pointing at the EN counterpart (`../../books/`, `../../education/`, `../../videos/`).
 - **Deploy:**
   ```bash
   cd machine-ctm-site
