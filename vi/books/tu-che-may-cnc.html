@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tự chế máy CNC — Hướng dẫn tiếng Việt · Chế tạo máy</title>
+<meta name="description" content="Bản hướng dẫn tiếng Việt (chuyển soạn nguyên bản) dựa trên cuốn Build Your Own CNC Machine: CNC là gì, dụng cụ, linh kiện, phần mềm, vật liệu, lắp ráp, điện tử và cắt thử.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua nội dung</a>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../../index.html" aria-label="Chế tạo máy">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="16" cy="16" r="6.5"/><circle cx="16" cy="16" r="2.2" fill="currentColor" stroke="none"/>
+            <path d="M16 4.5v3M16 24.5v3M4.5 16h3M24.5 16h3M7.6 7.6l2.1 2.1M22.3 22.3l2.1 2.1M24.4 7.6l-2.1 2.1M9.7 22.3l-2.1 2.1"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand-txt"><strong>Chế tạo máy</strong><em>Machine Building</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a class="nav-link" href="../../index.html#discipline">Kỷ thuật</a>
+      <a class="nav-link" href="../../index.html#processes">Quy trình</a>
+      <a class="nav-link" href="../../index.html#curriculum">Chương trình</a>
+      <a class="nav-link" href="../../index.html#tools">Thiết bị</a>
+      <a class="nav-link" href="../../index.html#careers">Nghề nghiệp</a>
+      <a class="nav-link" href="../../books/">Sách (EN)</a>
+      <a class="nav-link" href="../../education/">Giáo dục</a>
+      <a class="nav-link" href="../../videos/">Video</a>
+    </nav>
+    <div class="bar-right">
+      <div class="lang" title="Đổi ngôn ngữ / Switch language">
+        <a href="../../books/" style="color:inherit">EN</a><span class="lang-sep">/</span><span class="on">VI</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="kicker"><span class="dot"></span>Sách · Tự chế máy CNC</span>
+        <h1>Tự chế máy CNC<span class="thin">Hướng dẫn tiếng Việt chuyển soạn từ cuốn <em>Build Your Own CNC Machine</em>.</span></h1>
+        <p class="lede">Một bản hướng dẫn nguyên bản bằng tiếng Việt, dựa trên các chủ đề của cuốn sách — từ khái niệm CNC, dụng cụ, linh kiện, phần mềm, vật liệu, quy trình lắp ráp, điện tử cho đến hiệu chuẩn và cắt thử. <span class="dim">Bản gốc (PDF): <a href="../books/files/build-your-own-cnc-machine.pdf" target="_blank" rel="noopener">build-your-own-cnc-machine.pdf ↗</a></span></p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#chuong-1">Bắt đầu đọc →</a>
+          <a class="btn btn-s" href="../books/files/build-your-own-cnc-machine.pdf" target="_blank" rel="noopener">PDF gốc (EN)</a>
+        </div>
+      </div>
+      <div class="figure">
+        <svg viewBox="0 0 360 240" role="img" aria-label="Máy CNC tự chế">
+          <g fill="none" stroke="#2f5d80" stroke-width="2">
+            <rect x="60" y="170" width="240" height="18" rx="3" fill="#e9f0f5"/>
+            <rect x="70" y="70" width="220" height="100" rx="6" fill="#fff" stroke="#d2d8e0"/>
+            <line x1="180" y1="70" x2="180" y2="36" stroke="#c2540b"/>
+            <rect x="170" y="22" width="20" height="16" rx="2" fill="#c2540b" stroke="none"/>
+            <line x1="180" y1="120" x2="120" y2="120" stroke="#c2540b"/>
+            <circle cx="120" cy="120" r="9" fill="#c2540b" stroke="none"/>
+            <line x1="180" y1="150" x2="240" y2="150" stroke="#c2540b"/>
+            <circle cx="240" cy="150" r="9" fill="#c2540b" stroke="none"/>
+          </g>
+          <g stroke="#c2540b" stroke-width="2" stroke-linecap="round">
+            <line x1="84" y1="188" x2="286" y2="188"/>
+            <line x1="84" y1="194" x2="286" y2="194"/>
+          </g>
+        </svg>
+        <div class="figcap">Thiết kế 3 trục · trục chính + 2 động cơ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIỚI THIỆU -->
+  <section class="sec" id="gioi-thieu">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">00</span><span class="line"></span><span class="eyebrow-label">Giới thiệu · Introduction</span></div>
+      <div class="sec-head">
+        <h2>Tại sao tự chế một máy CNC? <span class="dim" style="font-weight:400;font-size:.6em">Why build your own?</span></h2>
+        <p>Máy CNC (Computer Numerical Control — điều khiển số bằng máy tính) là máy công cụ được dẫn động bởi động cơ bước và một bộ điều khiển, thay vì tay người. Bạn vẽ mẫu trên máy tính, phần mềm sinh ra mã G, và máy tự cắt theo đúng lộ trình với độ lặp lại cao. Tự chế một máy CNC giúp bạn hiểu sâu về cơ khí, điện tử và phần mềm — đồng thời có một công cụ để làm đồ gỗ, nhôm, mạch in, khắc hoặc phay nhựa với chi phí thấp hơn nhiều so với máy thương mại.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">HỌC</span>
+          <h3>Hiểu máy từ gốc</h3>
+          <p>Biết rõ từng bộ phận — ray trượt, vít me, động cơ, bộ điều khiển — giúp bạn bảo trì và nâng cấp dễ dàng.</p>
+        </div>
+        <div class="card">
+          <span class="n">TIẾT KIỆM</span>
+          <h3>Chi phí thấp hơn</h3>
+          <p>Một máy tự chế thường rẻ hơn nhiều so với máy thương mại tương đương, nhất là ở khổ nhỏ.</p>
+        </div>
+        <div class="card">
+          <span class="n">SÁNG TẠO</span>
+          <h3>Làm được nhiều vật liệu</h3>
+          <p>Gỗ, nhựa, nhôm mỏng, mạch in (FR4), cao su — tùy vào trục chính và thiết kế khung.</p>
+        </div>
+      </div>
+      <p class="note warn" style="margin-top:24px">
+        <span class="lbl">LƯU Ý BẢN QUYỀN</span>
+        <span class="t-vi">Đây là <b>bản chuyển soạn nguyên bản</b> (original adaptation) bằng tiếng Việt dựa trên các chủ đề của cuốn <em>Build Your Own CNC Machine</em> (Kelly &amp; Hood-Daniel, Apress). Nội dung được viết lại bằng lời văn riêng nhằm mục đích giáo dục và không sao chép nguyên văn bản gốc có bản quyền. Toàn văn gốc (tiếng Anh) xem tại PDF liên kết ở trên.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 1 -->
+  <section class="sec alt" id="chuong-1">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">01</span><span class="line"></span><span class="eyebrow-label">Chương 1 · What is CNC?</span></div>
+      <div class="sec-head">
+        <h2>CNC là gì? <span class="dim" style="font-weight:400;font-size:.6em">What is CNC?</span></h2>
+        <p>Máy CNC dùng ba trục tọa độ (X, Y, Z) để định vị dụng cụ cắt trong không gian. Động cơ bước (stepper) hoặc servo di chuyển bàn/mỏ cắt theo lệnh từ một bộ điều khiển. Khác với máy thủ công, sai số do người thao tác được loại bỏ: cùng một chương trình chạy bao nhiêu lần cũng cho kết quả như nhau.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">TRỤC</span>
+          <h3>Ba trục cơ bản (3-axis)</h3>
+          <p><b>X</b> — ngang trái/phải · <b>Y</b> — ngang trước/sau · <b>Z</b> — lên/xuống (độ sâu cắt). Máy phay/cắt router thường là 3 trục; máy 4–5 trục thêm trục quay để cắt góc nghiêng.</p>
+        </div>
+        <div class="card">
+          <span class="n">LOẠI</span>
+          <h3>Router, mill, laser hay plasma?</h3>
+          <p><b>Router CNC</b> (trục chính cầm tay gắn lên khung) cắt gỗ/nhựa/mạch in — dễ tự chế nhất. <b>Mill</b> cắt kim loại cứng cần khung cứng hơn. <b>Laser/plasma</b> cắt bằng nhiệt, không có trục cắt cơ khí.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 2 -->
+  <section class="sec" id="chuong-2">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">02</span><span class="line"></span><span class="eyebrow-label">Chương 2 · Getting help</span></div>
+      <div class="sec-head">
+        <h2>Tìm sự trợ giúp <span class="dim" style="font-weight:400;font-size:.6em">Getting a little help</span></h2>
+        <p>Bạn không cần là kỹ sư để bắt đầu. Cộng đồng người chế máy CNC rất lớn và sẵn sàng giúp đỡ. Trước khi hỏi, hãy đọc kỹ hướng dẫn và dùng từ khóa đúng để tìm nhanh.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">FORUM</span>
+          <h3>Diễn đàn chuyên biệt</h3>
+          <p>Các diễn đàn như CNCZone có hàng ngàn chủ đề về tự chế, điện tử, hiệu chuẩn và khắc phục lỗi.</p>
+        </div>
+        <div class="card">
+          <span class="n">NHÓM</span>
+          <h3>Cộng đồng makers</h3>
+          <p>Nhóm địa phương, FabLab, MakerSpace là nơi xem máy thật, mượn dụng cụ và học trực tiếp.</p>
+        </div>
+        <div class="card">
+          <span class="n">VIDEO</span>
+          <h3>Video thực hành</h3>
+          <p>Xem người khác lắp ráp từng bước giúp tránh sai lầm phổ biến. (Xem thêm mục <a href="../../videos/">Video</a> của trang.)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 3 -->
+  <section class="sec alt" id="chuong-3">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">03</span><span class="line"></span><span class="eyebrow-label">Chương 3 · Tools you'll need</span></div>
+      <div class="sec-head">
+        <h2>Dụng cụ bạn cần <span class="dim" style="font-weight:400;font-size:.6em">The tools you'll need</span></h2>
+        <p>Trước khi mua linh kiện, hãy đảm bảo có bộ dụng cụ cơ bản. Hầu hết có thể mượn hoặc mua giá rẻ.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">CƠ BẢN</span>
+          <h3>Thợ mộc &amp; cơ khí</h3>
+          <p>Cưa, khoan, tuốc nơ vít, cờ lê/lục giác, thước kẹp (caliper), ê tô nhỏ, búa cao su, giấy nhám.</p>
+        </div>
+        <div class="card">
+          <span class="n">ĐIỆN TỬ</span>
+          <h3>Đo &amp; hàn</h3>
+          <p>Đồng hồ vạn năng (multimeter), mỏ hàn thiếc và thiếc, kéo cắt dây, băng keo cách điện, kính/bảo hộ mắt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 4 -->
+  <section class="sec" id="chuong-4">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">04</span><span class="line"></span><span class="eyebrow-label">Chương 4 · The parts</span></div>
+      <div class="sec-head">
+        <h2>Các linh kiện chính <span class="dim" style="font-weight:400;font-size:.6em">The parts</span></h2>
+        <p>Đây là "trái tim" của máy. Chất lượng từng món quyết định độ chính xác và tốc độ của cả hệ thống.</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">DẪN HƯỚNG</span>
+          <h3>Ray trượt &amp; bạc</h3>
+          <p>Thanh trụ (round rail) + bạc trượt cho khổ nhỏ; ray vuông (linear guide) cứng vững hơn cho khổ lớn.</p>
+        </div>
+        <div class="card">
+          <span class="n">TRUYỀN ĐỘNG</span>
+          <h3>Vít me &amp; đai</h3>
+          <p><b>Vít me (lead screw)</b> + đai ốc đồng cho truyền động vít me; <b>ballscrew</b> mượt hơn, đắt hơn. Đai răng (belt) nhanh nhưng kém cứng hơn.</p>
+        </div>
+        <div class="card">
+          <span class="n">ĐỘNG CƠ</span>
+          <h3>Động cơ bước</h3>
+          <p>Stepper NEMA 17 (nhỏ) hoặc NEMA 23 (phổ biến) + driver (A4988, DM542…). Servo dùng cho máy lớn, tốc độ cao.</p>
+        </div>
+        <div class="card">
+          <span class="n">ĐIỀU KHIỂN</span>
+          <h3>Bo điều khiển</h3>
+          <p>Breakout board + cổng parallel, hoặc bo chuyển động (motion controller) USB. Nhận lệnh G-code và phát xung cho driver.</p>
+        </div>
+        <div class="card">
+          <span class="n">CẮT</span>
+          <h3>Trục chính (spindle)</h3>
+          <p>Máy cắt router cầm tay (như router gỗ) là phổ biến nhất; trục chính nước/ko nước cho kim loại cần nguồn và kẹp chặt tốt.</p>
+        </div>
+        <div class="card">
+          <span class="n">KHUNG</span>
+          <h3>Khung &amp; mặt bàn</h3>
+          <p>MDF, nhôm định hình (8020), hoặc thép hộp. Khung càng cứng, rung càng ít, cắt càng sắc.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 5 -->
+  <section class="sec alt" id="chuong-5">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">05</span><span class="line"></span><span class="eyebrow-label">Chương 5 · The software</span></div>
+      <div class="sec-head">
+        <h2>Phần mềm <span class="dim" style="font-weight:400;font-size:.6em">The software</span></h2>
+        <p>Quy trình gồm ba bước: thiết kế (CAD) → tạo đường chạy dao (CAM) → điều khiển máy (CNC control).</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">CAD</span>
+          <h3>Thiết kế mẫu</h3>
+          <p>Vẽ chi tiết 2D/3D: Fusion 360, FreeCAD, Inkscape (2D), Carbide Create. Xuất file SVG/DXF/STEP.</p>
+        </div>
+        <div class="card">
+          <span class="n">CAM</span>
+          <h3>Đường chạy dao</h3>
+          <p>CAM sinh mã G từ mẫu: chọn dao, tốc độ trục chính (S), tiến dao (F), chiều sâu. Ra file .nc / .gcode.</p>
+        </div>
+        <div class="card">
+          <span class="n">CONTROL</span>
+          <h3>Điều khiển máy</h3>
+          <p>Mach3, LinuxCNC (EMC2), Universal Gcode Sender, hoặc grblControl cho bo grbl. Nạp G-code và bấm chạy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 6 -->
+  <section class="sec" id="chuong-6">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">06</span><span class="line"></span><span class="eyebrow-label">Chương 6 · The options</span></div>
+      <div class="sec-head">
+        <h2>Các lựa chọn thiết kế <span class="dim" style="font-weight:400;font-size:.6em">The options</span></h2>
+        <p>Quyết định khổ, loại máy và vật liệu khung trước khi mua — chúng ảnh hưởng đến mọi linh kiện còn lại.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">KHỔ</span>
+          <h3>Kích thước làm việc</h3>
+          <p>Khổ nhỏ (30×30 cm) dễ chế, rẻ, đủ làm mạch in và đồ gỗ nhỏ. Khổ lớn tốn khung cứng và động cơ khỏe hơn.</p>
+        </div>
+        <div class="card">
+          <span class="n">TRUYỀN</span>
+          <h3>Vít me hay đai?</h3>
+          <p>Vít me: chính xác, đẩy khỏe, chậm. Đai răng: nhanh, nhẹ, nhưng có độ trễ (backlash) và kém cứng khi cắt sâu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 7 -->
+  <section class="sec alt" id="chuong-7">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">07</span><span class="line"></span><span class="eyebrow-label">Chương 7 · The materials</span></div>
+      <div class="sec-head">
+        <h2>Vật liệu khung <span class="dim" style="font-weight:400;font-size:.6em">The materials</span></h2>
+        <p>Vật liệu khung quyết định độ rung và tuổi thọ. Ba lựa chọn phổ biến:</p>
+      </div>
+      <div class="grid c3">
+        <div class="card">
+          <span class="n">MDF</span>
+          <h3>Gỗ MDF</h3>
+          <p>Rẻ, dễ cưa, nặng và hút ẩm. Phù hợp máy router khổ nhỏ, tốc độ thấp.</p>
+        </div>
+        <div class="card">
+          <span class="n">ALU</span>
+          <h3>Nhôm định hình</h3>
+          <p>Loại 8020 dễ lắp, vững, tái sử dụng tốt. Cân bằng giữa giá và độ cứng — lựa chọn phổ biến nhất.</p>
+        </div>
+        <div class="card">
+          <span class="n">THÉP</span>
+          <h3>Thép hộp</h3>
+          <p>Cứng vững nhất, cắt/ hàn cần dụng cụ chuyên dụng. Dùng cho máy nặng cắt kim loại.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 8 -->
+  <section class="sec" id="chuong-8">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">08</span><span class="line"></span><span class="eyebrow-label">Chương 8 · The build</span></div>
+      <div class="sec-head">
+        <h2>Lắp ráp từng bước <span class="dim" style="font-weight:400;font-size:.6em">The build</span></h2>
+        <p>Thứ tự lắp ráp chuẩn giúp tránh sai lệch tích lũy. Làm từ khung ra ngoài.</p>
+      </div>
+      <ol class="steps">
+        <li><b>1. Khung:</b> lắp khung vuông góc, kiểm tra đường chéo bằng nhau.</li>
+        <li><b>2. Ray trượt:</b> gắn ray X, Y, Z, đảm bảo song song và phẳng.</li>
+        <li><b>3. Vít me:</b> lắp vít me, căn chỉnh đồng trục với ray, hạn chế kẹt (binding).</li>
+        <li><b>4. Động cơ:</b> gắn stepper vào vít me qua khớp nối (coupling), chỉnh thẳng trục.</li>
+        <li><b>5. Trục chính:</b> lắp router/trục chính lên cụm Z, cân bằng tâm.</li>
+        <li><b>6. Bàn:</b> lắp mặt bàn, làm phẳng (tram) bằng dao phay mặt.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 9 -->
+  <section class="sec alt" id="chuong-9">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">09</span><span class="line"></span><span class="eyebrow-label">Chương 9 · The electronics</span></div>
+      <div class="sec-head">
+        <h2>Điện tử &amp; đấu nối <span class="dim" style="font-weight:400;font-size:.6em">The electronics</span></h2>
+        <p>An toàn điện là ưu tiên. Ngắt nguồn khi đấu nối, kiểm tra kỹ trước khi cấp điện.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">NGUỒN</span>
+          <h3>Nguồn &amp; driver</h3>
+          <p>Bộ nguồn DC (24–48 V tùy driver) cấp cho driver stepper. Đấu đúng cực, nối đất (ground) chung.</p>
+        </div>
+        <div class="card">
+          <span class="n">TÍN HIỆU</span>
+          <h3>Bo điều khiển → driver</h3>
+          <p>Cáp xung (step/dir) từ bo điều khiển tới mỗi driver. Cáp kín (shielded) giảm nhiễu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHƯƠNG 10 -->
+  <section class="sec" id="chuong-10">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">10</span><span class="line"></span><span class="eyebrow-label">Chương 10 · The test</span></div>
+      <div class="sec-head">
+        <h2>Hiệu chuẩn &amp; cắt thử <span class="dim" style="font-weight:400;font-size:.6em">The test</span></h2>
+        <p>Đừng cắt ngay vật liệu quý. Kiểm tra chuyển động "không tải" trước, rồi cắt thử trên phế liệu.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card">
+          <span class="n">HIỆU CHUẨN</span>
+          <h3>Gốc &amp; điểm zero</h3>
+          <p>Về điểm gốc (homing) từng trục. Đặt điểm zero chi tiết (G54). Kiểm tra chiều trục đúng (X+ sang phải, Z+ lên).</p>
+        </div>
+        <div class="card">
+          <span class="n">CẮT THỬ</span>
+          <h3>Lần cắt đầu tiên</h3>
+          <p>Chạy không dao trên không (dry run). Cắt thử mạch/nhựa mỏng. Nếu sai kích thước, soát bù trừ bán kính dao và backlash.</p>
+        </div>
+      </div>
+      <p class="note" style="margin-top:24px">
+        <span class="lbl">MẸO</span>
+        <span class="t-vi">Luôn giữ tay gần nút dừng khẩn cấp (E-stop) khi chạy máy. Đeo kính bảo hộ và không mặc quần áo rủ xuống gần trục quay.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- KẾT -->
+  <section class="sec alt" id="ket">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">11</span><span class="line"></span><span class="eyebrow-label">Kết luận · Next steps</span></div>
+      <div class="sec-head">
+        <h2>Bước tiếp theo <span class="dim" style="font-weight:400;font-size:.6em">What's next?</span></h2>
+        <p>Sau khi máy chạy ổn định, bạn có thể nâng cấp: thêm trục quay (A-axis), lắp cảm biến chiều cao (touch plate / Z-probe), tự động bôi trơn, hoặc viết macro G-code riêng. Đọc tiếp PDF gốc để có hình ảnh chi tiết từng bước.</p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="../books/files/build-your-own-cnc-machine.pdf" target="_blank" rel="noopener">Đọc PDF gốc (EN) ▸</a>
+        <a class="btn btn-s" href="index.html">← Về thư viện sách</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-l">
+      <span class="brand-mini">Tự chế máy CNC — Chế tạo máy</span>
+      <p>Bản chuyển soạn nguyên bản tiếng Việt dựa trên <em>Build Your Own CNC Machine</em> (Kelly &amp; Hood-Daniel, Apress). Không thay thế bản gốc có bản quyền. PDF gốc © tác giả.</p>
+    </div>
+    <div class="foot-r">
+      <span class="mono"><a href="../../index.html">← Trang chủ / Home</a></span>
+      <span class="mono">machine-ctm.github.io</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
