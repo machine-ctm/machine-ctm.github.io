@@ -28,6 +28,7 @@ A **VI / EN** switch in the top bar toggles the whole page (persisted in `localS
 - Đề cương “1.2. Kỹ thuật Cơ khí” (course outline PDF).
 - Layout inspiration: https://pro-instcontrol.github.io/
 - Free open-access books (Internet Archive): Smid *CNC Programming Handbook* `archive.org/details/cnc-programming-handbook-a-comprehensive-guide-to-practical-cnc-programming`, Rose *Modern Machine-Shop Practice* `archive.org/details/modernmachinesho39225gut`, Cleveland *Use and Care of Twist Drills* `archive.org/details/cleveland-use-and-care-of-twist-drills`, Paquin *Die Design Fundamentals* `archive.org/details/die-design-fundamentals-by-paquin_201908`, Oberg *Machinery's Handbook* (borrowable) `archive.org/details/machineryshandbo0000ober`.
+- Boothroyd *Fundamentals of Machining and Machine Tools* (free PDF, College Library / referenceglobe.com): `referenceglobe.com/CollegeLibrary/library_books/20180120071811Fundamentals-of-Machining-and-Machine-Tools-Boothryd.pdf`.
 - BCIT Machinist LibGuide (books): https://libguides.bcit.ca/machinist/books
 - ResearchGate paper: https://www.researchgate.net/publication/347527876_Machining_Processes_and_Machines_Fundamentals_Analysis_and_Calculations
 
