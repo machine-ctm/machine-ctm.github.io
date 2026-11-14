@@ -16,6 +16,9 @@
 | Book Library (VI) | https://machine-ctm.github.io/vi/books/ |
 | Education (EN) | https://machine-ctm.github.io/education/ |
 | Education (VI) | https://machine-ctm.github.io/vi/education/ |
+| Video Library (EN) | https://machine-ctm.github.io/videos/ |
+| Video Library (VI) | https://machine-ctm.github.io/vi/videos/ |
+| Build Your Own CNC Machine — TIẾNG VIỆT | https://machine-ctm.github.io/vi/books/tu-che-may-cnc.html |
 
 A **VI / EN** switch in the top bar toggles the whole page (state persisted in `localStorage`).
 
@@ -65,9 +68,10 @@ Verified live: EN `/books` returns `A=4, B=2, C=2`; all 6 newly added PDFs resol
 
 ## 5. Pending work
 
-1. **Video Library (NOT started).** Eight YouTube videos were requested but not yet built into `/videos` (EN) and `/vi/videos` (VI). IDs/titles are captured in `handoff.md`.
-2. **Translate the first A-grade book** ("Build Your Own CNC Machine") into Vietnamese and add it to `/vi/books`. Delivery format (Vietnamese HTML book page vs. PDF vs. sample chapters) is still to be decided.
-3. *(Optional)* The Eagle Group and Boothroyd PDFs are currently linked **externally** in the free-books section; local copies already exist in `books/files/` if you later want them as hosted "Read/Download" cards.
+1. **Video Library — DONE.** Eight YouTube videos built into `/videos` (EN) and `/vi/videos` (VI) with responsive embeds; nav wired into all page pairs.
+2. **First A-grade book translated to Vietnamese — DONE (original adaptation).** "Build Your Own CNC Machine" → `vi/books/tu-che-may-cnc.html`, an original Vietnamese study guide (11 sections, copyright note + link to original PDF). Wired into both `/books` and `/vi/books` cards. A verbatim full translation was deliberately avoided to respect Apress copyright.
+3. *(Optional)* Other A-grade books (CNC Programming Basics, CNC Machining Complete Guide, Tormach Student Guide) could get similar Vietnamese pages.
+4. *(Optional)* The Eagle Group and Boothroyd PDFs are currently linked **externally** in the free-books section; local copies already exist in `books/files/` if you later want them as hosted "Read/Download" cards.
 
 ---
 
