@@ -335,3 +335,9 @@ html.lang-en .t-vi{display:none}
   .sec{border:0;padding:24px 0}
   body{font-size:11pt}
 }
+/* book grade badges (quality + ease of translation) */
+.grade{display:inline-block;font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.05em;padding:3px 9px;border-radius:999px;margin-right:9px;vertical-align:middle;color:#fff}
+.grade.g-A{background:#1f7a4d}
+.grade.g-B{background:#b9791b}
+.grade.g-C{background:#9a3b3b}
+.grade.g-VI{background:#2f5d80}
