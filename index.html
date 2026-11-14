@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="vi" class="lang-vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chế tạo máy — Cẩm nang song ngữ / Machine Building Field Guide</title>
+<meta name="description" content="Cẩm nang song ngữ (Tiếng Việt – English) về chế tạo máy: gia công cắt gọt, CNC, thiết kế máy công cụ, đồ gá, hàn, cơ khí chính xác và chương trình Kỹ thuật Cơ khí.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chế tạo máy — Cẩm nang song ngữ / Machine Building Field Guide">
+<meta property="og:description" content="Thiết kế. Gia công. Lắp ráp. — một cẩm nang về kỹ thuật chế tạo máy, từ gia công truyền thống đến công nghệ số.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua nội dung / Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="#main" aria-label="Chế tạo máy">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="16" cy="16" r="6.5"/>
+            <circle cx="16" cy="16" r="2.2" fill="currentColor" stroke="none"/>
+            <path d="M16 4.5v3M16 24.5v3M4.5 16h3M24.5 16h3M7.6 7.6l2.1 2.1M22.3 22.3l2.1 2.1M24.4 7.6l-2.1 2.1M9.7 22.3l-2.1 2.1"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand-txt"><strong>Chế tạo máy</strong><em>Machine Building</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a class="nav-link active" href="#main"><span class="t-vi">Trang chủ</span><span class="t-en">Home</span></a>
+      <a class="nav-link" href="#discipline"><span class="t-vi">Kỷ thuật</span><span class="t-en">Discipline</span></a>
+      <a class="nav-link" href="#processes"><span class="t-vi">Quy trình</span><span class="t-en">Processes</span></a>
+      <a class="nav-link" href="#curriculum"><span class="t-vi">Chương trình</span><span class="t-en">Curriculum</span></a>
+      <a class="nav-link" href="#tools"><span class="t-vi">Thiết bị</span><span class="t-en">Tools</span></a>
+      <a class="nav-link" href="#careers"><span class="t-vi">Nghề nghiệp</span><span class="t-en">Careers</span></a>
+    </nav>
+    <div class="bar-right">
+      <div class="lang" id="langSwitch" role="button" tabindex="0" title="Đổi ngôn ngữ / Switch language" aria-label="Switch language">
+        <span class="on" data-lang="vi">VI</span><span class="lang-sep">/</span><span data-lang="en">EN</span>
+      </div>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="kicker"><span class="dot"></span><span class="t-vi">Kỹ thuật Cơ khí · Chuyên ngành Chế tạo máy</span><span class="t-en">Mechanical Engineering · Machine Building track</span></span>
+        <h1>
+          <span class="t-vi">Thiết kế. Gia công. Lắp ráp.</span>
+          <span class="t-en">Design. Cut. Assemble.</span>
+          <span class="thin t-vi">Từ khối phôi thô đến chi tiết máy hoàn chỉnh.</span>
+          <span class="thin t-en">From a raw blank to a finished machine part.</span>
+        </h1>
+        <p class="lede">
+          <span class="t-vi">Một cẩm nang song ngữ về chế tạo máy — từ gia công cắt gọt truyền thống đến công nghệ CNC hiện đại, thiết kế máy công cụ, đồ gá, hàn và cơ khí chính xác. Dành cho sinh viên, kỹ sư và bất kỳ ai muốn hiểu cách biến vật liệu thành máy móc.</span>
+          <span class="t-en">A bilingual field guide to machine building — from traditional cutting processes to modern CNC technology, machine-tool design, jigs and fixtures, welding and precision mechanics. For students, engineers, and anyone who wants to understand how material becomes machinery.</span>
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#discipline"><span class="t-vi">Bắt đầu với kiến thức cơ bản →</span><span class="t-en">Start with the fundamentals →</span></a>
+          <a class="btn btn-s" href="#curriculum"><span class="t-vi">Xem chương trình đào tạo</span><span class="t-en">View the training program</span></a>
+        </div>
+      </div>
+      <div class="figure">
+        <svg viewBox="0 0 560 300" role="img" aria-label="Chuỗi chế tạo: thiết kế, gia công, đo kiểm, sản phẩm">
+          <defs>
+            <marker id="arw" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#9aa6b2"/>
+            </marker>
+          </defs>
+          <!-- boxes -->
+          <g font-family="Inter, sans-serif">
+            <!-- CAD -->
+            <rect x="22" y="108" width="124" height="84" rx="12" fill="#ffffff" stroke="#d2d8e0"/>
+            <text x="34" y="132" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1" fill="#c2540b">01</text>
+            <text x="34" y="162" font-size="22" font-weight="700" fill="#0c1116">CAD</text>
+            <text x="34" y="182" font-size="11.5" fill="#67748a">Thiết kế · Design</text>
+            <!-- CNC -->
+            <rect x="174" y="108" width="124" height="84" rx="12" fill="#ffffff" stroke="#d2d8e0"/>
+            <text x="186" y="132" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1" fill="#c2540b">02</text>
+            <text x="186" y="162" font-size="20" font-weight="700" fill="#0c1116">CNC</text>
+            <text x="186" y="182" font-size="11.5" fill="#67748a">Gia công · Cut</text>
+            <!-- CMM -->
+            <rect x="326" y="108" width="124" height="84" rx="12" fill="#ffffff" stroke="#d2d8e0"/>
+            <text x="338" y="132" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1" fill="#c2540b">03</text>
+            <text x="338" y="162" font-size="19" font-weight="700" fill="#0c1116">CMM</text>
+            <text x="338" y="182" font-size="11.5" fill="#67748a">Đo kiểm · Inspect</text>
+            <!-- arrows -->
+            <line x1="146" y1="150" x2="172" y2="150" stroke="#9aa6b2" stroke-width="2" marker-end="url(#arw)"/>
+            <line x1="298" y1="150" x2="324" y2="150" stroke="#9aa6b2" stroke-width="2" marker-end="url(#arw)"/>
+            <line x1="450" y1="150" x2="478" y2="150" stroke="#9aa6b2" stroke-width="2" marker-end="url(#arw)"/>
+            <!-- product gear -->
+            <g transform="translate(486,150)">
+              <circle r="26" fill="#fbeee2" stroke="#c2540b" stroke-width="1.6"/>
+              <g fill="none" stroke="#c2540b" stroke-width="2" stroke-linecap="round">
+                <circle r="13"/><circle r="4.5" fill="#c2540b" stroke="none"/>
+                <path d="M0 -22v5M0 17v5M-22 0h5M17 0h5M-15.5 -15.5l3.5 3.5M11.5 11.5l3.5 3.5M15.5 -15.5l-3.5 3.5M-11.5 11.5l-3.5 3.5"/>
+              </g>
+            </g>
+            <text x="486" y="196" text-anchor="middle" font-size="11" fill="#67748a">Sản phẩm · Part</text>
+          </g>
+        </svg>
+        <div class="figcap">Thiết kế → Gia công → Đo kiểm → Sản phẩm</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <div class="stats">
+    <div class="stat"><b>95%+</b><span><span class="t-vi">có việc làm sau 1 năm</span><span class="t-en">employed within 1 year</span></span></div>
+    <div class="stat"><b>5</b><span><span class="t-vi">chuyên đề đào tạo</span><span class="t-en">training modules</span></span></div>
+    <div class="stat"><b>4–8,5</b><span><span class="t-vi">năm (cử nhân → tiến sĩ)</span><span class="t-en">years (BSc → PhD)</span></span></div>
+    <div class="stat"><b>9–15</b><span><span class="t-vi">triệu ₫/tháng lương khởi điểm</span><span class="t-en">M₫/mo starting salary</span></span></div>
+  </div>
+
+  <!-- ============ 01 DISCIPLINE ============ -->
+  <section class="sec" id="discipline">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">01</span><span class="line"></span><span class="eyebrow-label"><span class="t-vi">Kỷ thuật ngành</span><span class="t-en">The discipline</span></span></div>
+      <div class="sec-head">
+        <h2><span class="t-vi">Chế tạo máy là gì?</span><span class="t-en">What is machine building?</span></h2>
+        <p><span class="t-vi">Chế tạo máy (Machine Building) là chuyên ngành của Kỹ thuật Cơ khí tập trung vào thiết kế, phát triển và sản xuất các hệ thống cơ khí — từ công nghệ gia công cắt gọt truyền thống đến gia công tự động hiện đại, gia công không phoi, thiết kế máy công cụ, thiết bị và hệ thống tự động, tạo hình, thiết kế ngược và tạo mẫu nhanh.</span><span class="t-en">Machine Building is the Mechanical Engineering track focused on the design, development and production of mechanical systems — from traditional cutting processes to modern automated machining, non-chip forming, machine-tool design, automated equipment and systems, shaping, reverse engineering and rapid prototyping.</span></p>
+      </div>
+
+      <div class="grid c3">
+        <div class="card">
+          <span class="n"><span class="t-vi">KIẾN THỨC</span><span class="t-en">KNOWLEDGE</span></span>
+          <h3><span class="t-vi">Nền tảng rộng và vững</span><span class="t-en">Broad, solid foundation</span></h3>
+          <p><span class="t-vi">Kiến thức cơ sở và cốt lõi ngành vững chắc, kết hợp khả năng dùng công cụ hiện đại để thiết kế, chế tạo, vận hành, nghiên cứu và cải tiến máy móc, thiết bị và hệ thống sản xuất.</span><span class="t-en">A strong grasp of foundational and core ME knowledge, combined with the ability to use modern tools to design, build, operate, analyse and improve machines, equipment and production systems.</span></p>
+        </div>
+        <div class="card">
+          <span class="n"><span class="t-vi">KỸ NĂNG</span><span class="t-en">SKILLS</span></span>
+          <h3><span class="t-vi">Làm việc chuyên nghiệp</span><span class="t-en">Professional practice</span></h3>
+          <p><span class="t-vi">Kỹ năng hợp tác, tổ chức và làm việc nhóm đa ngành; giao tiếp hiệu quả qua viết, thuyết trình, thảo luận và sử dụng thành thạo công cụ, phương tiện hiện đại.</span><span class="t-en">Teamwork, organisation and cross-disciplinary collaboration; effective communication through writing, presentation and discussion, plus fluent use of modern tools.</span></p>
+        </div>
+        <div class="card">
+          <span class="n"><span class="t-vi">NGOẠI NGỮ</span><span class="t-en">LANGUAGE</span></span>
+          <h3><span class="t-vi">Tiếng Anh thực dụng</span><span class="t-en">Working English</span></h3>
+          <p><span class="t-vi">Sử dụng hiệu quả tiếng Anh trong giao tiếp và công việc, đạt TOEIC từ 500 điểm trở lên — bước đệm để học tập và làm việc trong môi trường quốc tế.</span><span class="t-en">Effective use of English at work, reaching TOEIC 500+, opening the door to international study and engineering environments.</span></p>
+        </div>
+      </div>
+
+      <div class="note">
+        <span class="lbl"><span class="t-vi">QUY TẮC NGÓN TAY CÁI</span><span class="t-en">RULE OF THUMB</span></span>
+        <p><span class="t-vi">Nếu bạn không chỉ rõ được biến điều khiển (manipulated variable), thì bạn đang thiết kế một hệ thống <em>giám sát</em> — dù có gắn bao nhiêu cảm biến đi nữa.</span><span class="t-en">If you cannot name the manipulated variable, you are designing a <em>monitoring</em> system — however many sensors you bolt on.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 PROCESS FAMILIES ============ -->
+  <section class="sec alt" id="processes">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">02</span><span class="line"></span><span class="eyebrow-label"><span class="t-vi">Các họ gia công</span><span class="t-en">Process families</span></span></div>
+      <div class="sec-head">
+        <h2><span class="t-vi">Năm họ gia công</span><span class="t-en">Five families of machining</span></h2>
+        <p><span class="t-vi">Hầu hết mọi chi tiết cơ khí đều thuộc về một trong năm họ quy trình. Mỗi họ có công nghệ chủ đạo, chế độ hỏng đặc trưng và tập quy tắc lắp đặt quyết định độ chính xác của chi tiết.</span><span class="t-en">Almost every mechanical part belongs to one of five process families. Each has a dominant technology, a characteristic failure mode, and a set of rules that decide whether the number on the drawing becomes a true part.</span></p>
+      </div>
+
+      <div class="grid c3">
+        <a class="card" href="#tools">
+          <span class="n"><span class="t-vi">CẮT GỌT</span><span class="t-en">CUTTING</span></span>
+          <h3><span class="t-vi">Gia công cắt gọt</span><span class="t-en">Machining</span></h3>
+          <p><span class="t-vi">Tiện, phay, khoan, mài — tách phoi để đạt dung sai. Công nghệ nền tảng, vừa thủ công vừa CNC.</span><span class="t-en">Turning, milling, drilling, grinding — remove chips to hit tolerance. The foundational technology, manual or CNC.</span></p>
+        </a>
+        <a class="card" href="#curriculum">
+          <span class="n"><span class="t-vi">ÁP LỰC</span><span class="t-en">FORMING</span></span>
+          <h3><span class="t-vi">Gia công áp lực</span><span class="t-en">Forming</span></h3>
+          <p><span class="t-vi">Dập, cán, rèn, kéo — biến dạng dẻo không phoi. Tiết kiệm vật liệu, cấu trúc đồng nhất.</span><span class="t-en">Stamping, rolling, forging, drawing — plastic deformation, no chips. Material-efficient, integral structure.</span></p>
+        </a>
+        <a class="card" href="#curriculum">
+          <span class="n"><span class="t-vi">LIÊN KẾT</span><span class="t-en">JOINING</span></span>
+          <h3><span class="t-vi">Công nghệ hàn</span><span class="t-en">Welding</span></h3>
+          <p><span class="t-vi">Hồ quang, MIG/MAG, TIG, điện trở — nối các chi tiết thành cấu kiện và kết cấu lớn.</span><span class="t-en">Arc, MIG/MAG, TIG, resistance — joining parts into components and large structures.</span></p>
+        </a>
+        <a class="card" href="#curriculum">
+          <span class="n"><span class="t-vi">POLYME</span><span class="t-en">POLYMERS</span></span>
+          <h3><span class="t-vi">Chất dẻo &amp; Composite</span><span class="t-en">Plastics &amp; Composites</span></h3>
+          <p><span class="t-vi">Đúc phun, đùn, khuôn — tạo hình từ nhựa nhiệt và vật liệu composite nhẹ, bền.</span><span class="t-en">Injection moulding, extrusion, tooling — shaping thermoplastics and light, strong composites.</span></p>
+        </a>
+        <a class="card" href="#tools">
+          <span class="n"><span class="t-vi">CHÍNH XÁC</span><span class="t-en">PRECISION</span></span>
+          <h3><span class="t-vi">Cơ khí chính xác</span><span class="t-en">Precision mechanics</span></h3>
+          <p><span class="t-vi">Gia công tinh, EDM, đo lường quang điện tử — độ chính xác tới micromet và dưới micromet.</span><span class="t-en">Fine machining, EDM, opto-electronic metrology — accuracy down to and below a micron.</span></p>
+        </a>
+        <a class="card" href="#tools">
+          <span class="n"><span class="t-vi">SỐ HÓA</span><span class="t-en">DIGITAL</span></span>
+          <h3><span class="t-vi">Gia công số (CNC)</span><span class="t-en">Digital machining (CNC)</span></h3>
+          <p><span class="t-vi">Xương sống kết nối mọi họ quy trình: lập trình, điều khiển số, robot và tự động hóa.</span><span class="t-en">The backbone linking every family: programming, numerical control, robots and automation.</span></p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 CURRICULUM ============ -->
+  <section class="sec" id="curriculum">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">03</span><span class="line"></span><span class="eyebrow-label"><span class="t-vi">Chương trình đào tạo</span><span class="t-en">The program</span></span></div>
+      <div class="sec-head">
+        <h2><span class="t-vi">Chương trình đào tạo</span><span class="t-en">The training program</span></h2>
+        <p><span class="t-vi">Xây dựng trên cơ sở ngành Chế tạo máy, tham khảo chương trình của Stanford, MIT, NTU, RMIT, NUS; được cập nhật hàng năm theo sự phát triển của khoa học, kỹ thuật và công nghệ.</span><span class="t-en">Built on the Machine Building program, referencing curricula from Stanford, MIT, NTU, RMIT and NUS; revised yearly to track advances in science, engineering and technology.</span></p>
+      </div>
+
+      <div class="grid c2">
+        <div class="card">
+          <span class="n"><span class="t-vi">MÔ ĐUN 1</span><span class="t-en">MODULE 1</span></span>
+          <h3><span class="t-vi">Chế tạo máy</span><span class="t-en">Machine Building</span></h3>
+          <p>Máy CNC &amp; Robot công nghiệp · Công nghệ CNC · Thiết kế máy công cụ · Thiết kế dụng cụ cắt</p>
+        </div>
+        <div class="card">
+          <span class="n"><span class="t-vi">MÔ ĐUN 2</span><span class="t-en">MODULE 2</span></span>
+          <h3><span class="t-vi">Công nghệ &amp; khuôn dập tạo hình</span><span class="t-en">Forming dies &amp; moulding</span></h3>
+          <p>Lý thuyết dập · Thiết bị gia công áp lực · Công nghệ tạo hình tấm &amp; khối · Tạo hình tiên tiến</p>
+        </div>
+        <div class="card">
+          <span class="n"><span class="t-vi">MÔ ĐUN 3</span><span class="t-en">MODULE 3</span></span>
+          <h3><span class="t-vi">Công nghệ hàn</span><span class="t-en">Welding technology</span></h3>
+          <p>Các quá trình hàn · Thiết bị hàn · Vật liệu hàn · Tính toán kết cấu hàn · Đảm bảo chất lượng hàn</p>
+        </div>
+        <div class="card">
+          <span class="n"><span class="t-vi">MÔ ĐUN 4</span><span class="t-en">MODULE 4</span></span>
+          <h3><span class="t-vi">Cơ khí chính xác &amp; quang học</span><span class="t-en">Precision &amp; optics</span></h3>
+          <p>Công nghệ máy chính xác · Đo lường quang điện tử · Xử lý tín hiệu · Kỹ thuật vi cơ</p>
+        </div>
+        <div class="card">
+          <span class="n"><span class="t-vi">MÔ ĐUN 5</span><span class="t-en">MODULE 5</span></span>
+          <h3><span class="t-vi">Chất dẻo &amp; composite</span><span class="t-en">Plastics &amp; composites</span></h3>
+          <p>Cơ học polymer · Sản phẩm composite · Đúc phun · Đùn · Khuôn chất dẻo</p>
+        </div>
+        <div class="card">
+          <span class="n"><span class="t-vi">NỀN TẢNG</span><span class="t-en">FOUNDATION</span></span>
+          <h3><span class="t-vi">Kiến thức cơ sở &amp; cốt lõi</span><span class="t-en">Core foundation</span></h3>
+          <p>Đồ họa kỹ thuật · Cơ học kỹ thuật · Sức bền vật liệu · Nguyên lý máy · Chi tiết máy</p>
+        </div>
+      </div>
+
+      <div class="tbl-wrap mt40">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th><span class="t-vi">Mã</span><span class="t-en">Code</span></th>
+              <th><span class="t-vi">Học phần</span><span class="t-en">Course</span></th>
+              <th><span class="t-vi">Nhóm</span><span class="t-en">Group</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>ME2011</code></td><td>Đồ họa kỹ thuật I · Engineering Graphics</td><td><span class="mod">Cơ sở</span></td></tr>
+            <tr><td><code>ME2112</code></td><td>Cơ học kỹ thuật I · Engineering Mechanics</td><td><span class="mod">Cơ sở</span></td></tr>
+            <tr><td><code>ME2101</code></td><td>Sức bền vật liệu I · Strength of Materials</td><td><span class="mod">Cơ sở</span></td></tr>
+            <tr><td><code>ME2203</code></td><td>Nguyên lý máy · Machine Theory</td><td><span class="mod">Cơ sở</span></td></tr>
+            <tr><td><code>ME3101</code></td><td>Chi tiết máy · Machine Elements</td><td><span class="mod">Cơ sở</span></td></tr>
+            <tr><td><code>ME3201</code></td><td>Cơ sở Máy công cụ · Machine Tool Basics</td><td><span class="mod">Cơ sở</span></td></tr>
+            <tr><td><code>ME3205</code></td><td>Công nghệ chế tạo máy · Manufacturing Tech.</td><td><span class="mod">Cốt lõi</span></td></tr>
+            <tr><td><code>ME3103</code></td><td>Dung sai lắp ghép &amp; Kỹ thuật đo · Tolerancing &amp; Metrology</td><td><span class="mod">Cốt lõi</span></td></tr>
+            <tr><td><code>ME3102</code></td><td>Nguyên lý gia công vật liệu · Material Processing</td><td><span class="mod">Cốt lõi</span></td></tr>
+            <tr><td><code>ME3104</code></td><td>Chế tạo phôi · Blanking/Stock Production</td><td><span class="mod">Cốt lõi</span></td></tr>
+            <tr><td><code>ME3203</code></td><td>Công nghệ gia công áp lực · Forming Tech.</td><td><span class="mod">Cốt lõi</span></td></tr>
+            <tr><td><code>ME4159</code></td><td>Đồ gá · Jigs &amp; Fixtures</td><td><span class="mod">Cốt lõi</span></td></tr>
+            <tr><td><code>ME4148</code></td><td>Máy CNC &amp; Robot công nghiệp · CNC &amp; Robots</td><td><span class="mod">Chuyên ngành</span></td></tr>
+            <tr><td><code>ME4187</code></td><td>Công nghệ CNC · CNC Technology</td><td><span class="mod">Chuyên ngành</span></td></tr>
+            <tr><td><code>ME4168</code></td><td>Thiết kế máy công cụ · Machine Tool Design</td><td><span class="mod">Chuyên ngành</span></td></tr>
+            <tr><td><code>ME3260</code></td><td>Thiết kế dụng cụ cắt · Cutting Tool Design</td><td><span class="mod">Chuyên ngành</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="src"><span class="t-vi">Danh mục rút gọn từ đề cương chi tiết môn học “1.2. Kỹ thuật Cơ khí”. Chương trình đầy đủ gồm hơn 90 tín chỉ, cập nhật hàng năm.</span><span class="t-en">Condensed from the “1.2. Kỹ thuật Cơ khí” course outline. The full program exceeds 90 credits and is revised annually.</span></p>
+    </div>
+  </section>
+
+  <!-- ============ 04 TOOLS ============ -->
+  <section class="sec alt" id="tools">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">04</span><span class="line"></span><span class="eyebrow-label"><span class="t-vi">Thiết bị &amp; máy công cụ</span><span class="t-en">Tools &amp; machines</span></span></div>
+      <div class="sec-head">
+        <h2><span class="t-vi">Máy công cụ và thiết bị</span><span class="t-en">Machine tools &amp; equipment</span></h2>
+        <p><span class="t-vi">Từ máy truyền thống đến chuỗi sản xuất tự động — đây là những công cụ biến bản vẽ thành chi tiết thực.</span><span class="t-en">From conventional machines to the automated production line — these are the tools that turn a drawing into a real part.</span></p>
+      </div>
+
+      <div class="grid c4">
+        <div class="card"><span class="n">CNC</span><h3><span class="t-vi">Máy CNC</span><span class="t-en">CNC machines</span></h3><p><span class="t-vi">Trung tâm gia công, tiện CNC — điều khiển số, lặp lại chính xác cao.</span><span class="t-en">Machining centres, CNC lathes — numerically controlled, highly repeatable.</span></p></div>
+        <div class="card"><span class="n">CONV.</span><h3><span class="t-vi">Máy công cụ truyền thống</span><span class="t-en">Conventional tools</span></h3><p><span class="t-vi">Tiện, phay, bào, khoan, mài — nền tảng của mọi xưởng cơ khí.</span><span class="t-en">Lathes, mills, planers, drills, grinders — the workshop backbone.</span></p></div>
+        <div class="card"><span class="n">TOOLS</span><h3><span class="t-vi">Dụng cụ cắt</span><span class="t-en">Cutting tools</span></h3><p><span class="t-vi">Dao phay, mũi khoan, dao tiện, hợp kim cứng — tim của quá trình cắt gọt.</span><span class="t-en">End mills, drills, turning inserts, carbide — the heart of cutting.</span></p></div>
+        <div class="card"><span class="n">FIX</span><h3><span class="t-vi">Đồ gá</span><span class="t-en">Jigs &amp; fixtures</span></h3><p><span class="t-vi">Định vị, kẹp, chuẩn — quyết định độ chính xác và năng suất gia công.</span><span class="t-en">Locating, clamping, datums — they set accuracy and throughput.</span></p></div>
+        <div class="card"><span class="n">ROBOT</span><h3><span class="t-vi">Robot công nghiệp</span><span class="t-en">Industrial robots</span></h3><p><span class="t-vi">Hàn, sơn, gắp đặt, máy nạp — tự động hóa dòng chảy sản xuất.</span><span class="t-en">Welding, painting, pick-and-place, loading — automating the flow.</span></p></div>
+        <div class="card"><span class="n">METRO</span><h3><span class="t-vi">Máy đo (CMM)</span><span class="t-en">Metrology (CMM)</span></h3><p><span class="t-vi">Đo tọa độ, quang học, dung sai — chốt chất lượng trước khi giao hàng.</span><span class="t-en">Coordinate, optical, tolerance checking — quality gate before shipping.</span></p></div>
+        <div class="card"><span class="n">CAD/CAM</span><h3>CAD / CAM / CAE</h3><p><span class="t-vi">Thiết kế, lập trình gia công và mô phỏng trên máy tính.</span><span class="t-en">Design, machining programming and simulation on the computer.</span></p></div>
+        <div class="card"><span class="n">NON-CHIP</span><h3><span class="t-vi">Gia công không phoi</span><span class="t-en">Non-chip processes</span></h3><p><span class="t-vi">EDM, cắt laser, tia nước — định hình mà không tạo phoi.</span><span class="t-en">EDM, laser, waterjet — shaping without chips.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPARE ============ -->
+  <section class="sec" id="compare">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">↔</span><span class="line"></span><span class="eyebrow-label"><span class="t-vi">So sánh</span><span class="t-en">Comparison</span></span></div>
+      <div class="sec-head">
+        <h2><span class="t-vi">Truyền thống hay CNC?</span><span class="t-en">Manual or CNC?</span></h2>
+      </div>
+      <div class="versus">
+        <div class="a">
+          <h3><span class="t-vi">Gia công truyền thống</span><span class="t-en">Conventional machining</span></h3>
+          <span class="tagline"><span class="t-vi">VẬN HÀNH BẰNG TAY</span><span class="t-en">HANDS-ON</span></span>
+          <ul>
+            <li><span class="t-vi">Chi phí thiết lập thấp, phù hợp đơn chiếc và sửa chữa.</span><span class="t-en">Low setup cost, ideal for one-offs and repair.</span></li>
+            <li><span class="t-vi">Linh hoạt, phụ thuộc vào tay nghề người vận hành.</span><span class="t-en">Flexible, dependent on the operator's skill.</span></li>
+            <li><span class="t-vi">Năng suất thấp hơn với số lượng lớn.</span><span class="t-en">Lower throughput at volume.</span></li>
+            <li><span class="t-vi">Độ đồng đều dao động theo người làm.</span><span class="t-en">Consistency varies with the operator.</span></li>
+          </ul>
+        </div>
+        <div class="b">
+          <h3><span class="t-vi">Gia công số (CNC)</span><span class="t-en">CNC machining</span></h3>
+          <span class="tagline"><span class="t-vi">ĐIỀU KHIỂN CHƯƠNG TRÌNH</span><span class="t-en">PROGRAM-DRIVEN</span></span>
+          <ul>
+            <li><span class="t-vi">Lặp lại chính xác cao, ổn định giữa các chi tiết.</span><span class="t-en">High repeatability, stable part-to-part.</span></li>
+            <li><span class="t-vi">Nhanh với sản lượng lớn, phức tạp được nhờ CAM.</span><span class="t-en">Fast at volume, complexity handled via CAM.</span></li>
+            <li><span class="t-vi">Cần lập trình, chuẩn bị và vốn đầu tư lớn hơn.</span><span class="t-en">Needs programming, setup and higher capital.</span></li>
+            <li><span class="t-vi">Cốt lõi của sản xuất 4.0.</span><span class="t-en">The core of Industry 4.0 production.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAREERS ============ -->
+  <section class="sec alt" id="careers">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">05</span><span class="line"></span><span class="eyebrow-label"><span class="t-vi">Nghề nghiệp</span><span class="t-en">Careers</span></span></div>
+      <div class="sec-head">
+        <h2><span class="t-vi">Cơ hội việc làm</span><span class="t-en">Career opportunities</span></h2>
+        <p><span class="t-vi">Tốt nghiệp ngành Kỹ thuật Cơ khí làm việc được tại nhiều tổ chức công và tư. Trên 95% sinh viên có việc làm trong vòng 1 năm, mức lương phổ biến 9–15 triệu ₫/tháng.</span><span class="t-en">Mechanical Engineering graduates work across public and private organisations. Over 95% are employed within a year, typically earning 9–15 million ₫/month.</span></p>
+      </div>
+
+      <div class="logos">
+        <span>Samsung</span><span>Honda</span><span>Vinfast</span><span>Yamaha</span><span>Ford</span>
+        <span>ABB</span><span>LG</span><span>Canon</span><span>TOTO</span><span>Lilama</span>
+        <span>Vinaconex</span><span>NARIME</span><span>IMI</span>
+      </div>
+
+      <div class="grid c2 mt40">
+        <div class="card">
+          <h3><span class="t-vi">Vị trí việc làm</span><span class="t-en">Roles</span></h3>
+          <p><span class="t-vi">Nghiên cứu, thiết kế, chế tạo, quản lý sản xuất tại nhà máy; giảng viên, nghiên cứu viên; tiếp tục học sau đại học trong và ngoài nước.</span><span class="t-en">Research, design, manufacturing and production management in factories; lecturers and researchers; graduate study at home and abroad.</span></p>
+        </div>
+        <div class="card">
+          <h3><span class="t-vi">Thời gian đào tạo</span><span class="t-en">Program length</span></h3>
+          <ul class="mb0">
+            <li><span class="t-vi">Cử nhân: 4 năm</span><span class="t-en">Bachelor: 4 years</span></li>
+            <li><span class="t-vi">Kỹ sư: 5,5 năm</span><span class="t-en">Engineer: 5.5 years</span></li>
+            <li><span class="t-vi">Cử nhân – Thạc sĩ: 5,5 năm</span><span class="t-en">Bachelor – Master: 5.5 years</span></li>
+            <li><span class="t-vi">Cử nhân – Thạc sĩ – Tiến sĩ: 8,5 năm</span><span class="t-en">Bachelor – Master – PhD: 8.5 years</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note mt40">
+        <span class="lbl"><span class="t-vi">GIÁM ĐỐC CHƯƠNG TRÌNH</span><span class="t-en">PROGRAM DIRECTOR</span></span>
+        <p><strong>TS Lê Đức Độ</strong> · <span class="t-vi">Email tư vấn:</span><span class="t-en">Advising email:</span> <a href="mailto:do.leduc@hust.edu.vn">do.leduc@hust.edu.vn</a> · <span class="t-vi">Điện thoại:</span><span class="t-en">Tel:</span> 0915331881</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PATH ============ -->
+  <section class="sec" id="path">
+    <div class="wrap">
+      <div class="eyebrow"><span class="num">★</span><span class="line"></span><span class="eyebrow-label"><span class="t-vi">Cách dùng cẩm nang</span><span class="t-en">How to use this guide</span></span></div>
+      <div class="sec-head">
+        <h2><span class="t-vi">Lộ trình học</span><span class="t-en">Learning path</span></h2>
+      </div>
+      <div class="grid c4">
+        <a class="card" href="#discipline">
+          <span class="n">01</span>
+          <h3><span class="t-vi">Học nền tảng</span><span class="t-en">Learn the basics</span></h3>
+          <p><span class="t-vi">Vật liệu, bản vẽ kỹ thuật, cơ học — nền tảng để đọc và thiết kế chi tiết.</span><span class="t-en">Materials, engineering drawing, mechanics — the base for reading and designing parts.</span></p>
+        </a>
+        <a class="card" href="#processes">
+          <span class="n">02</span>
+          <h3><span class="t-vi">Chọn quy trình</span><span class="t-en">Choose a process</span></h3>
+          <p><span class="t-vi">Cắt gọt, áp lực, hàn, nhựa hay chính xác — mỗi họ có quy tắc riêng.</span><span class="t-en">Cutting, forming, welding, plastics or precision — each family has its own rules.</span></p>
+        </a>
+        <a class="card" href="#tools">
+          <span class="n">03</span>
+          <h3><span class="t-vi">Thiết lập máy &amp; CNC</span><span class="t-en">Set up the machine</span></h3>
+          <p><span class="t-vi">Đồ gá, dụng cụ cắt, lập trình — biến quy trình thành chi tiết thực.</span><span class="t-en">Fixtures, cutting tools, programming — turn the process into a real part.</span></p>
+        </a>
+        <a class="card" href="#curriculum">
+          <span class="n">04</span>
+          <h3><span class="t-vi">Đo kiểm &amp; chất lượng</span><span class="t-en">Inspect &amp; assure</span></h3>
+          <p><span class="t-vi">Dung sai, đo lường, đảm bảo chất lượng — chốt cuối trước khi giao hàng.</span><span class="t-en">Tolerances, metrology, QA — the final gate before shipping.</span></p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-l">
+      <span class="brand-mini">Chế tạo máy — Cẩm nang song ngữ / Machine Building Field Guide</span>
+      <p>
+        <span class="t-vi">Nguồn tham khảo: Chương trình đào tạo Kỹ thuật Cơ khí, Trường Đại học Bách khoa Hà Nội (SME) · Đề cương “1.2. Kỹ thuật Cơ khí” · Bố cục tham khảo pro-instcontrol.github.io. Trang thông tin học thuật, không phải trang chính thức của HUST.</span>
+        <span class="t-en">Sources: Mechanical Engineering program, Hanoi University of Science and Technology (SME) · “1.2. Kỹ thuật Cơ khí” course outline · layout inspired by pro-instcontrol.github.io. An academic reference page, not an official HUST site.</span>
+      </p>
+    </div>
+    <div class="foot-r">
+      <span class="mono">machine-ctm.github.io</span>
+      <span class="mono">© <span id="yr">2026</span> · EN / VI</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var sw=document.getElementById('langSwitch');
+  function setLang(l){
+    root.className='lang-'+l;
+    root.setAttribute('lang', l==='vi'?'vi':'en');
+    var spans=sw.querySelectorAll('span[data-lang]');
+    for(var i=0;i<spans.length;i++){
+      spans[i].classList.toggle('on', spans[i].getAttribute('data-lang')===l);
+    }
+    try{localStorage.setItem('ctm-lang',l);}catch(e){}
+  }
+  sw.addEventListener('click',function(){
+    var cur=root.classList.contains('lang-en')?'en':'vi';
+    setLang(cur==='vi'?'en':'vi');
+  });
+  sw.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();sw.click();} });
+  try{var s=localStorage.getItem('ctm-lang'); if(s) setLang(s);}catch(e){}
+  var burger=document.querySelector('.burger');
+  if(burger){ burger.addEventListener('click',function(){ document.body.classList.toggle('menu-open'); }); }
+  var links=document.querySelectorAll('.nav-link');
+  for(var j=0;j<links.length;j++){ links[j].addEventListener('click',function(){ document.body.classList.remove('menu-open'); }); }
+  var yr=document.getElementById('yr'); if(yr){ yr.textContent=new Date().getFullYear(); }
+})();
+</script>
+</body>
+</html>
