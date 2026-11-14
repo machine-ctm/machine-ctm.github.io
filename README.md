@@ -22,24 +22,35 @@ machining (burnt-orange + steel palette, light technical theme).
 | Vietnamese study guides | `/vi/books/*.html` | 8 original adaptations, one per graded English book |
 | Education (EN / VI) | `/education/`, `/vi/education/` | Training programs, curricula, trade-theory PDFs |
 | Video Library (EN / VI) | `/videos/`, `/vi/videos/` | 8 curated YouTube videos with responsive embeds |
-| Foundation Science (EN) | `/foundation/` | 13 free science books (Maths, Physics, Chemistry, General Science) hosted on GitHub Releases |
+| Foundation Science (EN) | `/foundation/` | 13 free science books (Maths, Physics, Chemistry, General Science) served same-origin + mirrored on a GitHub Release |
 | Foundation Science (VI) | `/vi/foundation/` | Same 13 books in Vietnamese, lively adaptations for young readers |
+| In-browser Reader (EN) | `/reader.html` | Full-page PDF viewer for every locally-hosted PDF (`?file=` / `?title=` query), `noindex` |
+| In-browser Reader (VI) | `/vi/reader.html` | Vietnamese full-page PDF viewer (same pattern, `noindex`) |
 
 The homepage toggles language in place via `.t-vi` / `.t-en` spans and `localStorage`.
 All other pages are separate EN / VI files linked by a language switcher in the top bar.
 `/vi/**` pages use relative paths two levels up (`../../assets/…`, `../../books/files/…`)
 and link to their VI sibling sections (`../education/`, `../videos/`, `../books/`).
 
+**In-browser Reader.** Every locally-hosted PDF — the 11 machining textbooks, the education
+curricula, and the 26 re-hosted Foundation science titles — opens inside `/reader.html` (EN) or
+`/vi/reader.html` (VI) instead of a new browser tab. The reader is a sticky top bar plus a
+full-height `<iframe>` whose `src` is set from a `?file=` query parameter (host-relative paths
+are normalized to same-origin absolute URLs); if a non-PDF is loaded it falls back to a plain
+download link. Both reader pages are marked `noindex`. **Exception:** `/vi/reader.html` sits only
+one level deep at `/vi/`, so it uses `../assets/…` and `../books/` (not the `../../` used by the
+deeper `/vi/books/*.html` study guides).
+
 ---
 
 ## Content
 
 - **Homepage** — hero (design → machining → inspection → product), discipline, process families, curriculum (5 modules + core-course table), tools & machines, conventional-vs-CNC comparison, careers, learning path, library and education teasers.
-- **Book Library** — **11 hosted PDFs** (3 Vietnamese lecture-note textbooks + 8 English references graded `A` / `B` / `C` for quality and ease of adaptation), each with Read / Download buttons. Also: free open-access books (Internet Archive, College Library, Eagle Group — all linked externally, not re-hosted), library / academic references (BCIT Machinist LibGuide, WorldCat, ResearchGate), a G/M-code quick reference, and a CnCCookbook G-code course link.
+- **Book Library** — **37 hosted PDFs** (11 machining textbooks + 26 Foundation science titles re-hosted same-origin), each opened through the in-browser Reader (`Read ▸`) with a parallel `Download` link. The 11 machining textbooks are 3 Vietnamese lecture-note texts + 8 English references graded `A` / `B` / `C` for quality and ease of adaptation. A `#foundation-science` cross-list section surfaces all 13 EN (and 13 VI) science titles with a "books we found on the shelf but did not copy" note. Also: free open-access books (Internet Archive, College Library, Eagle Group — all linked externally, not re-hosted), library / academic references (BCIT Machinist LibGuide, WorldCat, ResearchGate), a G/M-code quick reference, and a CnCCookbook G-code course link.
 - **Vietnamese study guides** — 8 original, illustrated HTML adaptations under `/vi/books/`. These are written from scratch in Vietnamese from the source books' **topic structure**, not verbatim translations, because the source PDFs are copyrighted (several explicitly reserve translation rights). Every guide has 8–11 sections, diagrams or tables, a copyright note, a link back to its source PDF, and cross-links to the other seven.
 - **Education** — career paths, program structure, Bharat Skills *CNC Machining Technician* trade-theory PDF, Skilled Trades BC *Machinist Harmonized Program Outline*, the HUST Mechanical Engineering program, and an online metal-machining course.
 - **Video Library** — 8 YouTube videos, each with EN / VI titles and descriptions.
-- **Foundation Science** — 13 free, openly downloadable science books per language (26 total), grouped into **Maths · Physics · Chemistry · General Science**. Written for *curiosity, not exams*: puzzles, vintage science-show tricks, the story of the chemical elements, and a gentle tour of the universe — no sign-up, no paywall. PDFs are hosted on a GitHub Release (`foundation-v1`) because some are large; every book credits its source (Internet Archive item, Project Gutenberg, US DOE handbook, or public-domain classic) and links back to it. Content tone is deliberately lively and inspiring for young readers, not dry/academic.
+- **Foundation Science** — 13 free, openly downloadable science books per language (26 total), grouped into **Maths · Physics · Chemistry · General Science**. Written for *curiosity, not exams*: puzzles, vintage science-show tricks, the story of the chemical elements, and a gentle tour of the universe — no sign-up, no paywall. The PDFs are **re-hosted same-origin** in `books/files/` (so the in-browser Reader can embed them) **and mirrored** on the `foundation-v1` GitHub Release; every book credits its source (Internet Archive item, Project Gutenberg, US DOE handbook, or public-domain classic) and links back to it. Content tone is deliberately lively and inspiring for young readers, not dry/academic.
 
 ### Vietnamese study guides (8/8 graded English books)
 
@@ -71,11 +82,21 @@ Only the user's own PDFs (copied from `E:\Ebooks\Che Tao May`) are hosted under
 their original hosts, never re-hosted. The Vietnamese guides are original adaptations that
 state "không phải bản dịch" and credit the source.
 
+`books/files/` now holds **37 PDFs** (11 machining textbooks + 26 Foundation science titles).
+The 26 science titles were **re-hosted same-origin** (they were originally only on the
+`foundation-v1` Release) because the in-browser Reader can only embed PDFs served with
+`Content-Type: application/pdf` **and** `Access-Control-Allow-Origin: *` — both of which
+Pages-hosted files provide. GitHub Release assets redirect to `release-assets.githubusercontent.com`
+with `Content-Disposition: attachment` and no CORS, which forces a download and cannot be
+embedded, so they are kept only as a mirror. Pages' hard limit is 100 MB per file; the largest
+re-hosted PDF is **69.8 MB** (`tro-choi-ly-thu-bach-khoa.pdf`), safely under it (GitHub warns
+above 50 MB but still accepts up to 100 MB).
+
 The **Foundation Science** PDFs are all *freely downloadable* works: public-domain classics,
 Project Gutenberg editions, US Government (DOE) handbooks, and Internet Archive items released
 for free download (several under CC BY-NC-ND, credited on-page). **No borrowed or lending-only
-copies are included.** PDFs are hosted on the `foundation-v1` GitHub Release (not in the repo
-tree) because several are large; each book card links back to its source item.
+copies are included.** They are served same-origin from `books/files/` for the Reader and mirrored
+on the `foundation-v1` GitHub Release; each book card links back to its source item.
 
 ---
 
@@ -103,17 +124,19 @@ tree) because several are large; each book card links back to its source item.
 ```
 machine-ctm-site/
 ├── index.html                 # bilingual homepage (VI/EN toggle)
+├── reader.html                # In-browser PDF Reader (EN, noindex) — ?file=/.../x.pdf&title=...
 ├── assets/
 │   ├── style.css              # shared design system
 │   └── favicon.svg
 ├── books/
-│   ├── index.html             # Book Library (EN)
-│   └── files/                 # 11 hosted PDFs (ASCII filenames)
+│   ├── index.html             # Book Library (EN) + #foundation-science cross-list
+│   └── files/                 # 37 hosted PDFs (11 machining + 26 science, ASCII filenames)
 ├── foundation/
-│   └── index.html             # Foundation Science (EN) — PDFs on GitHub Release
+│   └── index.html             # Foundation Science (EN) — PDFs same-origin + Release mirror
 ├── vi/
+│   ├── reader.html            # In-browser PDF Reader (VI, noindex) — one level deep, uses ../assets
 │   ├── books/
-│   │   ├── index.html         # Book Library (VI) + #huong-dan guide index
+│   │   ├── index.html         # Book Library (VI) + #huong-dan guide index + #foundation-science
 │   │   └── *.html             # 8 Vietnamese study guides
 │   ├── foundation/index.html  # Foundation Science (VI)
 │   ├── education/index.html
@@ -123,7 +146,7 @@ machine-ctm-site/
 │   └── files/                 # Bharat Skills + SkilledTradesBC PDFs
 ├── videos/index.html
 ├── 404.html                   # custom bilingual 404 (noindex)
-├── sitemap.xml                # 17 content pages + 4 EN/VI hreflang pairs
+├── sitemap.xml                # 17 content pages + 4 EN/VI hreflang pairs (reader pages excluded: noindex)
 ├── robots.txt                 # Allow: / + Sitemap reference
 ├── README.md
 ├── report.md                  # project status report

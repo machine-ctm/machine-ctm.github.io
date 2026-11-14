@@ -8,12 +8,14 @@ current state and the exact next steps so work can resume without re-deriving co
 ## 1. Goal & current state
 
 Bilingual (EN / VI) static GitHub Pages site about Machine Building / Machining.
-**Done:** homepage, `/books` + `/vi/books` (11 hosted PDFs + free/external references,
-A/B/C grading live), `/education` + `/vi/education`, `/videos` + `/vi/videos`,
-**Foundation Science** `/foundation` + `/vi/foundation` (13 free science books per language,
-hosted on the `foundation-v1` GitHub Release), and **Vietnamese study-guide pages for every
-graded English book — 4 grade-A + 2 grade-B + 2 grade-C (8 total)**, plus a consolidated
-eight-card index at `/vi/books/#huong-dan`.
+**Done:** homepage, `/books` + `/vi/books` (37 hosted PDFs — 11 machining textbooks + 26
+Foundation science titles re-hosted same-origin — all opened through the in-browser Reader,
+plus free/external references and A/B/C grading; both libraries carry a `#foundation-science`
+cross-list), the in-browser Reader (`/reader.html`, `/vi/reader.html`), `/education` +
+`/vi/education`, `/videos` + `/vi/videos`, **Foundation Science** `/foundation` + `/vi/foundation`
+(13 free science books per language, served same-origin + mirrored on the `foundation-v1` GitHub
+Release), and **Vietnamese study-guide pages for every graded English book — 4 grade-A + 2 grade-B
++ 2 grade-C (8 total)**, plus a consolidated eight-card index at `/vi/books/#huong-dan`.
 **Nothing pending** from the original handoff — Tasks A, B, the remaining A-books, the grade-B
 books and the grade-C reference works are all complete. The translation job is finished (8/8).
 The Foundation Science section (basic Maths / Physics / Chemistry / General Science for young
@@ -97,15 +99,19 @@ and to the corresponding library cards in both indexes. `<pre>` blocks carry inl
 
 - **Copyright:** only host the user's own PDFs from `E:\Ebooks\Che Tao May`. Link external/
   licensed material (CnCCookbook, Internet Archive, referenceglobe, Eagle, ResearchGate, BCIT).
-- **Large / free PDFs → GitHub Releases, not the repo tree.** The Foundation Science PDFs
-  (26 files, several tens of MB) are uploaded to the `foundation-v1` release on
-  `machine-ctm/machine-ctm.github.io` and linked via
+- **Foundation Science PDFs are served same-origin AND mirrored on a GitHub Release.** The 26 science
+  PDFs live in `books/files/` (so the in-browser Reader can embed them — Pages serves them with
+  `Content-Type: application/pdf` **and** `Access-Control-Allow-Origin: *`) **and** are mirrored on the
+  `foundation-v1` release at
   `https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/<slug>.pdf`.
-  This keeps the Pages repo lean and handles large binaries. Only *freely downloadable* works are
-  included (public domain, Project Gutenberg, US DOE handbooks, Internet Archive CC BY-NC-ND) —
-  **never** borrowed/lending-only copies. Create/replace a release with `gh release create` using
-  `GH_TOKEN` (read from the PAT in `git remote get-url origin`); `gh auth status` keyring tokens
-  are currently invalid, so set `GH_TOKEN` explicitly.
+  GitHub Release assets redirect to `release-assets.githubusercontent.com` with
+  `Content-Disposition: attachment` and no CORS, so they **cannot** be embedded in the reader and are
+  kept only as a download mirror. Pages' hard limit is 100 MB per file; the largest re-hosted PDF is
+  **69.8 MB** (`tro-choi-ly-thu-bach-khoa.pdf`) — under the limit, though GitHub warns above 50 MB.
+  Only *freely downloadable* works are included (public domain, Project Gutenberg, US DOE handbooks,
+  Internet Archive CC BY-NC-ND) — **never** borrowed/lending-only copies. Update the mirror with
+  `gh release create` using `GH_TOKEN` (read from the PAT in `git remote get-url origin`); `gh auth status`
+  keyring tokens are currently invalid, so set `GH_TOKEN` explicitly.
 - **Metadata for any new page:** add `<link rel="canonical" href="https://machine-ctm.github.io/<path>">`,
   Open Graph tags (`og:type`, `og:site_name`, `og:title`, `og:description`, `og:url`) and
   `<meta name="twitter:card" content="summary">`, derived from its `<title>` / `<meta name="description">`.
@@ -135,21 +141,23 @@ and to the corresponding library cards in both indexes. `<pre>` blocks carry inl
 ```
 machine-ctm-site/
 ├── index.html                 # homepage (EN+VI toggle)
-├── books/index.html           # Library EN  (hosted PDFs + free/external + grading)
-├── vi/books/index.html        # Library VI (+ #huong-dan: 8-guide consolidated index)
+├── reader.html                # In-browser PDF Reader (EN, noindex) — ?file=/.../x.pdf&title=...
+├── books/index.html           # Library EN  (hosted PDFs + free/external + grading + #foundation-science)
+├── vi/books/index.html        # Library VI (+ #huong-dan: 8-guide index; + #foundation-science)
 ├── vi/books/*.html            # 8 Vietnamese study guides (all grade-A + B + C books)
+├── vi/reader.html             # In-browser PDF Reader (VI, noindex) — one level deep, uses ../assets
 ├── education/index.html        # Education EN
 ├── vi/education/index.html     # Education VI
 ├── videos/index.html           # Video Library EN
 ├── vi/videos/index.html        # Video Library VI
-├── foundation/index.html       # Foundation Science EN (PDFs on GitHub Release foundation-v1)
+├── foundation/index.html       # Foundation Science EN (PDFs same-origin + Release mirror)
 ├── vi/foundation/index.html    # Foundation Science VI
-├── books/files/                # 11 hosted PDFs (ASCII filenames)
+├── books/files/                # 37 hosted PDFs (11 machining + 26 science, ASCII filenames)
 ├── education/files/            # Bharat Skills + SkilledTradesBC PDFs
 ├── assets/style.css            # design system (+ .grade badges added)
 ├── assets/favicon.svg
 ├── 404.html                    # custom bilingual 404 (noindex)
-├── sitemap.xml                 # 17 content pages + 4 EN/VI hreflang pairs
+├── sitemap.xml                 # 17 content pages + 4 EN/VI hreflang pairs (reader pages excluded: noindex)
 ├── robots.txt                  # Allow: / + Sitemap reference
 ├── README.md
 ├── report.md                   # status report
@@ -163,6 +171,7 @@ machine-ctm-site/
 ```bash
 sleep 60
 for u in sitemap.xml robots.txt 404.html \
+         reader.html vi/reader.html \
          books vi/books education vi/education videos vi/videos \
          foundation vi/foundation \
          vi/books/tu-che-may-cnc.html vi/books/co-ban-lap-trinh-cnc.html \
@@ -171,7 +180,15 @@ for u in sitemap.xml robots.txt 404.html \
          vi/books/cam-nang-gia-cong-ap-luc.html vi/books/quy-trinh-va-may-gia-cong.html; do
   curl -sL "https://machine-ctm.github.io/$u" -o /tmp/p.html -w "$u -> HTTP %{http_code} %{size_download}B\n"
 done
-# Foundation Science PDFs are on the GitHub Release, not the repo tree:
+# Same-origin hosted PDFs must come back as application/pdf WITH CORS (so the Reader can embed them):
+for f in build-your-own-cnc-machine.pdf flatland.pdf amusements-in-mathematics.pdf \
+         toan-hoc-sieu-hay.pdf vat-ly-ngo-ngan.pdf tro-choi-ly-thu-bach-khoa.pdf; do
+  curl -sI -L -o /dev/null -w "pdf $f -> %{http_code} %{content_type}\n" \
+    "https://machine-ctm.github.io/books/files/$f"
+  curl -sI -L "https://machine-ctm.github.io/books/files/$f" | grep -i 'access-control-allow-origin' \
+    && echo "  ok: CORS present for $f" || echo "  WARN: no CORS header for $f"
+done
+# Foundation Science PDFs are ALSO mirrored on the GitHub Release (download mirror, not embeddable):
 for f in flatland.pdf amusements-in-mathematics.pdf toan-hoc-sieu-hay.pdf vat-ly-ngo-ngan.pdf; do
   curl -sI -L -o /dev/null -w "asset $f -> HTTP %{http_code} %{size_download}B\n" \
     "https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/$f"
