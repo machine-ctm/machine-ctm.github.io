@@ -82,6 +82,10 @@ state "không phải bản dịch" and credit the source.
 - ResearchGate: https://www.researchgate.net/publication/347527876_Machining_Processes_and_Machines_Fundamentals_Analysis_and_Calculations
 
 > Academic reference site — not an official HUST site.
+>
+> Link-check note: ResearchGate returns HTTP 403 to non-browser user agents (anti-bot); the
+> publication link still resolves in a normal browser. The `fonts.googleapis.com` /
+> `fonts.gstatic.com` preconnect roots also return 404 by design — they are origins, not pages.
 
 ---
 
@@ -106,10 +110,18 @@ machine-ctm-site/
 │   ├── index.html
 │   └── files/                 # Bharat Skills + SkilledTradesBC PDFs
 ├── videos/index.html
+├── 404.html                   # custom bilingual 404 (noindex)
+├── sitemap.xml                # 15 content pages + 3 EN/VI hreflang pairs
+├── robots.txt                 # Allow: / + Sitemap reference
 ├── README.md
 ├── report.md                  # project status report
 └── handoff.md                 # resume / implementation notes
 ```
+
+Every content page carries `<link rel="canonical">`, Open Graph / Twitter tags, and — for the
+three EN/VI page pairs — reciprocal `hreflang` alternates. `404.html` is deliberately excluded
+from the sitemap and marked `noindex`. When adding a page, add it to `sitemap.xml` too and give
+it the same metadata block (see `handoff.md` §4).
 
 ---
 

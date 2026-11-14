@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://machine-ctm.github.io/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-ctm.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://machine-ctm.github.io/"/>
+  </url>
+
+  <url>
+    <loc>https://machine-ctm.github.io/books/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-ctm.github.io/books/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/vi/books/"/>
+  </url>
+
+  <url>
+    <loc>https://machine-ctm.github.io/vi/books/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-ctm.github.io/books/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/vi/books/"/>
+  </url>
+
+  <url>
+    <loc>https://machine-ctm.github.io/vi/books/tu-che-may-cnc.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machine-ctm.github.io/vi/books/co-ban-lap-trinh-cnc.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machine-ctm.github.io/vi/books/cam-nang-gia-cong-cnc.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machine-ctm.github.io/vi/books/cam-nang-sinh-vien-tormach.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machine-ctm.github.io/vi/books/lap-trinh-cnc-may-tien.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machine-ctm.github.io/vi/books/nen-tang-gia-cong-cnc.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machine-ctm.github.io/vi/books/cam-nang-gia-cong-ap-luc.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machine-ctm.github.io/vi/books/quy-trinh-va-may-gia-cong.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://machine-ctm.github.io/education/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-ctm.github.io/education/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/vi/education/"/>
+  </url>
+  <url>
+    <loc>https://machine-ctm.github.io/vi/education/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-ctm.github.io/education/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/vi/education/"/>
+  </url>
+
+  <url>
+    <loc>https://machine-ctm.github.io/videos/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-ctm.github.io/videos/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/vi/videos/"/>
+  </url>
+  <url>
+    <loc>https://machine-ctm.github.io/vi/videos/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-ctm.github.io/videos/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/vi/videos/"/>
+  </url>
+
+</urlset>

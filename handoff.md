@@ -93,6 +93,15 @@ and to the corresponding library cards in both indexes. `<pre>` blocks carry inl
 
 - **Copyright:** only host the user's own PDFs from `E:\Ebooks\Che Tao May`. Link external/
   licensed material (CnCCookbook, Internet Archive, referenceglobe, Eagle, ResearchGate, BCIT).
+- **Metadata for any new page:** add `<link rel="canonical" href="https://machine-ctm.github.io/<path>">`,
+  Open Graph tags (`og:type`, `og:site_name`, `og:title`, `og:description`, `og:url`) and
+  `<meta name="twitter:card" content="summary">`, derived from its `<title>` / `<meta name="description">`.
+  Add reciprocal `hreflang="en"` / `hreflang="vi"` alternates if it has an EN/VI pair, then add its
+  URL to `sitemap.xml` (referenced from `robots.txt`). `404.html` is `noindex` and deliberately
+  **not** in the sitemap; it reuses the homepage's `.t-vi`/`.t-en` toggle script.
+- **External-link checks:** 23 real links all return 200. ResearchGate returns 403 to non-browser
+  user agents (anti-bot) and the two font preconnect origins return 404 by design — neither is a
+  broken link, do not "fix" them.
 - **Bilingual toggle:** `<html>` class `lang-vi`/`lang-en`; `.t-vi`/`.t-en` spans; `localStorage` (homepage only). Other pages are separate EN/VI files with a top-bar language switcher.
 - **`/vi/**` relative paths:** assets and hosted files go two levels up (`../../assets/…`, `../../books/files/…`, `../../education/files/…`); the homepage is `../../index.html`. But **navigation to sibling VI sections is one level up** — `../books/`, `../education/`, `../videos/` — and a guide's "Sách" link is `index.html`. A previous version incorrectly used `../../books/` etc. in the nav and silently sent VI readers to the English sections. Keep the language switcher pointing at the EN counterpart (`../../books/`, `../../education/`, `../../videos/`).
 - **Deploy:**
@@ -124,6 +133,9 @@ machine-ctm-site/
 ├── education/files/            # Bharat Skills + SkilledTradesBC PDFs
 ├── assets/style.css            # design system (+ .grade badges added)
 ├── assets/favicon.svg
+├── 404.html                    # custom bilingual 404 (noindex)
+├── sitemap.xml                 # 15 content pages + 3 EN/VI hreflang pairs
+├── robots.txt                  # Allow: / + Sitemap reference
 ├── README.md
 ├── report.md                   # status report
 └── handoff.md                 # this file
@@ -135,7 +147,8 @@ machine-ctm-site/
 
 ```bash
 sleep 60
-for u in books vi/books education vi/education videos vi/videos \
+for u in sitemap.xml robots.txt 404.html \
+         books vi/books education vi/education videos vi/videos \
          vi/books/tu-che-may-cnc.html vi/books/co-ban-lap-trinh-cnc.html \
          vi/books/cam-nang-gia-cong-cnc.html vi/books/cam-nang-sinh-vien-tormach.html \
          vi/books/lap-trinh-cnc-may-tien.html vi/books/nen-tang-gia-cong-cnc.html \
