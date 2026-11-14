@@ -18,6 +18,7 @@ machining (burnt-orange + steel palette).
 - **Careers** — employers, roles, program lengths, program director.
 - **Learning path** — a 4-step study route.
 - **Book library** (`/books`, `/vi/books`) — five hosted machining textbooks (read/download) plus CNC web references (CnCCookbook G-code course & PDF hub) and a G/M-code quick reference.
+- **Education section** (`/education`, `/vi/education`) — training programs & courses: Bharat Skills *CNC Machining Technician* 1st-year trade-theory PDF, Skilled Trades BC *Machinist Harmonized Program Outline* PDF, the HUST Mechanical Engineering program page, and an Udemy metal-machining video course.
 
 A **VI / EN** switch in the top bar toggles the whole page (persisted in `localStorage`).
 
