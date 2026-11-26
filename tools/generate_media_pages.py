@@ -38,6 +38,7 @@ TEXT = {
         "col_get": "Open",
         "download": "Download",
         "view": "View",
+        "large": "Over 100 MB — download to view",
         "empty": "No files match your filter.",
         "note_lbl": "A note on sources",
         "note": "These are personal study copies collected from local course folders. Copyright remains with the original authors and publishers; please use them for private study and follow your local copyright rules.",
@@ -69,6 +70,7 @@ TEXT = {
         "col_get": "Mở",
         "download": "Tải về",
         "view": "Xem",
+        "large": "Trên 100 MB — tải về để xem",
         "empty": "Không có tệp nào khớp với bộ lọc.",
         "note_lbl": "Lưu ý về nguồn tài liệu",
         "note": "Đây là các bản sao dùng cho học tập cá nhân, lấy từ thư mục khóa học trên máy. Bản quyền vẫn thuộc về tác giả và nhà xuất bản gốc; chỉ sử dụng cho mục đích học tập riêng và tuân thủ quy định bản quyền hiện hành.",
@@ -144,12 +146,16 @@ def build(lang: str) -> str:
                 f'{viewer}?file={quote(item["slug"])}&title={quote(item["title"])}'
                 + ("&lang=vi" if lang == "vi" else "")
             )
+            if item["size"] > 100 * 1024 * 1024:
+                view_cell = f'<span class="dim small">{t["large"]}</span>'
+            else:
+                view_cell = f'<a class="more" href="{esc(view_url)}">{t["view"]} ▸</a>'
             rows.append(
                 f'          <tr data-search="{search}">\n'
                 f'            <td><strong>{esc(item["title"])}</strong><br><span class="src">{esc(item["slug"])}</span></td>\n'
                 f'            <td><span class="pill" data-kind="{kind}">{kind}</span></td>\n'
                 f'            <td class="mono">{fmt_size(item["size"])}</td>\n'
-                f'            <td><a class="more" href="{esc(view_url)}">{t["view"]} ▸</a> · <a class="more" href="{esc(url)}" target="_blank" rel="noopener">{t["download"]} ↗</a></td>\n'
+                f'            <td>{view_cell} · <a class="more" href="{esc(url)}" target="_blank" rel="noopener">{t["download"]} ↗</a></td>\n'
                 f'          </tr>'
             )
         sections.append(

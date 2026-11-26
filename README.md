@@ -215,5 +215,6 @@ inventory changes.
 renders PDFs in-page with a locally hosted PDF.js (`assets/pdfjs/`), with page navigation and
 zoom; `.ppt`/`.pptx` files use the Microsoft Office Online embed viewer. Both viewer pages
 accept `?file=<slug>&title=<title>&lang=en|vi`, are `noindex`, and always keep a Download
-fallback. The catalog carries a note that these are personal study copies and that copyright
-remains with the original authors and publishers.
+fallback. One 116 MB manufacturing handbook exceeds GitHub's 100 MB per-file limit, so it
+is download-only. The catalog carries a note that these are personal study copies and that
+copyright remains with the original authors and publishers.

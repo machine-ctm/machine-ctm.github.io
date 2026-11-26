@@ -215,6 +215,8 @@ support byte ranges.
 hosted PDF.js renderer for PDFs and an Office Online embed for `.ppt`/`.pptx`. Both take
 `?file=<slug>&title=<title>&lang=en|vi`, are `noindex`, and keep a Download fallback.
 PDF.js files live in `assets/pdfjs/` (3.11.174, UMD build) so the worker stays same-origin.
+The 116 MB manufacturing handbook exceeds GitHub's 100 MB per-file limit; it stays on the
+Release only and its catalog row shows a download-to-view note instead of a View link.
 
 Regeneration workflow:
 ```bash
