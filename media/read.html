@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book reader — Chế tạo máy / Machine Building</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/pdfjs/pdf.min.js"></script>
+<style>
+  .rwrap{max-width:1040px;margin:0 auto;padding:26px 28px 60px}
+  .rhead{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:18px}
+  .rhead h1{font-size:1.4rem;letter-spacing:-.02em}
+  .rhead .mono{font-size:11.5px;color:var(--muted)}
+  .ractions{display:flex;flex-wrap:wrap;gap:8px}
+  .rbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px;border:1px solid var(--line);background:var(--bg2);border-radius:10px;margin-bottom:14px}
+  .rbar button{font:inherit;font-size:13px;padding:6px 11px;border:1px solid var(--line2);background:#fff;border-radius:7px;cursor:pointer;color:var(--ink)}
+  .rbar button:hover{border-color:var(--ink2)}
+  .rbar .page{font-family:var(--mono);font-size:12px;color:var(--muted);min-width:74px;text-align:center}
+  .stage{background:#eef1f5;border:1px solid var(--line);border-radius:12px;padding:18px;text-align:center;min-height:320px;overflow:auto}
+  .stage canvas{display:block;margin:0 auto;box-shadow:0 8px 26px -14px rgba(12,17,22,.5);background:#fff}
+  .office{width:100%;height:78vh;border:0;border-radius:10px;background:#fff}
+  .rhint{margin-top:14px;font-size:13.4px;color:var(--muted)}
+  .rerr{margin-top:14px;padding:14px 16px;border-left:2px solid var(--accent);background:var(--bg2);border-radius:0 8px 8px 0;display:none}
+  @media (max-width:700px){.rwrap{padding:18px 16px 44px}.rhead h1{font-size:1.12rem}.stage{padding:8px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" aria-label="Chế tạo máy">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="16" cy="16" r="6.5"/><circle cx="16" cy="16" r="2.2" fill="currentColor" stroke="none"/>
+            <path d="M16 4.5v3M16 24.5v3M4.5 16h3M24.5 16h3M7.6 7.6l2.1 2.1M22.3 22.3l2.1 2.1M24.4 7.6l-2.1 2.1M9.7 22.3l-2.1 2.1"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand-txt"><strong>Chế tạo máy</strong><em>Machine Building</em></span>
+    </a>
+    <nav class="nav" id="nav"><a class="nav-link" href="index.html">← Media</a></nav>
+  </div>
+</header>
+
+<main class="rwrap">
+  <div class="rhead">
+    <div>
+      <h1 id="rtitle">Book reader</h1>
+      <div class="mono" id="rfile">—</div>
+    </div>
+    <div class="ractions">
+      <a class="btn btn-s" id="rdownload" href="#" download>Download / Tải về</a>
+      <a class="btn btn-p" href="index.html">← Library</a>
+    </div>
+  </div>
+
+  <div class="rbar" id="rbar">
+    <button id="prev" type="button">← Prev</button>
+    <span class="page" id="pageLabel">—</span>
+    <button id="next" type="button">Next →</button>
+    <button id="zoomOut" type="button">−</button>
+    <button id="zoomIn" type="button">+</button>
+    <a id="rawOpen" href="#" target="_blank" rel="noopener" class="mono small">Open source ↗</a>
+  </div>
+
+  <div class="stage" id="stage"><canvas id="pdfCanvas"></canvas></div>
+  <p class="rhint" id="rhint">PDF pages render in your browser. Use the arrows to turn pages and + / − to zoom.</p>
+  <div class="rerr" id="rerr"><strong id="rerrTitle">Could not display this document inline.</strong> <span id="rerrBody">Use Download instead.</span></div>
+</main>
+
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var file = q.get('file') || '';
+  var title = q.get('title') || file;
+  var lang = q.get('lang') === 'vi' ? 'vi' : 'en';
+  var RAW = 'https://raw.githubusercontent.com/machine-ctm/course-media/main/';
+  var RELEASE = 'https://github.com/machine-ctm/machine-ctm.github.io/releases/download/course-media-v1/';
+  var remote = RAW + encodeURIComponent(file);
+  var ext = (file.split('.').pop() || '').toLowerCase();
+  var isOffice = ext === 'ppt' || ext === 'pptx';
+
+  document.documentElement.lang = lang;
+  document.getElementById('rtitle').textContent = title;
+  document.getElementById('rfile').textContent = file;
+  document.getElementById('rdownload').href = RELEASE + encodeURI(file);
+  document.getElementById('rawOpen').href = remote;
+  document.querySelector('.nav-link').textContent = lang === 'vi' ? '← Tài liệu' : '← Media';
+  document.querySelectorAll('.btn-p').forEach(function(a){ a.textContent = lang === 'vi' ? '← Thư viện' : '← Library'; });
+  document.getElementById('prev').textContent = lang === 'vi' ? '← Trước' : '← Prev';
+  document.getElementById('next').textContent = lang === 'vi' ? 'Sau →' : 'Next →';
+
+  if (!file) return;
+
+  if (isOffice) {
+    document.getElementById('rbar').style.display = 'none';
+    document.getElementById('rhint').textContent = lang === 'vi'
+      ? 'Slide được hiển thị bằng trình xem Office trực tuyến. Nếu không tải được, hãy dùng nút Tải về.'
+      : 'Slides are shown with the online Office viewer. If it does not load, use Download.';
+    var frame = document.createElement('iframe');
+    frame.className = 'office';
+    frame.src = 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(remote);
+    frame.title = title;
+    frame.setAttribute('allowfullscreen', 'true');
+    document.getElementById('stage').replaceChildren(frame);
+    return;
+  }
+
+  document.getElementById('rhint').textContent = lang === 'vi'
+    ? 'Trang PDF được hiển thị trong trình duyệt. Dùng mũi tên để lật trang và + / − để phóng to.'
+    : 'PDF pages render in your browser. Use the arrows to turn pages and + / − to zoom.';
+
+  if (!window.pdfjsLib) {
+    document.getElementById('rerr').style.display = 'block';
+    return;
+  }
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '../assets/pdfjs/pdf.worker.min.js';
+
+  var pdf = null, pageNo = 1, scale = 1.15, renderTask = null;
+  var canvas = document.getElementById('pdfCanvas');
+  var ctx = canvas.getContext('2d');
+  var label = document.getElementById('pageLabel');
+
+  function fail(err){
+    console.error(err);
+    document.getElementById('rerr').style.display = 'block';
+  }
+
+  async function render(n){
+    if (!pdf || n < 1 || n > pdf.numPages) return;
+    if (renderTask) { try { renderTask.cancel(); } catch(e){} }
+    pageNo = n;
+    try {
+      var page = await pdf.getPage(n);
+      var viewport = page.getViewport({scale: scale});
+      var dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.floor(viewport.width * dpr);
+      canvas.height = Math.floor(viewport.height * dpr);
+      canvas.style.width = Math.floor(viewport.width) + 'px';
+      canvas.style.height = Math.floor(viewport.height) + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      renderTask = page.render({canvasContext: ctx, viewport: viewport});
+      await renderTask.promise;
+      label.textContent = n + ' / ' + pdf.numPages;
+    } catch (e) { if (e && e.name !== 'RenderingCancelledException') fail(e); }
+  }
+
+  pdfjsLib.getDocument({url: remote, withCredentials: false}).promise.then(function(doc){
+    pdf = doc;
+    render(1);
+  }).catch(fail);
+
+  document.getElementById('prev').addEventListener('click', function(){ render(pageNo - 1); });
+  document.getElementById('next').addEventListener('click', function(){ render(pageNo + 1); });
+  document.getElementById('zoomIn').addEventListener('click', function(){ scale = Math.min(scale + 0.2, 3); render(pageNo); });
+  document.getElementById('zoomOut').addEventListener('click', function(){ scale = Math.max(scale - 0.2, 0.5); render(pageNo); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft') render(pageNo - 1);
+    if (e.key === 'ArrowRight') render(pageNo + 1);
+  });
+})();
+</script>
+</body>
+</html>

@@ -30,13 +30,14 @@ TEXT = {
         "figure_cap": "137 files · 1.46 GB",
         "eyebrow": "Course media · Tài liệu học tập",
         "h2": "Downloadable files",
-        "intro": "Files are hosted as GitHub Release assets so the site stays within GitHub Pages size limits. Click a file name to save it locally; MP4 videos play in any modern media player.",
+        "intro": "Watch videos and read documents online with View, or use Download for an offline copy. Media is streamed from a public asset repository; the download links point to GitHub Releases.",
         "filter": "Filter by title or filename…",
         "col_file": "File",
         "col_type": "Type",
         "col_size": "Size",
-        "col_get": "Get",
+        "col_get": "Open",
         "download": "Download",
+        "view": "View",
         "empty": "No files match your filter.",
         "note_lbl": "A note on sources",
         "note": "These are personal study copies collected from local course folders. Copyright remains with the original authors and publishers; please use them for private study and follow your local copyright rules.",
@@ -60,13 +61,14 @@ TEXT = {
         "figure_cap": "137 tệp · 1,46 GB",
         "eyebrow": "Tài liệu học tập · Course media",
         "h2": "Tệp có thể tải về",
-        "intro": "Các tệp được lưu trên GitHub Releases để trang web không vượt giới hạn của GitHub Pages. Nhấn tên tệp để tải về; video MP4 mở được bằng mọi trình phát hiện đại.",
+        "intro": "Nhấn Xem để xem video hoặc đọc tài liệu trực tuyến, hoặc dùng Tải về để lưu máy. Tài liệu được phát trực tiếp từ kho media công khai; liên kết tải về trỏ tới GitHub Releases.",
         "filter": "Lọc theo tên tệp…",
         "col_file": "Tệp",
         "col_type": "Loại",
         "col_size": "Kích thước",
-        "col_get": "Tải",
+        "col_get": "Mở",
         "download": "Tải về",
+        "view": "Xem",
         "empty": "Không có tệp nào khớp với bộ lọc.",
         "note_lbl": "Lưu ý về nguồn tài liệu",
         "note": "Đây là các bản sao dùng cho học tập cá nhân, lấy từ thư mục khóa học trên máy. Bản quyền vẫn thuộc về tác giả và nhà xuất bản gốc; chỉ sử dụng cho mục đích học tập riêng và tuân thủ quy định bản quyền hiện hành.",
@@ -137,12 +139,17 @@ def build(lang: str) -> str:
             url = BASE + quote(item["slug"])
             kind = item["ext"].lstrip(".").upper()
             search = esc(f'{item["title"]} {item["slug"]}'.lower())
+            viewer = "viewer.html" if item["ext"] == ".mp4" else "read.html"
+            view_url = (
+                f'{viewer}?file={quote(item["slug"])}&title={quote(item["title"])}'
+                + ("&lang=vi" if lang == "vi" else "")
+            )
             rows.append(
                 f'          <tr data-search="{search}">\n'
                 f'            <td><strong>{esc(item["title"])}</strong><br><span class="src">{esc(item["slug"])}</span></td>\n'
                 f'            <td><span class="pill" data-kind="{kind}">{kind}</span></td>\n'
                 f'            <td class="mono">{fmt_size(item["size"])}</td>\n'
-                f'            <td><a class="more" href="{esc(url)}" target="_blank" rel="noopener">{t["download"]} ↗</a></td>\n'
+                f'            <td><a class="more" href="{esc(view_url)}">{t["view"]} ▸</a> · <a class="more" href="{esc(url)}" target="_blank" rel="noopener">{t["download"]} ↗</a></td>\n'
                 f'          </tr>'
             )
         sections.append(

@@ -200,14 +200,20 @@ Manufacturing*, *CNC Machine* (including *Fundamentals of Tool Design*), *Mechan
 Engineering* and *Mechanical Drawing*. Exact duplicates are skipped by SHA-256.
 
 Binary files are **not committed to the Pages repo** — Pages has a ~1 GB soft limit and the
-repo already holds ~400 MB of PDFs. Instead they are uploaded as assets on the
-`course-media-v1` GitHub Release and linked from searchable catalog tables on both pages.
+repo already holds ~400 MB of PDFs. Two public mirrors are used instead:
+
+- `course-media-v1` GitHub Release — powers the **Download** links.
+- `machine-ctm/course-media` repo — raw URLs power the **View** links (CORS + byte ranges).
+
 The catalog is generated from `tools/media_inventory.json` by
-`tools/generate_media_pages.py`; the release is populated by
-`tools/upload_release_assets.py` (PAT supplied via `GH_TOKEN`). `tools/patch_site.py` wires
-the pages into the navigation, homepage and sitemap. Regenerate the pages whenever the
+`tools/generate_media_pages.py`; `tools/upload_release_assets.py` populates the release, and
+`tools/stage_media_repo.py` prepares the raw-asset repo. `tools/patch_site.py` wires the
+catalog into the navigation, homepage and sitemap. Regenerate the pages whenever the
 inventory changes.
 
-Videos are MP4 downloads and open in any modern media player. The catalog carries a note
-that these are personal study copies and that copyright remains with the original authors
-and publishers.
+**Viewers.** `/media/viewer.html` plays MP4s with the native HTML5 player. `/media/read.html`
+renders PDFs in-page with a locally hosted PDF.js (`assets/pdfjs/`), with page navigation and
+zoom; `.ppt`/`.pptx` files use the Microsoft Office Online embed viewer. Both viewer pages
+accept `?file=<slug>&title=<title>&lang=en|vi`, are `noindex`, and always keep a Download
+fallback. The catalog carries a note that these are personal study copies and that copyright
+remains with the original authors and publishers.

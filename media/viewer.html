@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video viewer — Chế tạo máy / Machine Building</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .vwrap{max-width:1040px;margin:0 auto;padding:26px 28px 60px}
+  .vhead{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:20px}
+  .vhead h1{font-size:1.45rem;letter-spacing:-.02em}
+  .vhead .mono{font-size:11.5px;color:var(--muted)}
+  .vactions{display:flex;flex-wrap:wrap;gap:8px}
+  .player{width:100%;background:#0b1016;border-radius:12px;display:block;aspect-ratio:16/9}
+  .vhint{margin-top:14px;font-size:13.5px;color:var(--muted)}
+  .verr{margin-top:14px;padding:14px 16px;border-left:2px solid var(--accent);background:var(--bg2);border-radius:0 8px 8px 0;display:none}
+  @media (max-width:700px){.vwrap{padding:18px 16px 44px}.vhead h1{font-size:1.15rem}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" aria-label="Chế tạo máy">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="16" cy="16" r="6.5"/><circle cx="16" cy="16" r="2.2" fill="currentColor" stroke="none"/>
+            <path d="M16 4.5v3M16 24.5v3M4.5 16h3M24.5 16h3M7.6 7.6l2.1 2.1M22.3 22.3l2.1 2.1M24.4 7.6l-2.1 2.1M9.7 22.3l-2.1 2.1"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand-txt"><strong>Chế tạo máy</strong><em>Machine Building</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a class="nav-link" href="index.html">← Media</a>
+    </nav>
+  </div>
+</header>
+
+<main class="vwrap">
+  <div class="vhead">
+    <div>
+      <h1 id="vtitle">Video viewer</h1>
+      <div class="mono" id="vfile">—</div>
+    </div>
+    <div class="vactions">
+      <a class="btn btn-s" id="vdownload" href="#" download>Download / Tải về</a>
+      <a class="btn btn-p" href="index.html">← Library</a>
+    </div>
+  </div>
+
+  <video class="player" id="player" controls preload="metadata" playsinline></video>
+  <p class="vhint" id="vhint">Streaming from the public media repository. If playback is blocked in your browser, use Download and open the MP4 locally.</p>
+  <div class="verr" id="verr">
+    <strong id="verr-title">Playback unavailable.</strong>
+    <span id="verr-body"> Use the Download button above to watch this video offline.</span>
+  </div>
+</main>
+
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var file = q.get('file') || '';
+  var title = q.get('title') || file;
+  var lang = q.get('lang') === 'vi' ? 'vi' : 'en';
+  var RAW = 'https://raw.githubusercontent.com/machine-ctm/course-media/main/';
+  var RELEASE = 'https://github.com/machine-ctm/machine-ctm.github.io/releases/download/course-media-v1/';
+
+  document.documentElement.lang = lang;
+  document.getElementById('vtitle').textContent = title;
+  document.getElementById('vfile').textContent = file;
+  document.getElementById('vdownload').href = RELEASE + encodeURI(file);
+  document.querySelector('.nav-link').textContent = lang === 'vi' ? '← Tài liệu' : '← Media';
+  document.querySelectorAll('.btn-p').forEach(function(a){ a.textContent = lang === 'vi' ? '← Thư viện' : '← Library'; });
+  document.getElementById('vhint').textContent = lang === 'vi'
+    ? 'Phát trực tiếp từ kho media công khai. Nếu trình duyệt không phát được, hãy tải về và mở tệp MP4 trên máy.'
+    : 'Streaming from the public media repository. If playback is blocked in your browser, use Download and open the MP4 locally.';
+  document.getElementById('verr-title').textContent = lang === 'vi' ? 'Không thể phát video.' : 'Playback unavailable.';
+  document.getElementById('verr-body').textContent = lang === 'vi'
+    ? ' Hãy dùng nút Tải về ở trên để xem video ngoại tuyến.'
+    : ' Use the Download button above to watch this video offline.';
+
+  if (!file) return;
+  var video = document.getElementById('player');
+  var src = RAW + encodeURIComponent(file);
+  video.src = src;
+  video.addEventListener('error', function(){
+    document.getElementById('verr').style.display = 'block';
+  });
+  video.load();
+})();
+</script>
+</body>
+</html>

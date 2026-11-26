@@ -205,15 +205,24 @@ done
 duplicates are removed by SHA-256 (one repeated CNC video, eight repeated drawing PDFs).
 
 **Hosting decision:** the binaries are **not** in the Pages repo (it already holds ~400 MB
-of PDFs and Pages has a ~1 GB soft limit). They are assets on the `course-media-v1`
-GitHub Release; the catalog links to them as downloads. Release assets are served with
-`Content-Disposition: attachment`, so no in-browser video player is possible.
+of PDFs and Pages has a ~1 GB soft limit). They are mirrored twice: on the `course-media-v1`
+GitHub Release (Download links) and in the public `machine-ctm/course-media` repo
+(raw URLs for inline viewers). Release assets cannot be embedded because they are served
+with `Content-Disposition: attachment`; raw URLs from the media repo send CORS headers and
+support byte ranges.
+
+**Viewers:** `/media/viewer.html` = native HTML5 MP4 player; `/media/read.html` = locally
+hosted PDF.js renderer for PDFs and an Office Online embed for `.ppt`/`.pptx`. Both take
+`?file=<slug>&title=<title>&lang=en|vi`, are `noindex`, and keep a Download fallback.
+PDF.js files live in `assets/pdfjs/` (3.11.174, UMD build) so the worker stays same-origin.
 
 Regeneration workflow:
 ```bash
 python tools/build_media_inventory.py          # writes tools/media_inventory.json
-GH_TOKEN=<PAT> python tools/upload_release_assets.py   # idempotent, skips existing asset names
-python tools/generate_media_pages.py           # rebuild both catalog pages
+GH_TOKEN=<PAT> python tools/upload_release_assets.py   # idempotent release mirror
+python tools/stage_media_repo.py               # copy slugs into D:/Educational Courses/course-media-staging
+# push that staging repo to machine-ctm/course-media
+python tools/generate_media_pages.py           # rebuild both catalog pages with View links
 python tools/patch_site.py                     # nav / homepage / sitemap (idempotent)
 ```
 When adding folders, update `SOURCES` and `COLLECTIONS` in `build_media_inventory.py` first.
