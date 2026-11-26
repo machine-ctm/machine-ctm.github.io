@@ -189,3 +189,25 @@ using the site's `sec` / `card` / `grid` / `steps` / `tbl` classes. Use `../../`
 assets and hosted PDFs, add a copyright note, wire the page into both library indexes and
 the `#huong-dan` grid, and extend the cross-link line in every other guide.
 `<pre>` blocks need inline styles — there is no global `pre` rule in `assets/style.css`.
+
+---
+
+## Course Media Library
+
+`/media/` (EN) and `/vi/media/` (VI) index **137 unique files (~1.46 GB)** collected from
+the user's local course folders: *Fundamentals of Modern Manufacturing*, *Lean
+Manufacturing*, *CNC Machine* (including *Fundamentals of Tool Design*), *Mechanical
+Engineering* and *Mechanical Drawing*. Exact duplicates are skipped by SHA-256.
+
+Binary files are **not committed to the Pages repo** — Pages has a ~1 GB soft limit and the
+repo already holds ~400 MB of PDFs. Instead they are uploaded as assets on the
+`course-media-v1` GitHub Release and linked from searchable catalog tables on both pages.
+The catalog is generated from `tools/media_inventory.json` by
+`tools/generate_media_pages.py`; the release is populated by
+`tools/upload_release_assets.py` (PAT supplied via `GH_TOKEN`). `tools/patch_site.py` wires
+the pages into the navigation, homepage and sitemap. Regenerate the pages whenever the
+inventory changes.
+
+Videos are MP4 downloads and open in any modern media player. The catalog carries a note
+that these are personal study copies and that copyright remains with the original authors
+and publishers.

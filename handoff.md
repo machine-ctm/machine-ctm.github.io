@@ -194,3 +194,28 @@ for f in flatland.pdf amusements-in-mathematics.pdf toan-hoc-sieu-hay.pdf vat-ly
     "https://github.com/machine-ctm/machine-ctm.github.io/releases/download/foundation-v1/$f"
 done
 ```
+
+---
+
+## 8. Course Media Library — added 2026-11-26
+
+`/media/` + `/vi/media/` index **137 unique files (~1.46 GB)** from six local folders:
+`Fundamentals of Mordern Manufacturing`, `Lean Manufacturing`, `CNC Machine` (including
+`Fundamentals of Tool Design`), `Mechanical Engineering` and `Mechanical Drawing`. Exact
+duplicates are removed by SHA-256 (one repeated CNC video, eight repeated drawing PDFs).
+
+**Hosting decision:** the binaries are **not** in the Pages repo (it already holds ~400 MB
+of PDFs and Pages has a ~1 GB soft limit). They are assets on the `course-media-v1`
+GitHub Release; the catalog links to them as downloads. Release assets are served with
+`Content-Disposition: attachment`, so no in-browser video player is possible.
+
+Regeneration workflow:
+```bash
+python tools/build_media_inventory.py          # writes tools/media_inventory.json
+GH_TOKEN=<PAT> python tools/upload_release_assets.py   # idempotent, skips existing asset names
+python tools/generate_media_pages.py           # rebuild both catalog pages
+python tools/patch_site.py                     # nav / homepage / sitemap (idempotent)
+```
+When adding folders, update `SOURCES` and `COLLECTIONS` in `build_media_inventory.py` first.
+VI sibling nav links must be `../media/` (one level up), while the VI language switcher
+stays `../../media/` (EN counterpart).

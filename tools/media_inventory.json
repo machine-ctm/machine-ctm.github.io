@@ -1,0 +1,1452 @@
+{
+  "release_tag": "course-media-v1",
+  "release_url_base": "https://github.com/machine-ctm/machine-ctm.github.io/releases/download/course-media-v1/",
+  "collections": {
+    "mfg": {
+      "en": "Fundamentals of Modern Manufacturing",
+      "vi": "Cơ sở Chế tạo Hiện đại",
+      "note_en": "Core manufacturing processes, forming, welding, plastics, metrology and automation.",
+      "note_vi": "Các quy trình chế tạo cơ bản: tạo hình, hàn, chất dẻo, đo kiểm và tự động hóa."
+    },
+    "lean": {
+      "en": "Lean Manufacturing",
+      "vi": "Sản xuất Tinh gọn (Lean)",
+      "note_en": "Kaizen, value stream mapping, kanban, setup reduction, visual control and lean culture.",
+      "note_vi": "Kaizen, bản đồ dòng giá trị, kanban, giảm thời gian chuyển máy và văn hóa Lean."
+    },
+    "cnc": {
+      "en": "CNC Machines & References",
+      "vi": "Máy CNC & Tài liệu tham khảo",
+      "note_en": "CNC operation, maintenance and handbooks; includes the Fundamentals of Tool Design videos.",
+      "note_vi": "Vận hành, bảo trì máy CNC và sổ tay; gồm cả video Fundamentals of Tool Design."
+    },
+    "tool": {
+      "en": "Fundamentals of Tool Design",
+      "vi": "Cơ sở Thiết kế Dụng cụ",
+      "note_en": "Fixture, die, gaging and cutting-tool design; rapid and composite tooling.",
+      "note_vi": "Thiết kế đồ gá, khuôn, dụng cụ đo và dụng cụ cắt; khuôn nhanh và composite."
+    },
+    "mech": {
+      "en": "Mechanical Engineering",
+      "vi": "Kỹ thuật Cơ khí",
+      "note_en": "Machine design, machine elements, manufacturing handbooks, turbomachinery and exam references.",
+      "note_vi": "Thiết kế máy, chi tiết máy, sổ tay chế tạo, tuốc bin và tài liệu ôn thi."
+    },
+    "draw": {
+      "en": "Mechanical Drawing",
+      "vi": "Bản vẽ Cơ khí",
+      "note_en": "Engineering drawing, blueprint reading, technical handouts and fastener drawings.",
+      "note_vi": "Bản vẽ kỹ thuật, đọc bản vẽ sản xuất, tài liệu hướng dẫn và bản vẽ ren."
+    }
+  },
+  "items": [
+    {
+      "collection": "cnc",
+      "title": "1525dipma",
+      "source": "D:\\Educational Courses\\CNC Machine\\1525dipma.pdf",
+      "source_label": "CNC Machine/1525dipma.pdf",
+      "slug": "cnc-1525dipma.pdf",
+      "ext": ".pdf",
+      "size": 467548,
+      "sha256": "722095d031c02b5c11f8310c48d47c5b30a9cdf007074b87866f1386beffd328"
+    },
+    {
+      "collection": "cnc",
+      "title": "BCIT Program",
+      "source": "D:\\Educational Courses\\CNC Machine\\BCIT Program.pdf",
+      "source_label": "CNC Machine/BCIT Program.pdf",
+      "slug": "cnc-bcit-program.pdf",
+      "ext": ".pdf",
+      "size": 316185,
+      "sha256": "e24fb12d2590727279e9a3c40c06f573588f3d059cde8ec0f281129f7be6617c"
+    },
+    {
+      "collection": "cnc",
+      "title": "CNC Machine",
+      "source": "D:\\Educational Courses\\CNC Machine\\CNC Machine.mp4",
+      "source_label": "CNC Machine/CNC Machine.mp4",
+      "slug": "cnc-cnc-machine.mp4",
+      "ext": ".mp4",
+      "size": 53232385,
+      "sha256": "ea512f071f543d48f1cb3b73eacead5bbacab0bfddd63c741ad4957ea0aab6e0"
+    },
+    {
+      "collection": "cnc",
+      "title": "Cnc Machine Operation & Maintenance Handbook - GE Fanuc Automation",
+      "source": "D:\\Educational Courses\\CNC Machine\\Cnc Machine Operation & Maintenance Handbook - GE Fanuc Automation.pdf",
+      "source_label": "CNC Machine/Cnc Machine Operation & Maintenance Handbook - GE Fanuc Automation.pdf",
+      "slug": "cnc-cnc-machine-operation-maintenance-handbook-ge-fanuc-automation.pdf",
+      "ext": ".pdf",
+      "size": 1755789,
+      "sha256": "af2a5f750ed34b30541b3f818082753f83d39d61cc66d04072a85a786ea3650f"
+    },
+    {
+      "collection": "cnc",
+      "title": "CNC Machinist",
+      "source": "D:\\Educational Courses\\CNC Machine\\CNC Machinist.pdf",
+      "source_label": "CNC Machine/CNC Machinist.pdf",
+      "slug": "cnc-cnc-machinist.pdf",
+      "ext": ".pdf",
+      "size": 482533,
+      "sha256": "4d6847ad283070da94712745d81582e299b5e422dca26fe1e846dcced16db181"
+    },
+    {
+      "collection": "cnc",
+      "title": "Indeed Jobs",
+      "source": "D:\\Educational Courses\\CNC Machine\\Indeed Jobs.pdf",
+      "source_label": "CNC Machine/Indeed Jobs.pdf",
+      "slug": "cnc-indeed-jobs.pdf",
+      "ext": ".pdf",
+      "size": 293960,
+      "sha256": "ececee81318be7bfc30a8dc3fac3a730b365ad99184955f29cee2a4a0c17337a"
+    },
+    {
+      "collection": "lean",
+      "title": "A Lean Supply Chain at John Deere",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\A Lean Supply Chain at John Deere.mp4",
+      "source_label": "Lean Manufacturing/A Lean Supply Chain at John Deere.mp4",
+      "slug": "lean-a-lean-supply-chain-at-john-deere.mp4",
+      "ext": ".mp4",
+      "size": 18533767,
+      "sha256": "7a56bc9be0919298db5ce3d20eb83d73aa54eec7d035a47168c0c1685c724108"
+    },
+    {
+      "collection": "lean",
+      "title": "Breakthrough Kaizen Events",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Breakthrough Kaizen Events.mp4",
+      "source_label": "Lean Manufacturing/Breakthrough Kaizen Events.mp4",
+      "slug": "lean-breakthrough-kaizen-events.mp4",
+      "ext": ".mp4",
+      "size": 15816311,
+      "sha256": "b21bc1b525484e2068ed61198f5334f7f65f7b565c93cf2437704453b8d1911d"
+    },
+    {
+      "collection": "lean",
+      "title": "Building a Lean Culture",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Building a Lean Culture.mp4",
+      "source_label": "Lean Manufacturing/Building a Lean Culture.mp4",
+      "slug": "lean-building-a-lean-culture.mp4",
+      "ext": ".mp4",
+      "size": 14768227,
+      "sha256": "051c6b8e55482fd8af442964df0e5128be5a4fcde4f805ea7218e28d414efcdd"
+    },
+    {
+      "collection": "lean",
+      "title": "C-17 Production Operations and Lean Manufacturing",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\C-17 Production Operations and Lean Manufacturing.mp4",
+      "source_label": "Lean Manufacturing/C-17 Production Operations and Lean Manufacturing.mp4",
+      "slug": "lean-c-17-production-operations-and-lean-manufacturing.mp4",
+      "ext": ".mp4",
+      "size": 8942870,
+      "sha256": "d014a496d19b7b8ca89ab639e9c6d7329fcec07dc64dee40c7d281eab5fed87a"
+    },
+    {
+      "collection": "lean",
+      "title": "Engineering a Lean Supply Chain",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Engineering a Lean Supply Chain.mp4",
+      "source_label": "Lean Manufacturing/Engineering a Lean Supply Chain.mp4",
+      "slug": "lean-engineering-a-lean-supply-chain.mp4",
+      "ext": ".mp4",
+      "size": 11801343,
+      "sha256": "880c6769dd82e624684d9690533162a673ffdd796b079ec62687d5478a92bbf1"
+    },
+    {
+      "collection": "lean",
+      "title": "Five S Factory Makeover",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Five S Factory Makeover.mp4",
+      "source_label": "Lean Manufacturing/Five S Factory Makeover.mp4",
+      "slug": "lean-five-s-factory-makeover.mp4",
+      "ext": ".mp4",
+      "size": 15128955,
+      "sha256": "0ec06f123a82c950b47dd56bf49937abd52f4ecc296bd5431d833e1825c53438"
+    },
+    {
+      "collection": "lean",
+      "title": "Focusing Ideas on What Matters Most",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Focusing Ideas on What Matters Most.mp4",
+      "source_label": "Lean Manufacturing/Focusing Ideas on What Matters Most.mp4",
+      "slug": "lean-focusing-ideas-on-what-matters-most.mp4",
+      "ext": ".mp4",
+      "size": 6946270,
+      "sha256": "57078e372cb25adac396aec1ba27c26da8c0e761d05643f3fbe779260994a4cd"
+    },
+    {
+      "collection": "lean",
+      "title": "Getting More and Better Ideas",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Getting More and Better Ideas.mp4",
+      "source_label": "Lean Manufacturing/Getting More and Better Ideas.mp4",
+      "slug": "lean-getting-more-and-better-ideas.mp4",
+      "ext": ".mp4",
+      "size": 14740533,
+      "sha256": "10fae2124e4394b22639231b696d6ab3829a9f4396219ab86c998b4f8bce58af"
+    },
+    {
+      "collection": "lean",
+      "title": "Green Lean  Achieving Outstanding Environmental Performance with Lean",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Green Lean  Achieving Outstanding Environmental Performance with Lean.mp4",
+      "source_label": "Lean Manufacturing/Green Lean  Achieving Outstanding Environmental Performance with Lean.mp4",
+      "slug": "lean-green-lean-achieving-outstanding-environmental-performance-with-lean.mp4",
+      "ext": ".mp4",
+      "size": 13636233,
+      "sha256": "562421b75e7743b07b70727205ab6bec59207d16a4cee20d4bea09197c38355a"
+    },
+    {
+      "collection": "lean",
+      "title": "Incorporating Lean  From the Factory to Front Office",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Incorporating Lean  From the Factory to Front Office.mp4",
+      "source_label": "Lean Manufacturing/Incorporating Lean  From the Factory to Front Office.mp4",
+      "slug": "lean-incorporating-lean-from-the-factory-to-front-office.mp4",
+      "ext": ".mp4",
+      "size": 13449311,
+      "sha256": "d0b010906d5af06ac35fa47f7b16c1c3348f9f677d65465d233f1ae102bd62e6"
+    },
+    {
+      "collection": "lean",
+      "title": "Introduction to Lean Manufacturing",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Introduction to Lean Manufacturing.mp4",
+      "source_label": "Lean Manufacturing/Introduction to Lean Manufacturing.mp4",
+      "slug": "lean-introduction-to-lean-manufacturing.mp4",
+      "ext": ".mp4",
+      "size": 13675017,
+      "sha256": "ba5b1ba3298da30ee4f1c96d72595dcd3de5afa21f9d9419f584ccabe222dd04"
+    },
+    {
+      "collection": "lean",
+      "title": "Introduction to Lean Tooling",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Introduction to Lean Tooling.mp4",
+      "source_label": "Lean Manufacturing/Introduction to Lean Tooling.mp4",
+      "slug": "lean-introduction-to-lean-tooling.mp4",
+      "ext": ".mp4",
+      "size": 12626711,
+      "sha256": "2313b1fb8ca4697117e80f85e701f12ff444419a13552d5a461f9ed5dd6b947c"
+    },
+    {
+      "collection": "lean",
+      "title": "Kanban Systems",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Kanban Systems.mp4",
+      "source_label": "Lean Manufacturing/Kanban Systems.mp4",
+      "slug": "lean-kanban-systems.mp4",
+      "ext": ".mp4",
+      "size": 15070300,
+      "sha256": "170d12848aa2f1fbfe6319aa0f23c7f8b963dad8f2c5a7af02dad882b4530bcc"
+    },
+    {
+      "collection": "lean",
+      "title": "Lean Accounting",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Lean Accounting.mp4",
+      "source_label": "Lean Manufacturing/Lean Accounting.mp4",
+      "slug": "lean-lean-accounting.mp4",
+      "ext": ".mp4",
+      "size": 12555633,
+      "sha256": "846605377d426d9ec02c505addb7c40bea5f800ee12221efac94570b9a57449c"
+    },
+    {
+      "collection": "lean",
+      "title": "Lean Automation",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Lean Automation.mp4",
+      "source_label": "Lean Manufacturing/Lean Automation.mp4",
+      "slug": "lean-lean-automation.mp4",
+      "ext": ".mp4",
+      "size": 7005306,
+      "sha256": "2d6ffd33d408779b219773419ad0641bb832dfc530c906fedec67337ad1817b6"
+    },
+    {
+      "collection": "lean",
+      "title": "Lean Culture",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Lean Culture.mp4",
+      "source_label": "Lean Manufacturing/Lean Culture.mp4",
+      "slug": "lean-lean-culture.mp4",
+      "ext": ".mp4",
+      "size": 9298284,
+      "sha256": "9e4ad32a839f4ef58a3973d303c58c5fd10c9c023f8deda1ffdb5dae59d27be3"
+    },
+    {
+      "collection": "lean",
+      "title": "Lean Epiphanies  Catapult the Cow and Other Inspirational Continuous Improvement Stories",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Lean Epiphanies  Catapult the Cow and Other Inspirational Continuous Improvement Stories.mp4",
+      "source_label": "Lean Manufacturing/Lean Epiphanies  Catapult the Cow and Other Inspirational Continuous Improvement Stories.mp4",
+      "slug": "lean-lean-epiphanies-catapult-the-cow-and-other-inspirational-continuous-improvement-stories.mp4",
+      "ext": ".mp4",
+      "size": 5297812,
+      "sha256": "e983f2934653c21351ddef69d7a134134549096151e0ab4f7612502aac7c2273"
+    },
+    {
+      "collection": "lean",
+      "title": "Lean ITS",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Lean ITS.mp4",
+      "source_label": "Lean Manufacturing/Lean ITS.mp4",
+      "slug": "lean-lean-its.mp4",
+      "ext": ".mp4",
+      "size": 23975873,
+      "sha256": "d4b7bcc5c788a77c86d947345d181abcdf45eefb237ed5db66537974c48258b4"
+    },
+    {
+      "collection": "lean",
+      "title": "Lean Manufacturing at Miller SQA",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Lean Manufacturing at Miller SQA.mp4",
+      "source_label": "Lean Manufacturing/Lean Manufacturing at Miller SQA.mp4",
+      "slug": "lean-lean-manufacturing-at-miller-sqa.mp4",
+      "ext": ".mp4",
+      "size": 14006328,
+      "sha256": "27a247a29c5628d3f3268a8b0ffdfb67d52839c684dfce611d9e2fde62399ee2"
+    },
+    {
+      "collection": "lean",
+      "title": "Lean Manufacturing at TAC Manufacturing",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Lean Manufacturing at TAC Manufacturing.mp4",
+      "source_label": "Lean Manufacturing/Lean Manufacturing at TAC Manufacturing.mp4",
+      "slug": "lean-lean-manufacturing-at-tac-manufacturing.mp4",
+      "ext": ".mp4",
+      "size": 18394240,
+      "sha256": "98b175d7ef08ff7dc25cb2c39ba26032ef92d0ebc57bf8d0d4e96f33649cfce5"
+    },
+    {
+      "collection": "lean",
+      "title": "Lean Manufacturing in a Small Shop",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Lean Manufacturing in a Small Shop.mp4",
+      "source_label": "Lean Manufacturing/Lean Manufacturing in a Small Shop.mp4",
+      "slug": "lean-lean-manufacturing-in-a-small-shop.mp4",
+      "ext": ".mp4",
+      "size": 14619496,
+      "sha256": "22d4fcda9d337e42cbac0252b6d196ce7f9be66cab0c02362e88effacf1c27b2"
+    },
+    {
+      "collection": "lean",
+      "title": "Lean Product Development",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Lean Product Development.mp4",
+      "source_label": "Lean Manufacturing/Lean Product Development.mp4",
+      "slug": "lean-lean-product-development.mp4",
+      "ext": ".mp4",
+      "size": 13994643,
+      "sha256": "990b1b8e1b9d96234bf23dde9adb98f881fa5b5074118dbf0ec711e904bc88d3"
+    },
+    {
+      "collection": "lean",
+      "title": "Lean Six Sigma, The Power to Drive Rapid and Sustained Value Creation",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Lean Six Sigma, The Power to Drive Rapid and Sustained Value Creation.mp4",
+      "source_label": "Lean Manufacturing/Lean Six Sigma, The Power to Drive Rapid and Sustained Value Creation.mp4",
+      "slug": "lean-lean-six-sigma-the-power-to-drive-rapid-and-sustained-value-creation.mp4",
+      "ext": ".mp4",
+      "size": 6408185,
+      "sha256": "623353fec7f3e183325b3eeda29e3d8e77673cebdabbb1505b307b653e0201b2"
+    },
+    {
+      "collection": "lean",
+      "title": "Lean Tooling in Action",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Lean Tooling in Action.mp4",
+      "source_label": "Lean Manufacturing/Lean Tooling in Action.mp4",
+      "slug": "lean-lean-tooling-in-action.mp4",
+      "ext": ".mp4",
+      "size": 15468231,
+      "sha256": "e81b93fc1dcca1708b4080a19c8feef33ecad3f1c5fae61030fb89a3164efd01"
+    },
+    {
+      "collection": "lean",
+      "title": "Learning Lean Through Simulation",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Learning Lean Through Simulation.mp4",
+      "source_label": "Lean Manufacturing/Learning Lean Through Simulation.mp4",
+      "slug": "lean-learning-lean-through-simulation.mp4",
+      "ext": ".mp4",
+      "size": 18572686,
+      "sha256": "c6467fa71361aadbd3154c9a5092667afb2e0855dc55cf31bb80fdaad78d6f47"
+    },
+    {
+      "collection": "lean",
+      "title": "Lessons from the Field - Making Lean Finally Work",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Lessons from the Field - Making Lean Finally Work.mp4",
+      "source_label": "Lean Manufacturing/Lessons from the Field - Making Lean Finally Work.mp4",
+      "slug": "lean-lessons-from-the-field-making-lean-finally-work.mp4",
+      "ext": ".mp4",
+      "size": 13184500,
+      "sha256": "cae1bc7749ab075a67c6e1a9ff3403fec35f4f42a11a4670b041c4349b9e284b"
+    },
+    {
+      "collection": "lean",
+      "title": "Liberating and Transforming  Employee Ideas and Lean Culture",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Liberating and Transforming  Employee Ideas and Lean Culture.mp4",
+      "source_label": "Lean Manufacturing/Liberating and Transforming  Employee Ideas and Lean Culture.mp4",
+      "slug": "lean-liberating-and-transforming-employee-ideas-and-lean-culture.mp4",
+      "ext": ".mp4",
+      "size": 6665230,
+      "sha256": "7edee3a09526a6b788367658cd3ef5543ee5779c1cf91793d07ecd1e4a5cc291"
+    },
+    {
+      "collection": "lean",
+      "title": "Making Ideas a Central Part of Work",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Making Ideas a Central Part of Work.mp4",
+      "source_label": "Lean Manufacturing/Making Ideas a Central Part of Work.mp4",
+      "slug": "lean-making-ideas-a-central-part-of-work.mp4",
+      "ext": ".mp4",
+      "size": 6428244,
+      "sha256": "305800363ecbf22ea5293f40ba7a1f6e552cf1239290b3f24f866040cd1d9d89"
+    },
+    {
+      "collection": "lean",
+      "title": "Mapping Your Value Stream",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Mapping Your Value Stream.mp4",
+      "source_label": "Lean Manufacturing/Mapping Your Value Stream.mp4",
+      "slug": "lean-mapping-your-value-stream.mp4",
+      "ext": ".mp4",
+      "size": 17231778,
+      "sha256": "31b5ccf4532c81a52df8d6552b7f4e4afb6fbcb22dbc3ee61f6559fb0fae0e77"
+    },
+    {
+      "collection": "lean",
+      "title": "Quick Changeover for Lean Manufacturing",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Quick Changeover for Lean Manufacturing.mp4",
+      "source_label": "Lean Manufacturing/Quick Changeover for Lean Manufacturing.mp4",
+      "slug": "lean-quick-changeover-for-lean-manufacturing.mp4",
+      "ext": ".mp4",
+      "size": 15651578,
+      "sha256": "980ac53f958171338ff22251c6867d5b8a2e72bce127f927e144811d0e40bab8"
+    },
+    {
+      "collection": "lean",
+      "title": "Right-Sized Equipment",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Right-Sized Equipment.mp4",
+      "source_label": "Lean Manufacturing/Right-Sized Equipment.mp4",
+      "slug": "lean-right-sized-equipment.mp4",
+      "ext": ".mp4",
+      "size": 14626771,
+      "sha256": "749228fc997b4f3eb14371ca47155cedda1a9fae3f9a03238f87e253336e6711"
+    },
+    {
+      "collection": "lean",
+      "title": "Setup Reduction",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Setup Reduction.mp4",
+      "source_label": "Lean Manufacturing/Setup Reduction.mp4",
+      "slug": "lean-setup-reduction.mp4",
+      "ext": ".mp4",
+      "size": 20434409,
+      "sha256": "34ca598429a05fa63644f438cde63a5e6e818839af9174329f5971fb2dc8c9c2"
+    },
+    {
+      "collection": "lean",
+      "title": "Single Piece Flow",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Single Piece Flow.mp4",
+      "source_label": "Lean Manufacturing/Single Piece Flow.mp4",
+      "slug": "lean-single-piece-flow.mp4",
+      "ext": ".mp4",
+      "size": 17220366,
+      "sha256": "d12c6ad9d2253aa3a16d5fc9557f274169c0af4b21943024807b8d6c3074dd91"
+    },
+    {
+      "collection": "lean",
+      "title": "Six Sigma",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Six Sigma.mp4",
+      "source_label": "Lean Manufacturing/Six Sigma.mp4",
+      "slug": "lean-six-sigma.mp4",
+      "ext": ".mp4",
+      "size": 11473876,
+      "sha256": "663017ccd5651b4d1294a44e6189b632a702aa6e5b93b480512de0c18d021ed3"
+    },
+    {
+      "collection": "lean",
+      "title": "Supplier Development - Boeing JDAM",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Supplier Development - Boeing JDAM.mp4",
+      "source_label": "Lean Manufacturing/Supplier Development - Boeing JDAM.mp4",
+      "slug": "lean-supplier-development-boeing-jdam.mp4",
+      "ext": ".mp4",
+      "size": 8181410,
+      "sha256": "baa3ad63505fa3e150d1043efe7010012eabf443ddbf7ee2f0bb858327a6891d"
+    },
+    {
+      "collection": "lean",
+      "title": "The Challenge of Staying Lean after Initial Application",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\The Challenge of Staying Lean after Initial Application.mp4",
+      "source_label": "Lean Manufacturing/The Challenge of Staying Lean after Initial Application.mp4",
+      "slug": "lean-the-challenge-of-staying-lean-after-initial-application.mp4",
+      "ext": ".mp4",
+      "size": 4238844,
+      "sha256": "653a621bb18cc80e4d0227382263433a690ac2340e2cffc794558b3dff993232"
+    },
+    {
+      "collection": "lean",
+      "title": "The Characteristics of a Good Process",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\The Characteristics of a Good Process.mp4",
+      "source_label": "Lean Manufacturing/The Characteristics of a Good Process.mp4",
+      "slug": "lean-the-characteristics-of-a-good-process.mp4",
+      "ext": ".mp4",
+      "size": 6257417,
+      "sha256": "a3491401065fa3943e4c1af08c8c8615243c65704f0683b6b1f94e8955ad1074"
+    },
+    {
+      "collection": "lean",
+      "title": "The Power of Small Ideas",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\The Power of Small Ideas.mp4",
+      "source_label": "Lean Manufacturing/The Power of Small Ideas.mp4",
+      "slug": "lean-the-power-of-small-ideas.mp4",
+      "ext": ".mp4",
+      "size": 15374049,
+      "sha256": "72a2576855f9f6056435b8755795b5704adc9316e8a6d50e8dba4971f1d564ad"
+    },
+    {
+      "collection": "lean",
+      "title": "Visual Controls",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\Visual Controls.mp4",
+      "source_label": "Lean Manufacturing/Visual Controls.mp4",
+      "slug": "lean-visual-controls.mp4",
+      "ext": ".mp4",
+      "size": 15857807,
+      "sha256": "6beb252eb57fa31f94e971009a70711247f1ee1e297cdbbdc27c8c3514f1fccc"
+    },
+    {
+      "collection": "lean",
+      "title": "What About Rewards for the Ideas",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\What About Rewards for the Ideas.mp4",
+      "source_label": "Lean Manufacturing/What About Rewards for the Ideas.mp4",
+      "slug": "lean-what-about-rewards-for-the-ideas.mp4",
+      "ext": ".mp4",
+      "size": 6567865,
+      "sha256": "7fa5da0a45f158b0b1224aa56f1a6c0da2d98a6ef0395b18f189a5dd9a6c97f4"
+    },
+    {
+      "collection": "lean",
+      "title": "What is an Idea",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\What is an Idea.mp4",
+      "source_label": "Lean Manufacturing/What is an Idea.mp4",
+      "slug": "lean-what-is-an-idea.mp4",
+      "ext": ".mp4",
+      "size": 7259753,
+      "sha256": "92be3f93f43f0b72f3a2fc626780d85d85b2808dcf99d0d054ad99aca83c5669"
+    },
+    {
+      "collection": "lean",
+      "title": "What Lean Means",
+      "source": "D:\\Educational Courses\\Lean Manufacturing\\What Lean Means.mp4",
+      "source_label": "Lean Manufacturing/What Lean Means.mp4",
+      "slug": "lean-what-lean-means.mp4",
+      "ext": ".mp4",
+      "size": 13021693,
+      "sha256": "5051399d754b213f98507e7ba48d669e7f086a84f46c70af3d19d42ac7e51e7c"
+    },
+    {
+      "collection": "mech",
+      "title": "A Brief-History-of-Mechanical-Engineering",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\A Brief-History-of-Mechanical-Engineering.pdf",
+      "source_label": "Mechanical Engineering/A Brief-History-of-Mechanical-Engineering.pdf",
+      "slug": "mech-a-brief-history-of-mechanical-engineering.pdf",
+      "ext": ".pdf",
+      "size": 2727205,
+      "sha256": "dd64bebca3251cd3774f93d22695730988ef11ef80c2e4d668ba0a6005a9a758"
+    },
+    {
+      "collection": "mech",
+      "title": "B-E-Mechanical-Engineering",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\B-E-Mechanical-Engineering.pdf",
+      "source_label": "Mechanical Engineering/B-E-Mechanical-Engineering.pdf",
+      "slug": "mech-b-e-mechanical-engineering.pdf",
+      "ext": ".pdf",
+      "size": 4248796,
+      "sha256": "69c37ec43fc1928a70482f568154fa6ca162c13949bb48656dec10103dc76359"
+    },
+    {
+      "collection": "mech",
+      "title": "Basic engineering drawing and communication",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Basic engineering drawing and communication.pdf",
+      "source_label": "Mechanical Engineering/Basic engineering drawing and communication.pdf",
+      "slug": "mech-basic-engineering-drawing-and-communication.pdf",
+      "ext": ".pdf",
+      "size": 395370,
+      "sha256": "81438b2515a9c3d5d8c62152be5fcea06e566ff90041924c2a39962d6eaa3b6a"
+    },
+    {
+      "collection": "mech",
+      "title": "Books-Mechanical-Engineering",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Books-Mechanical-Engineering.pdf",
+      "source_label": "Mechanical Engineering/Books-Mechanical-Engineering.pdf",
+      "slug": "mech-books-mechanical-engineering.pdf",
+      "ext": ".pdf",
+      "size": 1352774,
+      "sha256": "27f8e95d8ccb0e47d9699f63dfb8fd5ba20072089a5634c107718b72469c7bfe"
+    },
+    {
+      "collection": "mech",
+      "title": "Ch-3-Shigley-Slides",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Ch-3-Shigley-Slides.pdf",
+      "source_label": "Mechanical Engineering/Ch-3-Shigley-Slides.pdf",
+      "slug": "mech-ch-3-shigley-slides.pdf",
+      "ext": ".pdf",
+      "size": 8131370,
+      "sha256": "699499c9fc1383b4ee6eec191b001b5cddc1a2d510e8b796eb77225922759db5"
+    },
+    {
+      "collection": "mech",
+      "title": "chapter10-threadsandfasteners",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\chapter10-threadsandfasteners.pdf",
+      "source_label": "Mechanical Engineering/chapter10-threadsandfasteners.pdf",
+      "slug": "mech-chapter10-threadsandfasteners.pdf",
+      "ext": ".pdf",
+      "size": 3833822,
+      "sha256": "73b9cf313215c96ea9063a78fd5da9575eea69521b45edcbc51c18e850613270"
+    },
+    {
+      "collection": "mech",
+      "title": "Cold-and-Hot-Forging-Fundamentals-and-Applications",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Cold-and-Hot-Forging-Fundamentals-and-Applications.pdf",
+      "source_label": "Mechanical Engineering/Cold-and-Hot-Forging-Fundamentals-and-Applications.pdf",
+      "slug": "mech-cold-and-hot-forging-fundamentals-and-applications.pdf",
+      "ext": ".pdf",
+      "size": 11533844,
+      "sha256": "ca7e81819b1995d5cbe21b52abf8b69f2e747aec80b523333590e14722d84499"
+    },
+    {
+      "collection": "mech",
+      "title": "Compressor-Instrument-and-Control",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Compressor-Instrument-and-Control.pptx",
+      "source_label": "Mechanical Engineering/Compressor-Instrument-and-Control.pptx",
+      "slug": "mech-compressor-instrument-and-control.pptx",
+      "ext": ".pptx",
+      "size": 22295210,
+      "sha256": "49d3d706ee997b03330510c6b17fb902f2a7a2f1afa09da010994d7e38a553e2"
+    },
+    {
+      "collection": "mech",
+      "title": "Compressors",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Compressors.pdf",
+      "source_label": "Mechanical Engineering/Compressors.pdf",
+      "slug": "mech-compressors.pdf",
+      "ext": ".pdf",
+      "size": 5467268,
+      "sha256": "3397268a59cc85fffecb112db16727e4dd61dc803838fad67408b7ee5cd44600"
+    },
+    {
+      "collection": "mech",
+      "title": "Concept-of-Stress-and-Strain-pdf",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Concept-of-Stress-and-Strain-pdf.pdf",
+      "source_label": "Mechanical Engineering/Concept-of-Stress-and-Strain-pdf.pdf",
+      "slug": "mech-concept-of-stress-and-strain-pdf.pdf",
+      "ext": ".pdf",
+      "size": 1566408,
+      "sha256": "1b3a59ffd07830f5b0f8266c89dcca96680730800cc46be5467dc66e57007dc2"
+    },
+    {
+      "collection": "mech",
+      "title": "Fundamentals-of-Machine-Design-01",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Fundamentals-of-Machine-Design-01.pdf",
+      "source_label": "Mechanical Engineering/Fundamentals-of-Machine-Design-01.pdf",
+      "slug": "mech-fundamentals-of-machine-design-01.pdf",
+      "ext": ".pdf",
+      "size": 16650890,
+      "sha256": "53a3f79089bbbe6512a0600848094bba3b849560c1f9e2411799c7eeee319b25"
+    },
+    {
+      "collection": "mech",
+      "title": "Fundamentals-of-Machine-Elements-2nd-Ed",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Fundamentals-of-Machine-Elements-2nd-Ed.pdf",
+      "source_label": "Mechanical Engineering/Fundamentals-of-Machine-Elements-2nd-Ed.pdf",
+      "slug": "mech-fundamentals-of-machine-elements-2nd-ed.pdf",
+      "ext": ".pdf",
+      "size": 94238169,
+      "sha256": "0eb0c3cb19c220107932e0adec4a09971ad8739a545cee510d0b2e71a1a0efa5"
+    },
+    {
+      "collection": "mech",
+      "title": "Grinding-Fundamentals",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Grinding-Fundamentals.pdf",
+      "source_label": "Mechanical Engineering/Grinding-Fundamentals.pdf",
+      "slug": "mech-grinding-fundamentals.pdf",
+      "ext": ".pdf",
+      "size": 2747505,
+      "sha256": "9f7e3e3d3dda165dbaf128a70f663b432a3adcff4f3d5d89fb82e371f45ca4b0"
+    },
+    {
+      "collection": "mech",
+      "title": "Handbook-of-Manufacturing-Engineering-and-Technology-2015th-Edition-PRG-pdf",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Handbook-of-Manufacturing-Engineering-and-Technology-2015th-Edition-PRG-pdf.pdf",
+      "source_label": "Mechanical Engineering/Handbook-of-Manufacturing-Engineering-and-Technology-2015th-Edition-PRG-pdf.pdf",
+      "slug": "mech-handbook-of-manufacturing-engineering-and-technology-2015th-edition-prg-pdf.pdf",
+      "ext": ".pdf",
+      "size": 122025462,
+      "sha256": "2251b20e643bec1bc82bdc9f74ceae83d961551d4ff4fc6f4d1c3429ccd10a3a"
+    },
+    {
+      "collection": "mech",
+      "title": "Handbook-of-Mechanical-Alloy-Design-Mechanical-Engineering-Marcell-Dekker",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Handbook-of-Mechanical-Alloy-Design-Mechanical-Engineering-Marcell-Dekker.pdf",
+      "source_label": "Mechanical Engineering/Handbook-of-Mechanical-Alloy-Design-Mechanical-Engineering-Marcell-Dekker.pdf",
+      "slug": "mech-handbook-of-mechanical-alloy-design-mechanical-engineering-marcell-dekker.pdf",
+      "ext": ".pdf",
+      "size": 9172092,
+      "sha256": "a339e4218d81e843d5c45e77abbe700a3e90ee902390343e48b6f01dab54846c"
+    },
+    {
+      "collection": "mech",
+      "title": "How to read a manufacturing drawing",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\How to read a manufacturing drawing.pdf",
+      "source_label": "Mechanical Engineering/How to read a manufacturing drawing.pdf",
+      "slug": "mech-how-to-read-a-manufacturing-drawing.pdf",
+      "ext": ".pdf",
+      "size": 961010,
+      "sha256": "c2a009c4d4b956ebf372c682c5b43ecb91ddd1f7825711c67ca79776329dad67"
+    },
+    {
+      "collection": "mech",
+      "title": "Intro-to-Mechanical-Engineering",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Intro-to-Mechanical-Engineering.pdf",
+      "source_label": "Mechanical Engineering/Intro-to-Mechanical-Engineering.pdf",
+      "slug": "mech-intro-to-mechanical-engineering.pdf",
+      "ext": ".pdf",
+      "size": 371861,
+      "sha256": "b35b7c29d6087118c443c37fa11ab38bcdeeef51e902f1fde550d8a87b7bd2c1"
+    },
+    {
+      "collection": "mech",
+      "title": "Lecture 1",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Lecture 1.pdf",
+      "source_label": "Mechanical Engineering/Lecture 1.pdf",
+      "slug": "mech-lecture-1.pdf",
+      "ext": ".pdf",
+      "size": 3541417,
+      "sha256": "7a6a4c02820941f7e1c5f4214374215e93d5e7f0b350e0b517a9afe05497bafc"
+    },
+    {
+      "collection": "mech",
+      "title": "MachineDrawing",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\MachineDrawing.pdf",
+      "source_label": "Mechanical Engineering/MachineDrawing.pdf",
+      "slug": "mech-machinedrawing.pdf",
+      "ext": ".pdf",
+      "size": 7862591,
+      "sha256": "d8a0294e2389b9d8c7d87c1cd2b8c50fc924a67f596890491e1704948795c76e"
+    },
+    {
+      "collection": "mech",
+      "title": "Mechanical Drawing Principles",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Mechanical Drawing Principles.pdf",
+      "source_label": "Mechanical Engineering/Mechanical Drawing Principles.pdf",
+      "slug": "mech-mechanical-drawing-principles.pdf",
+      "ext": ".pdf",
+      "size": 2497939,
+      "sha256": "017151bbde5dcc222158252ff41a56e3f87b4c5c0fa7f12af26aae5d79ceb7d7"
+    },
+    {
+      "collection": "mech",
+      "title": "Mechanical-Completion",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Mechanical-Completion.pdf",
+      "source_label": "Mechanical Engineering/Mechanical-Completion.pdf",
+      "slug": "mech-mechanical-completion.pdf",
+      "ext": ".pdf",
+      "size": 377700,
+      "sha256": "47545ad9c83f0e0749c223e3ab63ae9c21e2480d947ac070ddb0e97f59b6f7ce"
+    },
+    {
+      "collection": "mech",
+      "title": "Mechanical-Engineer-Board-exam",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Mechanical-Engineer-Board-exam.pdf",
+      "source_label": "Mechanical Engineering/Mechanical-Engineer-Board-exam.pdf",
+      "slug": "mech-mechanical-engineer-board-exam.pdf",
+      "ext": ".pdf",
+      "size": 77668,
+      "sha256": "571c8992cc0734a2beffe8c145b477a4d85482c1f5c8d978559d7abe65143ac6"
+    },
+    {
+      "collection": "mech",
+      "title": "Mechanical-Engineering",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Mechanical-Engineering.ppt",
+      "source_label": "Mechanical Engineering/Mechanical-Engineering.ppt",
+      "slug": "mech-mechanical-engineering.ppt",
+      "ext": ".ppt",
+      "size": 13627392,
+      "sha256": "e5f8554c98062444a97385dcb53633f8300c53331b65c5eaa817d4a7d164d6c6"
+    },
+    {
+      "collection": "mech",
+      "title": "Mechanical-engineering-interview-questions-pdf",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Mechanical-engineering-interview-questions-pdf.pdf",
+      "source_label": "Mechanical Engineering/Mechanical-engineering-interview-questions-pdf.pdf",
+      "slug": "mech-mechanical-engineering-interview-questions-pdf.pdf",
+      "ext": ".pdf",
+      "size": 308682,
+      "sha256": "b633c620590a29290b51cdba82333bc23520e52252ba9345e53f1e26d1b20111"
+    },
+    {
+      "collection": "mech",
+      "title": "Mechanical-Engineering-Machine Drawing",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Mechanical-Engineering-Machine Drawing.pdf",
+      "source_label": "Mechanical Engineering/Mechanical-Engineering-Machine Drawing.pdf",
+      "slug": "mech-mechanical-engineering-machine-drawing.pdf",
+      "ext": ".pdf",
+      "size": 7846132,
+      "sha256": "20957681314a6c177c94f888b5a8c36e59bd9b29b54b449b808b5ff4108c09b2"
+    },
+    {
+      "collection": "mech",
+      "title": "Mechanical-Reliability-Improvement-Probability-and-Statistics-for-Experimental-Testing-Marcel-Dekker-2001",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Mechanical-Reliability-Improvement-Probability-and-Statistics-for-Experimental-Testing-Marcel-Dekker-2001.pdf",
+      "source_label": "Mechanical Engineering/Mechanical-Reliability-Improvement-Probability-and-Statistics-for-Experimental-Testing-Marcel-Dekker-2001.pdf",
+      "slug": "mech-mechanical-reliability-improvement-probability-and-statistics-for-experimental-testing-marcel-dekker-2001.pdf",
+      "ext": ".pdf",
+      "size": 7618143,
+      "sha256": "37457ac8bd038a7b8fad2771210057fecdf03fdc545c980562a78ae3a46811ab"
+    },
+    {
+      "collection": "mech",
+      "title": "practical_problems_in_mechanical_drawing_and_blueprint_reading_1921",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\practical_problems_in_mechanical_drawing_and_blueprint_reading_1921.pdf",
+      "source_label": "Mechanical Engineering/practical_problems_in_mechanical_drawing_and_blueprint_reading_1921.pdf",
+      "slug": "mech-practical-problems-in-mechanical-drawing-and-blueprint-reading-1921.pdf",
+      "ext": ".pdf",
+      "size": 2162000,
+      "sha256": "a419ea8b306562a7ee54ebc88e79df468dec4e2e77462219bab974bc1389c87c"
+    },
+    {
+      "collection": "mech",
+      "title": "Shaft-Alignment-Manual",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Shaft-Alignment-Manual.pdf",
+      "source_label": "Mechanical Engineering/Shaft-Alignment-Manual.pdf",
+      "slug": "mech-shaft-alignment-manual.pdf",
+      "ext": ".pdf",
+      "size": 2239954,
+      "sha256": "f5be5eb176621d88235e88fc4e77ed3a11b8ccab75f68011052eb806b07a4c9c"
+    },
+    {
+      "collection": "mech",
+      "title": "Syllabus-Mechanical-Engineering",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Syllabus-Mechanical-Engineering.pdf",
+      "source_label": "Mechanical Engineering/Syllabus-Mechanical-Engineering.pdf",
+      "slug": "mech-syllabus-mechanical-engineering.pdf",
+      "ext": ".pdf",
+      "size": 5419698,
+      "sha256": "17b62d36992ca277293e64389b7b0606022304145b7172dc511791da576efca9"
+    },
+    {
+      "collection": "mech",
+      "title": "Technical Drawing - Class Handout",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Technical Drawing - Class Handout.pdf",
+      "source_label": "Mechanical Engineering/Technical Drawing - Class Handout.pdf",
+      "slug": "mech-technical-drawing-class-handout.pdf",
+      "ext": ".pdf",
+      "size": 1366752,
+      "sha256": "630935fc1f019a2d398b90675055b0d5a078de37dc6bf879cf7de0cab68e2629"
+    },
+    {
+      "collection": "mech",
+      "title": "Torsion-of-Circular-Shafts-pdf",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Torsion-of-Circular-Shafts-pdf.pdf",
+      "source_label": "Mechanical Engineering/Torsion-of-Circular-Shafts-pdf.pdf",
+      "slug": "mech-torsion-of-circular-shafts-pdf.pdf",
+      "ext": ".pdf",
+      "size": 2732493,
+      "sha256": "3c70072b009af2126b2ec6c3f8fa81fe70890c0aff4fda59846bfad68ad9c589"
+    },
+    {
+      "collection": "mech",
+      "title": "Turbomachinery-Design-and-Theory-Dekker-Mechanical-Engineering",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\Turbomachinery-Design-and-Theory-Dekker-Mechanical-Engineering.pdf",
+      "source_label": "Mechanical Engineering/Turbomachinery-Design-and-Theory-Dekker-Mechanical-Engineering.pdf",
+      "slug": "mech-turbomachinery-design-and-theory-dekker-mechanical-engineering.pdf",
+      "ext": ".pdf",
+      "size": 3004033,
+      "sha256": "160328962460aa9f8de3edc9163ae5c0ea85ca3d41a8736a7a8249cb94a5796d"
+    },
+    {
+      "collection": "mech",
+      "title": "What is a Mechanical Engineer",
+      "source": "D:\\Educational Courses\\Mechanical Engineering\\What is a Mechanical Engineer.pdf",
+      "source_label": "Mechanical Engineering/What is a Mechanical Engineer.pdf",
+      "slug": "mech-what-is-a-mechanical-engineer.pdf",
+      "ext": ".pdf",
+      "size": 1720416,
+      "sha256": "2877429db481231e0f3e53aee7f7605c641beeef71180f081019e217b88fe0a6"
+    },
+    {
+      "collection": "mfg",
+      "title": "Brazing & Soldering",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Brazing & Soldering.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Brazing & Soldering.mp4",
+      "slug": "mfg-brazing-soldering.mp4",
+      "ext": ".mp4",
+      "size": 14796125,
+      "sha256": "7a89bf8615c4d9a5cfbb60f8f8976848ff3ab15964f95321e6ceaff94cf0ca81"
+    },
+    {
+      "collection": "mfg",
+      "title": "Casting",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Casting.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Casting.mp4",
+      "slug": "mfg-casting.mp4",
+      "ext": ".mp4",
+      "size": 10375053,
+      "sha256": "1978b0af3bd204eab270404ff7fc9a57492c39253c543a578514b78da7549332"
+    },
+    {
+      "collection": "mfg",
+      "title": "Composite Materials and Manufacturing",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Composite Materials and Manufacturing.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Composite Materials and Manufacturing.mp4",
+      "slug": "mfg-composite-materials-and-manufacturing.mp4",
+      "ext": ".mp4",
+      "size": 8101321,
+      "sha256": "58bbfc49adc9b1c0911444101e0ea9f0b85da0d730d2d7ea0d8f742a80430c2c"
+    },
+    {
+      "collection": "mfg",
+      "title": "Computer Numerical Control",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Computer Numerical Control.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Computer Numerical Control.mp4",
+      "slug": "mfg-computer-numerical-control.mp4",
+      "ext": ".mp4",
+      "size": 10432134,
+      "sha256": "85d022e8ed11032b9d0f2b19a3e1445fd9771eab0df59b08a34b4ddcfaaca28f"
+    },
+    {
+      "collection": "mfg",
+      "title": "Cutting Tool Geometries",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Cutting Tool Geometries.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Cutting Tool Geometries.mp4",
+      "slug": "mfg-cutting-tool-geometries.mp4",
+      "ext": ".mp4",
+      "size": 8649067,
+      "sha256": "4127f4f783ea48f9944b27cd6d21f2930ef4f649385370362c31dd181455421f"
+    },
+    {
+      "collection": "mfg",
+      "title": "Cutting Tool Materials",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Cutting Tool Materials.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Cutting Tool Materials.mp4",
+      "slug": "mfg-cutting-tool-materials.mp4",
+      "ext": ".mp4",
+      "size": 6851899,
+      "sha256": "4de9bbf562ed6b0908b0a33bb0df746366a27bd02c443dc8b7a95fb6057be3f0"
+    },
+    {
+      "collection": "mfg",
+      "title": "Deburring Processes",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Deburring Processes.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Deburring Processes.mp4",
+      "slug": "mfg-deburring-processes.mp4",
+      "ext": ".mp4",
+      "size": 14420998,
+      "sha256": "921404c4795f223fd2f127f2f62a9826c93475d0deedade59aa79d58ae3a0327"
+    },
+    {
+      "collection": "mfg",
+      "title": "Die Casting",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Die Casting.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Die Casting.mp4",
+      "slug": "mfg-die-casting.mp4",
+      "ext": ".mp4",
+      "size": 13827574,
+      "sha256": "52d2102330a6e783206e5ceb4fd3e1d39921348b7ac28cacdb49a8ad2a7bd83a"
+    },
+    {
+      "collection": "mfg",
+      "title": "Electrical Discharge Machining",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Electrical Discharge Machining.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Electrical Discharge Machining.mp4",
+      "slug": "mfg-electrical-discharge-machining.mp4",
+      "ext": ".mp4",
+      "size": 7236213,
+      "sha256": "59ed0c3bdf4f292499ff4f7679f9e8dc86c7915eef88c8fb3329d0e17c9a7129"
+    },
+    {
+      "collection": "mfg",
+      "title": "Extrusion Processes",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Extrusion Processes.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Extrusion Processes.mp4",
+      "slug": "mfg-extrusion-processes.mp4",
+      "ext": ".mp4",
+      "size": 7308766,
+      "sha256": "68b71435e58984d1c66bdfefd0c3495f703003eb4294fe675b3be0dfdf6f1fa5"
+    },
+    {
+      "collection": "mfg",
+      "title": "Fastening & Assembly",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Fastening & Assembly.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Fastening & Assembly.mp4",
+      "slug": "mfg-fastening-assembly.mp4",
+      "ext": ".mp4",
+      "size": 8323817,
+      "sha256": "5a78a42d0225521ebf753908447ed21dfe3f1ff1a3c69f62b2d374ad8c212bdb"
+    },
+    {
+      "collection": "mfg",
+      "title": "FMP_mini_catalog",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\FMP_mini_catalog.pdf",
+      "source_label": "Fundamentals of Mordern Manufacturing/FMP_mini_catalog.pdf",
+      "slug": "mfg-fmp-mini-catalog.pdf",
+      "ext": ".pdf",
+      "size": 4429403,
+      "sha256": "a85d26d415ab61bb33e731ee039ea78b5941da9384fb8df2ffad79c0373bcf73"
+    },
+    {
+      "collection": "mfg",
+      "title": "Forging",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Forging.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Forging.mp4",
+      "slug": "mfg-forging.mp4",
+      "ext": ".mp4",
+      "size": 10325707,
+      "sha256": "eca4af88560fb9a616cc519eaafc657f7e8238c5ba3a91b4fb357559d6c24997"
+    },
+    {
+      "collection": "mfg",
+      "title": "Fundamental-Manufacturing-Processes",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Fundamental-Manufacturing-Processes.pdf",
+      "source_label": "Fundamentals of Mordern Manufacturing/Fundamental-Manufacturing-Processes.pdf",
+      "slug": "mfg-fundamental-manufacturing-processes.pdf",
+      "ext": ".pdf",
+      "size": 64341,
+      "sha256": "c89875ef8fb0c679b84ba9f773eb882505c6d5cc8f9ffd29315e16cc2857cd92"
+    },
+    {
+      "collection": "mfg",
+      "title": "fundamentals-of-modern-manufacturing-4th-edition-by-mikell-p-groover",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\fundamentals-of-modern-manufacturing-4th-edition-by-mikell-p-groover.pdf",
+      "source_label": "Fundamentals of Mordern Manufacturing/fundamentals-of-modern-manufacturing-4th-edition-by-mikell-p-groover.pdf",
+      "slug": "mfg-fundamentals-of-modern-manufacturing-4th-edition-by-mikell-p-groover.pdf",
+      "ext": ".pdf",
+      "size": 31099393,
+      "sha256": "f992042069f5cb63cc907a65c561007fd081329bb60a8c2f4fdbbffe716c1244"
+    },
+    {
+      "collection": "mfg",
+      "title": "Gears & Gear Manufacturing",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Gears & Gear Manufacturing.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Gears & Gear Manufacturing.mp4",
+      "slug": "mfg-gears-gear-manufacturing.mp4",
+      "ext": ".mp4",
+      "size": 10350878,
+      "sha256": "1865fd5811735afa333d03dba69655296e4b8498257323e5ddeb107a06df286a"
+    },
+    {
+      "collection": "mfg",
+      "title": "Grinding",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Grinding.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Grinding.mp4",
+      "slug": "mfg-grinding.mp4",
+      "ext": ".mp4",
+      "size": 10483063,
+      "sha256": "325d3a5ff9d3c29946989f9fe3de24ac56332ff13fefe981560bcd7f4ce48fb3"
+    },
+    {
+      "collection": "mfg",
+      "title": "Heat Treating",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Heat Treating.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Heat Treating.mp4",
+      "slug": "mfg-heat-treating.mp4",
+      "ext": ".mp4",
+      "size": 9790128,
+      "sha256": "33ce8fd06e5e145c1e4fea1258f270487d0c529fe6add65607b9bb81e301091e"
+    },
+    {
+      "collection": "mfg",
+      "title": "Holemaking",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Holemaking.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Holemaking.mp4",
+      "slug": "mfg-holemaking.mp4",
+      "ext": ".mp4",
+      "size": 7944631,
+      "sha256": "2ddbf692af2fe54f41b3685189ce728d405087c831053d9bb7e1986784c66e18"
+    },
+    {
+      "collection": "mfg",
+      "title": "Hydroforming",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Hydroforming.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Hydroforming.mp4",
+      "slug": "mfg-hydroforming.mp4",
+      "ext": ".mp4",
+      "size": 10969798,
+      "sha256": "32508c8afc0526b34cd7f860fa242bc81130b58ad48b58dd28134883be2a3781"
+    },
+    {
+      "collection": "mfg",
+      "title": "Industrial Robotics",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Industrial Robotics.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Industrial Robotics.mp4",
+      "slug": "mfg-industrial-robotics.mp4",
+      "ext": ".mp4",
+      "size": 16987987,
+      "sha256": "9138cbd62743a5f9e1e4e592c12860651df5034c7694391567c9aa7d71384533"
+    },
+    {
+      "collection": "mfg",
+      "title": "Measurement & Gaging",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Measurement & Gaging.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Measurement & Gaging.mp4",
+      "slug": "mfg-measurement-gaging.mp4",
+      "ext": ".mp4",
+      "size": 8194430,
+      "sha256": "d4ef5e587aa01e0ae0d7d7487e304c5ed31d21e072f867717e2f186f28e133c9"
+    },
+    {
+      "collection": "mfg",
+      "title": "Mechanical & Non-Destructive Testing",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Mechanical & Non-Destructive Testing.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Mechanical & Non-Destructive Testing.mp4",
+      "slug": "mfg-mechanical-non-destructive-testing.mp4",
+      "ext": ".mp4",
+      "size": 8627536,
+      "sha256": "eb30e2cd2c4056c884c2eeeb8a457b2fc2b5c1d2508f5f53337086e9d867fa82"
+    },
+    {
+      "collection": "mfg",
+      "title": "Metalcutting Fluids",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Metalcutting Fluids.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Metalcutting Fluids.mp4",
+      "slug": "mfg-metalcutting-fluids.mp4",
+      "ext": ".mp4",
+      "size": 10500972,
+      "sha256": "f6a5c997a21d6a7009f05a0fb4f0e386856de5432a7a326eacaa46a242999988"
+    },
+    {
+      "collection": "mfg",
+      "title": "Milling & Machining Centers",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Milling & Machining Centers.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Milling & Machining Centers.mp4",
+      "slug": "mfg-milling-machining-centers.mp4",
+      "ext": ".mp4",
+      "size": 11578701,
+      "sha256": "7392f42eafc7cda78b066c7d18243e04c05217e2c7e7935a311041d75351af8b"
+    },
+    {
+      "collection": "mfg",
+      "title": "Painting & Powder Coating",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Painting & Powder Coating.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Painting & Powder Coating.mp4",
+      "slug": "mfg-painting-powder-coating.mp4",
+      "ext": ".mp4",
+      "size": 8793194,
+      "sha256": "2beddf0599d0000f379bf05171cc0c64801305eba1994a634646b3b8f1e5b2d1"
+    },
+    {
+      "collection": "mfg",
+      "title": "Plastic Blow Molding",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Plastic Blow Molding.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Plastic Blow Molding.mp4",
+      "slug": "mfg-plastic-blow-molding.mp4",
+      "ext": ".mp4",
+      "size": 5191513,
+      "sha256": "7d977674de248fcef2f357df4410949ed5d980d43710f0e763d85a8f096db893"
+    },
+    {
+      "collection": "mfg",
+      "title": "Plastic Injection Molding",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Plastic Injection Molding.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Plastic Injection Molding.mp4",
+      "slug": "mfg-plastic-injection-molding.mp4",
+      "ext": ".mp4",
+      "size": 6197276,
+      "sha256": "95c41f79f5c32639475943a9ba71bb1cee8556b4fd7d7bf0b02d9ddb7e1710cb"
+    },
+    {
+      "collection": "mfg",
+      "title": "Plastic Injection Molds",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Plastic Injection Molds.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Plastic Injection Molds.mp4",
+      "slug": "mfg-plastic-injection-molds.mp4",
+      "ext": ".mp4",
+      "size": 14417359,
+      "sha256": "6dc01d0c74c5b36efd97760d12efad0e0b8c3e458c6437bc3da55111f27d8822"
+    },
+    {
+      "collection": "mfg",
+      "title": "Plastic Thermoforming",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Plastic Thermoforming.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Plastic Thermoforming.mp4",
+      "slug": "mfg-plastic-thermoforming.mp4",
+      "ext": ".mp4",
+      "size": 11435973,
+      "sha256": "e24310097b96cb64077afb064a672ad1e06fd3474d1458b5031f9a93f796a99d"
+    },
+    {
+      "collection": "mfg",
+      "title": "Plastics Finishing",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Plastics Finishing.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Plastics Finishing.mp4",
+      "slug": "mfg-plastics-finishing.mp4",
+      "ext": ".mp4",
+      "size": 5605515,
+      "sha256": "3efcfd40806d7a341c31cd4372ad20df2935eefa0994a40d3de92141fb7cf064"
+    },
+    {
+      "collection": "mfg",
+      "title": "Plastics Machining & Assembly",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Plastics Machining & Assembly.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Plastics Machining & Assembly.mp4",
+      "slug": "mfg-plastics-machining-assembly.mp4",
+      "ext": ".mp4",
+      "size": 7050762,
+      "sha256": "be334a8834c5fd996c4e87fd09e947219917b6b0c04fea558e408126ce7df706"
+    },
+    {
+      "collection": "mfg",
+      "title": "Plating & Surface Coatings - YouTube",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Plating & Surface Coatings - YouTube.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Plating & Surface Coatings - YouTube.mp4",
+      "slug": "mfg-plating-surface-coatings-youtube.mp4",
+      "ext": ".mp4",
+      "size": 14564765,
+      "sha256": "135bbd2040e409ab8a3de04bb0be0fe02f63280a3a402265c59324b07f617ef2"
+    },
+    {
+      "collection": "mfg",
+      "title": "Powder Metallurgy",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Powder Metallurgy.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Powder Metallurgy.mp4",
+      "slug": "mfg-powder-metallurgy.mp4",
+      "ext": ".mp4",
+      "size": 9975057,
+      "sha256": "c190319d6b98bf0860ee1d77b0591e1a97f7e463b7a0978039d521920e04bd48"
+    },
+    {
+      "collection": "mfg",
+      "title": "Punch Presses",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Punch Presses.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Punch Presses.mp4",
+      "slug": "mfg-punch-presses.mp4",
+      "ext": ".mp4",
+      "size": 12223166,
+      "sha256": "816aaa39e9d357eadb5d295fe447234d8e652e00a17c59cf2d228fe431da2bf6"
+    },
+    {
+      "collection": "mfg",
+      "title": "Rapid Prototyping",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Rapid Prototyping.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Rapid Prototyping.mp4",
+      "slug": "mfg-rapid-prototyping.mp4",
+      "ext": ".mp4",
+      "size": 15038973,
+      "sha256": "e2514a9d242f6611eb777311309b5154bdf256b31fd439b4124354ff15eb68ce"
+    },
+    {
+      "collection": "mfg",
+      "title": "Roll Forming",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Roll Forming.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Roll Forming.mp4",
+      "slug": "mfg-roll-forming.mp4",
+      "ext": ".mp4",
+      "size": 13142102,
+      "sha256": "d51f928eb194172b76adb8eb91bb4785a81bb38e8333d7ee2f51875d426bf763"
+    },
+    {
+      "collection": "mfg",
+      "title": "Sheet Metal Coil Processing",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Sheet Metal Coil Processing.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Sheet Metal Coil Processing.mp4",
+      "slug": "mfg-sheet-metal-coil-processing.mp4",
+      "ext": ".mp4",
+      "size": 13982288,
+      "sha256": "e89e34c8440e61602a8fab9e34c2774802684089bc2ac6186863de3ae2bb1edc"
+    },
+    {
+      "collection": "mfg",
+      "title": "Sheet Metal Shearing & Bending",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Sheet Metal Shearing & Bending.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Sheet Metal Shearing & Bending.mp4",
+      "slug": "mfg-sheet-metal-shearing-bending.mp4",
+      "ext": ".mp4",
+      "size": 8258448,
+      "sha256": "b965cc90d07af88bcea0b336f75b669ccade7f88a974e59e9ed50215978986ff"
+    },
+    {
+      "collection": "mfg",
+      "title": "Sheet Metal Stamping Dies & Processes",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Sheet Metal Stamping Dies & Processes.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Sheet Metal Stamping Dies & Processes.mp4",
+      "slug": "mfg-sheet-metal-stamping-dies-processes.mp4",
+      "ext": ".mp4",
+      "size": 17724926,
+      "sha256": "0c25483ff4a9e99c154a0389ce6fae0e621f87dc0275ac0f9ce32574146ebf86"
+    },
+    {
+      "collection": "mfg",
+      "title": "Sheet Metal Stamping Presses",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Sheet Metal Stamping Presses.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Sheet Metal Stamping Presses.mp4",
+      "slug": "mfg-sheet-metal-stamping-presses.mp4",
+      "ext": ".mp4",
+      "size": 12834383,
+      "sha256": "58e2064fd2ace6185b744cb6bf0858e8bccaf7d8bc753dd41f803e57797be2eb"
+    },
+    {
+      "collection": "mfg",
+      "title": "Thermal & Abrasive Waterjet Cutting",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Thermal & Abrasive Waterjet Cutting.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Thermal & Abrasive Waterjet Cutting.mp4",
+      "slug": "mfg-thermal-abrasive-waterjet-cutting.mp4",
+      "ext": ".mp4",
+      "size": 16497324,
+      "sha256": "09ff505c7629d7aa9fe4d3c111faa3b2fa1aca65c36d9accbed9fb8e884a0688"
+    },
+    {
+      "collection": "mfg",
+      "title": "Threading",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Threading.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Threading.mp4",
+      "slug": "mfg-threading.mp4",
+      "ext": ".mp4",
+      "size": 16444108,
+      "sha256": "8373ea6ca166bcf5ec00b38c0b2b500cec7011bc0a8db2e43c46fbd961b229b2"
+    },
+    {
+      "collection": "mfg",
+      "title": "Tube Bending",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Tube Bending.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Tube Bending.mp4",
+      "slug": "mfg-tube-bending.mp4",
+      "ext": ".mp4",
+      "size": 8046941,
+      "sha256": "1c76d94094e8355cb94bc717c740d4ac51f7959ea0bfa07939f8d57de8ae658b"
+    },
+    {
+      "collection": "mfg",
+      "title": "Turning & the Lathe",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Turning & the Lathe.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Turning & the Lathe.mp4",
+      "slug": "mfg-turning-the-lathe.mp4",
+      "ext": ".mp4",
+      "size": 9288308,
+      "sha256": "9d64d6c4eabc0989d34926f9bb131851a424fddb9ab1c6fd87532f6950a383fb"
+    },
+    {
+      "collection": "mfg",
+      "title": "Welding",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Welding.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Welding.mp4",
+      "slug": "mfg-welding.mp4",
+      "ext": ".mp4",
+      "size": 11985565,
+      "sha256": "83678861ec0daeaade4b08266f28dfa7ce551bf9c41415a4590fed95f4ac5644"
+    },
+    {
+      "collection": "mfg",
+      "title": "Workholding",
+      "source": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Workholding.mp4",
+      "source_label": "Fundamentals of Mordern Manufacturing/Workholding.mp4",
+      "slug": "mfg-workholding.mp4",
+      "ext": ".mp4",
+      "size": 14104680,
+      "sha256": "88a8af12a3ddd1499de5826725a0bf98abd341a6bc838919439eb474a1ecab61"
+    },
+    {
+      "collection": "tool",
+      "title": "Composite Tooling Design",
+      "source": "D:\\Educational Courses\\CNC Machine\\Fundamentals of Tool Design\\Composite Tooling Design.mp4",
+      "source_label": "CNC Machine/Fundamentals of Tool Design/Composite Tooling Design.mp4",
+      "slug": "cnc-tool-composite-tooling-design.mp4",
+      "ext": ".mp4",
+      "size": 10180648,
+      "sha256": "129b26f6d81a1257d1cb2d09019ffe33bbb8c407b8c529e4d72406b6cf8954e3"
+    },
+    {
+      "collection": "tool",
+      "title": "Computer-Aided Design",
+      "source": "D:\\Educational Courses\\CNC Machine\\Fundamentals of Tool Design\\Computer-Aided Design.mp4",
+      "source_label": "CNC Machine/Fundamentals of Tool Design/Computer-Aided Design.mp4",
+      "slug": "cnc-tool-computer-aided-design.mp4",
+      "ext": ".mp4",
+      "size": 6953618,
+      "sha256": "1792947481c0695ef62fa2088b9865b0cad548259a704e70158931c5095c4615"
+    },
+    {
+      "collection": "tool",
+      "title": "Cutting Tool Design",
+      "source": "D:\\Educational Courses\\CNC Machine\\Fundamentals of Tool Design\\Cutting Tool Design.mp4",
+      "source_label": "CNC Machine/Fundamentals of Tool Design/Cutting Tool Design.mp4",
+      "slug": "cnc-tool-cutting-tool-design.mp4",
+      "ext": ".mp4",
+      "size": 11616376,
+      "sha256": "488fa81e083e5863927bfe9784437ae1ebb9927566f9125b5d685445ef07bbda"
+    },
+    {
+      "collection": "tool",
+      "title": "Fixture Design",
+      "source": "D:\\Educational Courses\\CNC Machine\\Fundamentals of Tool Design\\Fixture Design.mp4",
+      "source_label": "CNC Machine/Fundamentals of Tool Design/Fixture Design.mp4",
+      "slug": "cnc-tool-fixture-design.mp4",
+      "ext": ".mp4",
+      "size": 9155407,
+      "sha256": "df19e1bc252c61d74170ca3d8b2a518095b9aa3706d87a551cb8ac9736b50da3"
+    },
+    {
+      "collection": "tool",
+      "title": "Gaging & Inspection Tool Design",
+      "source": "D:\\Educational Courses\\CNC Machine\\Fundamentals of Tool Design\\Gaging & Inspection Tool Design.mp4",
+      "source_label": "CNC Machine/Fundamentals of Tool Design/Gaging & Inspection Tool Design.mp4",
+      "slug": "cnc-tool-gaging-inspection-tool-design.mp4",
+      "ext": ".mp4",
+      "size": 7975412,
+      "sha256": "e423be59134545f5bddccba0d3f89125b6d0170d4db18bbca651a77acf811173"
+    },
+    {
+      "collection": "tool",
+      "title": "Progressive Die Design",
+      "source": "D:\\Educational Courses\\CNC Machine\\Fundamentals of Tool Design\\Progressive Die Design.mp4",
+      "source_label": "CNC Machine/Fundamentals of Tool Design/Progressive Die Design.mp4",
+      "slug": "cnc-tool-progressive-die-design.mp4",
+      "ext": ".mp4",
+      "size": 12143658,
+      "sha256": "2f38d4c1e71553e0f73cca630598b43ef6a1b8b5ad6981d9c302da8112ea2ffe"
+    },
+    {
+      "collection": "tool",
+      "title": "Rapid Tooling Design",
+      "source": "D:\\Educational Courses\\CNC Machine\\Fundamentals of Tool Design\\Rapid Tooling Design.mp4",
+      "source_label": "CNC Machine/Fundamentals of Tool Design/Rapid Tooling Design.mp4",
+      "slug": "cnc-tool-rapid-tooling-design.mp4",
+      "ext": ".mp4",
+      "size": 9939246,
+      "sha256": "30500222db4392574750f2df695cabca983e31989dce2fc229cbb33c68823bd4"
+    },
+    {
+      "collection": "tool",
+      "title": "Tool Materials",
+      "source": "D:\\Educational Courses\\CNC Machine\\Fundamentals of Tool Design\\Tool Materials.mp4",
+      "source_label": "CNC Machine/Fundamentals of Tool Design/Tool Materials.mp4",
+      "slug": "cnc-tool-tool-materials.mp4",
+      "ext": ".mp4",
+      "size": 10926826,
+      "sha256": "b1625a5a51824903aa8e04e3899793454a1be92153dbccea1643a42f56185c91"
+    },
+    {
+      "collection": "tool",
+      "title": "Troubleshooting Tool and Die Making",
+      "source": "D:\\Educational Courses\\CNC Machine\\Fundamentals of Tool Design\\Troubleshooting Tool and Die Making.mp4",
+      "source_label": "CNC Machine/Fundamentals of Tool Design/Troubleshooting Tool and Die Making.mp4",
+      "slug": "cnc-tool-troubleshooting-tool-and-die-making.mp4",
+      "ext": ".mp4",
+      "size": 8863195,
+      "sha256": "349cc55b99ff2af3e0d22c06ec256dfb358f25487980103b214f912634752f14"
+    }
+  ],
+  "duplicates": [
+    {
+      "source": "D:\\Educational Courses\\CNC Machine\\Computer Numerical Control.mp4",
+      "duplicate_of": "D:\\Educational Courses\\Fundamentals of Mordern Manufacturing\\Computer Numerical Control.mp4"
+    },
+    {
+      "source": "D:\\Educational Courses\\Mechanical Drawing\\Basic engineering drawing and communication.pdf",
+      "duplicate_of": "D:\\Educational Courses\\Mechanical Engineering\\Basic engineering drawing and communication.pdf"
+    },
+    {
+      "source": "D:\\Educational Courses\\Mechanical Drawing\\chapter10-threadsandfasteners.pdf",
+      "duplicate_of": "D:\\Educational Courses\\Mechanical Engineering\\chapter10-threadsandfasteners.pdf"
+    },
+    {
+      "source": "D:\\Educational Courses\\Mechanical Drawing\\How to read a manufacturing drawing.pdf",
+      "duplicate_of": "D:\\Educational Courses\\Mechanical Engineering\\How to read a manufacturing drawing.pdf"
+    },
+    {
+      "source": "D:\\Educational Courses\\Mechanical Drawing\\Lecture 1.pdf",
+      "duplicate_of": "D:\\Educational Courses\\Mechanical Engineering\\Lecture 1.pdf"
+    },
+    {
+      "source": "D:\\Educational Courses\\Mechanical Drawing\\MachineDrawing.pdf",
+      "duplicate_of": "D:\\Educational Courses\\Mechanical Engineering\\MachineDrawing.pdf"
+    },
+    {
+      "source": "D:\\Educational Courses\\Mechanical Drawing\\Mechanical Drawing Principles.pdf",
+      "duplicate_of": "D:\\Educational Courses\\Mechanical Engineering\\Mechanical Drawing Principles.pdf"
+    },
+    {
+      "source": "D:\\Educational Courses\\Mechanical Drawing\\practical_problems_in_mechanical_drawing_and_blueprint_reading_1921.pdf",
+      "duplicate_of": "D:\\Educational Courses\\Mechanical Engineering\\practical_problems_in_mechanical_drawing_and_blueprint_reading_1921.pdf"
+    },
+    {
+      "source": "D:\\Educational Courses\\Mechanical Drawing\\Technical Drawing - Class Handout.pdf",
+      "duplicate_of": "D:\\Educational Courses\\Mechanical Engineering\\Technical Drawing - Class Handout.pdf"
+    }
+  ]
+}

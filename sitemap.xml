@@ -131,4 +131,21 @@
     <xhtml:link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/vi/videos/"/>
   </url>
 
+
+  <url>
+    <loc>https://machine-ctm.github.io/media/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-ctm.github.io/media/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/vi/media/"/>
+  </url>
+  <url>
+    <loc>https://machine-ctm.github.io/vi/media/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://machine-ctm.github.io/media/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://machine-ctm.github.io/vi/media/"/>
+  </url>
 </urlset>
